@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- CoFarmer Brand Colors -->
+    <color name="cofarmer_primary">#04D288</color>
+    <color name="cofarmer_secondary">#0066CC</color>
+    <color name="cofarmer_accent">#03B799</color>
+    <color name="cofarmer_gradient_start">#04D288</color>
+    <color name="cofarmer_gradient_end">#0066CC</color>
+    
+    <!-- Legacy theme colors updated with CoFarmer palette -->
     <color name="colorDialogBackground">@android:color/white</color>
     <color name="colorDialogMessage">@android:color/black</color>
     <color name="colorDialogTitle">@android:color/black</color>
     <color name="colorBackground">@android:color/white</color>
     <color name="colorOnBackground">#212121</color>
     <color name="colorSurface">@android:color/white</color>
-    <color name="colorPrimary">#03A9F4</color>
-    <color name="colorPrimaryDark">#0288D1</color>
-    <color name="colorAccent">#03A9F4</color>
+    <color name="colorPrimary">@color/cofarmer_primary</color>
+    <color name="colorPrimaryDark">@color/cofarmer_accent</color>
+    <color name="colorAccent">@color/cofarmer_primary</color>
     <color name="colorOnPrimary">@android:color/white</color>
     <color name="colorWarning">#D32F2F</color>
     <color name="colorHeadline1">@android:color/black</color>
     <color name="colorHeadline2">@android:color/black</color>
-    <color name="colorActionBar">#03A9F4</color>
+    <color name="colorActionBar">@color/cofarmer_primary</color>
     <color name="colorIcon">@android:color/black</color>
     <color name="colorSensorTopBackground">#f9fafc</color>
-    <color name="colorSensorTopEnabled">#e0f5fe</color>
-    <color name="colorSensorIconEnabled">#44739e</color>
+    <color name="colorSensorTopEnabled">#E0F7EF</color>
+    <color name="colorSensorIconEnabled">@color/cofarmer_accent</color>
     <color name="colorSwitchUncheckedThumb">#ececec</color>
     <color name="colorWidgetButtonBackground">@android:color/white</color>
     <color name="colorWidgetButtonLabel">@color/colorWidgetButtonLabelBlack</color>
@@ -34,12 +42,12 @@
     <color name="colorDeviceControlsLightOn">#FDD663</color>
     <color name="colorYellow">#F6C344</color>
     <color name="colorDeviceControlsOff">#9AA0A6</color>
-    <color name="colorDeviceControlsDefaultOn">#8AB4F8</color>
+    <color name="colorDeviceControlsDefaultOn">@color/cofarmer_secondary</color>
     <color name="colorDeviceControlsThermostatHeat">#FF8B66</color>
     <color name="colorDeviceControlsCamera">#F1F3F4</color>
     <color name="colorSpeechText">#B3E5FC</color>
-    <color name="colorPreferenceSuggestion">#1F03A9F4</color> <!-- colorAccent 12% opacity -->
+    <color name="colorPreferenceSuggestion">#1F04D288</color> <!-- cofarmer_primary 12% opacity -->
     <color name="colorOnSurfaceVariant">#49454E</color> <!-- M3 On Surface Variant -->
     <color name="colorBottomSheetHandle">#6649454E</color> <!-- M3 On Surface Variant 40% opacity -->
-    <color name="colorLauncherBackground">#18BCF2</color>
+    <color name="colorLauncherBackground">@color/cofarmer_primary</color>
 </resources>

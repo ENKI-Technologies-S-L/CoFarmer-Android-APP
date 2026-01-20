@@ -57,6 +57,7 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.draw.scale
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
@@ -96,6 +97,7 @@ internal fun ServerDiscoveryScreen(
     onBackClick: () -> Unit,
     onConnectClick: (server: URL) -> Unit,
     onHelpClick: () -> Unit,
+    onQrScanClick: () -> Unit,
     onManualSetupClick: () -> Unit,
     viewModel: ServerDiscoveryViewModel,
     modifier: Modifier = Modifier,
@@ -108,6 +110,7 @@ internal fun ServerDiscoveryScreen(
         onConnectClick = onConnectClick,
         onDismissOneServerFound = viewModel::onDismissOneServerFound,
         onHelpClick = onHelpClick,
+        onQrScanClick = onQrScanClick,
         onManualSetupClick = onManualSetupClick,
         modifier = modifier,
     )
@@ -120,6 +123,7 @@ internal fun ServerDiscoveryScreen(
     onConnectClick: (server: URL) -> Unit,
     onDismissOneServerFound: () -> Unit,
     onHelpClick: () -> Unit,
+    onQrScanClick: () -> Unit,
     onManualSetupClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -132,6 +136,7 @@ internal fun ServerDiscoveryScreen(
             contentPadding = contentPadding,
             discoveryState = discoveryState,
             onConnectClick = onConnectClick,
+            onQrScanClick = onQrScanClick,
             onManualSetupClick = onManualSetupClick,
         )
 
@@ -219,6 +224,7 @@ private fun ScreenContent(
     contentPadding: PaddingValues,
     discoveryState: DiscoveryState,
     onConnectClick: (URL) -> Unit,
+    onQrScanClick: () -> Unit,
     onManualSetupClick: () -> Unit,
 ) {
     Column(
@@ -239,6 +245,14 @@ private fun ScreenContent(
             is Started, NoServerFound, is ServerDiscovered -> ScanningForServer(discoveryState)
             is ServersDiscovered -> ServersDiscoveredContent(discoveryState, onConnectClick)
         }
+
+        HAAccentButton(
+            text = stringResource(commonR.string.qr_scanner_button),
+            onClick = onQrScanClick,
+            modifier = Modifier.fillMaxWidth(),
+        )
+
+        Spacer(modifier = Modifier.height(HADimens.SPACE2))
 
         HAPlainButton(
             text = stringResource(commonR.string.manual_setup),
@@ -383,7 +397,12 @@ private fun AnimatedIcon() {
                 .size(80.dp)
                 .scale(pulse)
                 .align(Alignment.Center)
-                .background(HABrandColors.Blue, CircleShape),
+                .background(
+                    brush = Brush.linearGradient(
+                        colors = listOf(HABrandColors.Primary, HABrandColors.Secondary)
+                    ),
+                    shape = CircleShape
+                ),
         ) {
             Icon(
                 imageVector = ImageVector.vectorResource(commonR.drawable.ic_stat_ic_notification_blue),
@@ -405,6 +424,7 @@ private fun ServerDiscoveryScreenPreview_scanning() {
         ServerDiscoveryScreen(
             discoveryState = Started,
             onConnectClick = {},
+            onQrScanClick = {},
             onManualSetupClick = {},
             onHelpClick = {},
             onBackClick = {},
@@ -420,6 +440,7 @@ private fun ServerDiscoveryScreenPreview_no_server_found() {
         ServerDiscoveryScreen(
             discoveryState = NoServerFound,
             onConnectClick = {},
+            onQrScanClick = {},
             onManualSetupClick = {},
             onHelpClick = {},
             onBackClick = {},
@@ -439,6 +460,7 @@ private fun ServerDiscoveryScreenPreview_with_one_server() {
                 HomeAssistantVersion(2042, 1, 42),
             ),
             onConnectClick = {},
+            onQrScanClick = {},
             onManualSetupClick = {},
             onHelpClick = {},
             onBackClick = {},
@@ -467,6 +489,7 @@ private fun ServerDiscoveryScreenPreview_with_multiple_servers() {
                 ),
             ),
             onConnectClick = {},
+            onQrScanClick = {},
             onManualSetupClick = {},
             onHelpClick = {},
             onBackClick = {},

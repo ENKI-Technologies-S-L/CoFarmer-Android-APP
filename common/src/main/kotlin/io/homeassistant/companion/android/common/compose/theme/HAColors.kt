@@ -192,13 +192,43 @@ private object HAColors {
     val Yellow80 = Color(0xFFFAC22B)
     val Yellow90 = Color(0xFFFFE495)
     val Yellow95 = Color(0xFFFEF3CD)
+
+    // CoFarmer Green (based on #04D288)
+    val CoFarmerGreen05 = Color(0xFF001A10)
+    val CoFarmerGreen10 = Color(0xFF00291A)
+    val CoFarmerGreen20 = Color(0xFF004D32)
+    val CoFarmerGreen30 = Color(0xFF007549)
+    val CoFarmerGreen40 = Color(0xFF009E62)
+    val CoFarmerGreen50 = Color(0xFF04D288)
+    val CoFarmerGreen60 = Color(0xFF3DDBA0)
+    val CoFarmerGreen70 = Color(0xFF6DE5B7)
+    val CoFarmerGreen80 = Color(0xFFA0EFCF)
+    val CoFarmerGreen90 = Color(0xFFD2F9E8)
+    val CoFarmerGreen95 = Color(0xFFE9FCF4)
+
+    // CoFarmer Blue (based on #0066CC)
+    val CoFarmerBlue05 = Color(0xFF001433)
+    val CoFarmerBlue10 = Color(0xFF002152)
+    val CoFarmerBlue20 = Color(0xFF003A85)
+    val CoFarmerBlue30 = Color(0xFF0050B5)
+    val CoFarmerBlue40 = Color(0xFF0066CC)
+    val CoFarmerBlue50 = Color(0xFF3385D6)
+    val CoFarmerBlue60 = Color(0xFF5599DD)
+    val CoFarmerBlue70 = Color(0xFF80B3E6)
+    val CoFarmerBlue80 = Color(0xFFAACCEE)
+    val CoFarmerBlue90 = Color(0xFFD5E6F7)
+    val CoFarmerBlue95 = Color(0xFFEAF3FB)
 }
 
 // TODO validate with design team if this color are immutable or not (not changeable by the users and also stay the same
 //  in dark mode)
 object HABrandColors {
-    val Blue = Color(0xFF18BCF2)
+    // CoFarmer/Enkitek Brand Colors
+    val Blue = Color(0xFF0066CC)  // Enkitek Secondary Blue
     val Background = Color(0xFFF2F4F9)
+    val Primary = Color(0xFF04D288)  // Enkitek Primary Green
+    val Secondary = Color(0xFF0066CC)  // Enkitek Secondary Blue
+    val Accent = Color(0xFF03B799)  // Enkitek Accent Teal
 }
 
 @Immutable
@@ -620,16 +650,17 @@ class HAColorScheme(
 }
 
 val DarkHAColorScheme = HAColorScheme(
-    colorFillPrimaryLoudResting = HAColors.Primary40,
-    colorFillPrimaryNormalResting = HAColors.Primary10,
-    colorFillPrimaryQuietResting = HAColors.Primary05,
-    colorFillPrimaryLoudHover = HAColors.Primary30,
-    colorFillPrimaryNormalHover = HAColors.Primary20,
-    colorFillPrimaryQuietHover = HAColors.Primary10,
-    colorFillPrimaryNormalActive = HAColors.Primary10,
+    // CoFarmer uses green as primary color
+    colorFillPrimaryLoudResting = HAColors.CoFarmerGreen40,
+    colorFillPrimaryNormalResting = HAColors.CoFarmerGreen10,
+    colorFillPrimaryQuietResting = HAColors.CoFarmerGreen05,
+    colorFillPrimaryLoudHover = HAColors.CoFarmerGreen30,
+    colorFillPrimaryNormalHover = HAColors.CoFarmerGreen20,
+    colorFillPrimaryQuietHover = HAColors.CoFarmerGreen10,
+    colorFillPrimaryNormalActive = HAColors.CoFarmerGreen10,
     colorOnPrimaryLoud = HAColors.White,
-    colorOnPrimaryNormal = HAColors.Primary60,
-    colorOnPrimaryQuiet = HAColors.Primary70,
+    colorOnPrimaryNormal = HAColors.CoFarmerGreen60,
+    colorOnPrimaryQuiet = HAColors.CoFarmerGreen70,
 
     colorFillNeutralLoudResting = HAColors.Neutral40,
     colorFillNeutralNormalResting = HAColors.Neutral10,
@@ -684,10 +715,10 @@ val DarkHAColorScheme = HAColorScheme(
     colorTextSecondary = HAColors.Neutral70,
     colorTextDisabled = HAColors.Neutral60,
 
-    colorTextLink = HAColors.Primary60,
+    colorTextLink = HAColors.CoFarmerBlue60,
 
-    colorBorderPrimaryNormal = HAColors.Primary50,
-    colorBorderPrimaryLoud = HAColors.Primary70,
+    colorBorderPrimaryNormal = HAColors.CoFarmerGreen50,
+    colorBorderPrimaryLoud = HAColors.CoFarmerGreen70,
 
     colorBorderNeutralQuiet = HAColors.Neutral40,
     colorBorderNeutralNormal = HAColors.Neutral50,
@@ -697,16 +728,17 @@ val DarkHAColorScheme = HAColorScheme(
 )
 
 val LightHAColorScheme = HAColorScheme(
-    colorFillPrimaryLoudResting = HAColors.Primary40,
-    colorFillPrimaryNormalResting = HAColors.Primary90,
-    colorFillPrimaryQuietResting = HAColors.Primary95,
-    colorFillPrimaryLoudHover = HAColors.Primary30,
-    colorFillPrimaryNormalHover = HAColors.Primary20,
-    colorFillPrimaryQuietHover = HAColors.Primary90,
-    colorFillPrimaryNormalActive = HAColors.Primary90,
+    // CoFarmer uses green as primary color
+    colorFillPrimaryLoudResting = HAColors.CoFarmerGreen40,
+    colorFillPrimaryNormalResting = HAColors.CoFarmerGreen90,
+    colorFillPrimaryQuietResting = HAColors.CoFarmerGreen95,
+    colorFillPrimaryLoudHover = HAColors.CoFarmerGreen30,
+    colorFillPrimaryNormalHover = HAColors.CoFarmerGreen20,
+    colorFillPrimaryQuietHover = HAColors.CoFarmerGreen90,
+    colorFillPrimaryNormalActive = HAColors.CoFarmerGreen90,
     colorOnPrimaryLoud = HAColors.White,
-    colorOnPrimaryNormal = HAColors.Primary40,
-    colorOnPrimaryQuiet = HAColors.Primary50,
+    colorOnPrimaryNormal = HAColors.CoFarmerGreen40,
+    colorOnPrimaryQuiet = HAColors.CoFarmerGreen50,
 
     colorFillNeutralLoudResting = HAColors.Neutral40,
     colorFillNeutralNormalResting = HAColors.Neutral90,
@@ -761,10 +793,10 @@ val LightHAColorScheme = HAColorScheme(
     colorTextSecondary = HAColors.Neutral40,
     colorTextDisabled = HAColors.Neutral60,
 
-    colorTextLink = HAColors.Primary40,
+    colorTextLink = HAColors.CoFarmerBlue40,
 
-    colorBorderPrimaryNormal = HAColors.Primary70,
-    colorBorderPrimaryLoud = HAColors.Primary40,
+    colorBorderPrimaryNormal = HAColors.CoFarmerGreen70,
+    colorBorderPrimaryLoud = HAColors.CoFarmerGreen40,
 
     colorBorderNeutralQuiet = HAColors.Neutral80,
     colorBorderNeutralNormal = HAColors.Neutral70,

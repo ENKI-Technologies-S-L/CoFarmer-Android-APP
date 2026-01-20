@@ -7,14 +7,19 @@ import androidx.wear.compose.material3.ColorScheme
 import androidx.wear.compose.material3.SliderDefaults
 import androidx.wear.compose.material3.SwitchButtonDefaults
 
-val md_theme_dark_primary = Color(0xFF03A9F4)
-val md_theme_dark_onPrimary = Color(0xFF00344F)
-val md_theme_dark_primaryContainer = Color(0xFF004B70)
-val md_theme_dark_onPrimaryContainer = Color(0xFFCAE6FF)
-val md_theme_dark_secondary = Color(0xFF96CCFF)
-val md_theme_dark_onSecondary = Color(0xFF003353)
-val md_theme_dark_secondaryContainer = Color(0xFF004A75)
-val md_theme_dark_onSecondaryContainer = Color(0xFFCEE5FF)
+// CoFarmer brand colors
+val cofarmer_primary = Color(0xFF04D288)
+val cofarmer_secondary = Color(0xFF0066CC)
+val cofarmer_accent = Color(0xFF03B799)
+
+val md_theme_dark_primary = cofarmer_primary
+val md_theme_dark_onPrimary = Color(0xFF00291A)
+val md_theme_dark_primaryContainer = Color(0xFF004D32)
+val md_theme_dark_onPrimaryContainer = Color(0xFFD2F9E8)
+val md_theme_dark_secondary = cofarmer_secondary
+val md_theme_dark_onSecondary = Color(0xFF001433)
+val md_theme_dark_secondaryContainer = Color(0xFF003A85)
+val md_theme_dark_onSecondaryContainer = Color(0xFFD5E6F7)
 val md_theme_dark_tertiary = Color(0xFFF6C344)
 val md_theme_dark_onTertiary = Color(0xFF3F2E00)
 val md_theme_dark_tertiaryContainer = Color(0xFF5B4300)

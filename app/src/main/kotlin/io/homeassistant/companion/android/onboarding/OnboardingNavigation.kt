@@ -28,6 +28,8 @@ import io.homeassistant.companion.android.onboarding.nameyourdevice.navigation.n
 import io.homeassistant.companion.android.onboarding.nameyourdevice.navigation.navigateToNameYourDevice
 import io.homeassistant.companion.android.onboarding.nameyourweardevice.navigation.nameYourWearDeviceScreen
 import io.homeassistant.companion.android.onboarding.nameyourweardevice.navigation.navigateToNameYourWearDevice
+import io.homeassistant.companion.android.onboarding.qrscanner.navigation.navigateToQrScanner
+import io.homeassistant.companion.android.onboarding.qrscanner.navigation.qrScannerScreen
 import io.homeassistant.companion.android.onboarding.serverdiscovery.navigation.ServerDiscoveryMode
 import io.homeassistant.companion.android.onboarding.serverdiscovery.navigation.ServerDiscoveryRoute
 import io.homeassistant.companion.android.onboarding.serverdiscovery.navigation.navigateToServerDiscovery
@@ -232,6 +234,7 @@ internal fun NavGraphBuilder.onboarding(
  *
  * This includes:
  * - Server discovery: Find servers on the network or via manual entry
+ * - QR code scanner: Scan hub QR code for quick connection
  * - Manual server entry: Direct URL input for server connection
  * - Connection: Authentication and server validation
  */
@@ -250,10 +253,18 @@ private fun NavGraphBuilder.commonScreens(navController: NavController, wearName
                 (navController.context as? Activity)?.finish()
             }
         },
+        onQrScanClick = navController::navigateToQrScanner,
         onManualSetupClick = navController::navigateToManualServer,
         onHelpClick = {
             navController.navigateToUri(URL_GETTING_STARTED_DOCUMENTATION)
         },
+    )
+    qrScannerScreen(
+        onBackClick = navController::popBackStack,
+        onUrlScanned = {
+            navController.navigateToConnection(it.toString())
+        },
+        onManualSetupClick = navController::navigateToManualServer,
     )
     manualServerScreen(
         onBackClick = navController::popBackStack,

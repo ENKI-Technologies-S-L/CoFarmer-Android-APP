@@ -39,6 +39,7 @@ internal fun NavGraphBuilder.serverDiscoveryScreen(
     onConnectClick: (server: URL) -> Unit,
     onBackClick: () -> Unit,
     onHelpClick: () -> Unit,
+    onQrScanClick: () -> Unit,
     onManualSetupClick: () -> Unit,
 ) {
     composable<ServerDiscoveryRoute> {
@@ -46,6 +47,7 @@ internal fun NavGraphBuilder.serverDiscoveryScreen(
             onConnectClick = onConnectClick,
             onBackClick = onBackClick,
             onHelpClick = onHelpClick,
+            onQrScanClick = onQrScanClick,
             onManualSetupClick = onManualSetupClick,
             viewModel = hiltViewModel(),
         )

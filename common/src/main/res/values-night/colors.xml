@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- CoFarmer Brand Colors (same in light/dark mode) -->
+    <color name="cofarmer_primary">#04D288</color>
+    <color name="cofarmer_secondary">#0066CC</color>
+    <color name="cofarmer_accent">#03B799</color>
+    
+    <!-- Dark mode specific colors -->
     <color name="colorDialogBackground">#111111</color>
     <color name="colorDialogMessage">@android:color/white</color>
     <color name="colorDialogTitle">@android:color/white</color>
@@ -13,7 +19,7 @@
     <color name="colorActionBar">#1c1c1c</color>
     <color name="colorIcon">@android:color/white</color>
     <color name="colorSensorTopBackground">#212227</color>
-    <color name="colorSensorTopEnabled">#192d36</color>
+    <color name="colorSensorTopEnabled">#0D3B2F</color>
     <color name="colorSwitchUncheckedThumb">#b9b9b9</color>
     <color name="colorWidgetButtonBackground">#1c1c1c</color>
     <color name="colorWidgetButtonLabel">@color/colorWidgetButtonLabelWhite</color>

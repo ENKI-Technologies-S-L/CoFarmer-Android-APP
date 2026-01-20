@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- CoFarmer App Launcher Colors -->
+    <color name="cofarmer_primary">#04D288</color>
+    <color name="cofarmer_secondary">#0066CC</color>
     <color name="ic_launcher_foreground">#FFF2F2F2</color>
+    <color name="ic_launcher_background">#04D288</color>
 </resources>

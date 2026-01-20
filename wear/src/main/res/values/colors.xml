@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- CoFarmer Brand Colors -->
+    <color name="cofarmer_primary">#04D288</color>
+    <color name="cofarmer_secondary">#0066CC</color>
+    <color name="cofarmer_accent">#03B799</color>
+    
     <color name="colorDialogBackground">#111111</color>
     <color name="colorDialogMessage">@android:color/white</color>
     <color name="colorDialogTitle">@android:color/white</color>

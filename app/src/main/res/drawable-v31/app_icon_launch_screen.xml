@@ -1,13 +1,26 @@
-<!-- 112 dp icon on a 288dp canvas -->
+<!-- CoFarmer / Enkitek E icon logo with gradient - optimized for splash screen circle -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
     android:width="288dp"
     android:height="288dp"
-    android:viewportWidth="288"
-    android:viewportHeight="288">
+    android:viewportWidth="186"
+    android:viewportHeight="186">
+    
+    <!-- Enkitek E logo circle with gradient - centered in square viewport -->
     <path
-        android:pathData="M200,192.89C200,194.75 199.26,196.53 197.95,197.84C196.64,199.15 194.86,199.89 193,199.89H95C93.14,199.89 91.36,199.15 90.05,197.84C88.74,196.53 88,194.75 88,192.89V150.89C88,147.04 90.23,141.66 92.95,138.94L139.05,92.84C141.77,90.12 146.23,90.12 148.95,92.84L195.05,138.94C197.77,141.66 200,147.04 200,150.89V192.89L200,192.89Z"
-        android:fillColor="#18BCF2"/>
-    <path
-        android:pathData="M138.06,199.89L119.1,180.93C118.1,181.27 117.06,181.45 116,181.46C110.73,181.46 106.43,177.16 106.43,171.89C106.43,166.61 110.73,162.32 116,162.32C121.27,162.32 125.57,166.61 125.57,171.89C125.57,172.94 125.39,173.99 125.04,174.99L139.8,189.75V135.68C136.63,134.12 134.43,130.86 134.43,127.09C134.43,121.82 138.73,117.53 144,117.53C149.27,117.53 153.57,121.82 153.57,127.09C153.57,130.86 151.37,134.12 148.2,135.68V173.6L162.88,158.92C162.59,157.99 162.43,157.01 162.43,156.03C162.43,150.76 166.73,146.46 172,146.46C177.27,146.46 181.57,150.75 181.57,156.03C181.57,161.3 177.27,165.6 172,165.6C170.87,165.59 169.75,165.39 168.69,164.99L148.2,185.48V199.89L138.06,199.89Z"
-        android:fillColor="#F2F4F9"/>
+        android:pathData="M93,30c-34.8,0-63,28.2-63,63s28.2,63,63,63c34.8,0,63-28.2,63-63S127.8,30,93,30zM59.5,74.2v-6.1c0,-2.1,1.7,-3.9,3.9,-3.9h6.1h11.6h11.9h11.5l-17,29.5l-3.6,6.1c-0.8,1.3,-2.2,2.1,-3.7,2.1h-3.3h-7.4h-10V74.2zM94.9,121.8h-2.7H69.5H62c-1.4,0,-2.5,-1.1,-2.5,-2.5v-7.5h10h16.9h2.7h4.7h1.8c1.5,0,2.8,0.8,3.5,2l4.6,7.9H94.9zM126.5,121.8H117c-1.3,0,-2.5,-0.7,-3.1,-1.8l-10.6,-17.9l-4.1,-6.9c-0.8,-1.4,-0.8,-3.1,0,-4.5l4.1,-6.9l10.3,-17.4c0.8,-1.4,2.4,-2.3,4,-2.3h8.9l-17,28.8L126.5,121.8z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="38.43"
+                android:startY="61.5"
+                android:endX="147.57"
+                android:endY="124.5">
+                <item android:offset="0.1459" android:color="#FF04D288"/>
+                <item android:offset="0.8054" android:color="#FF0066CC"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- Inner detail teal -->
+    <path android:fillColor="#03B799" android:pathData="M78,89.8l8.1,-15.6H75.3h-1.9c-2.1,0,-3.9,1.7,-3.9,3.9v6.2v7.7h5C76,91.9,77.3,91.1,78,89.8z"/>
 </vector>
