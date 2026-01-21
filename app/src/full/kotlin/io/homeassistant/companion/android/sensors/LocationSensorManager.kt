@@ -1330,7 +1330,7 @@ class LocationSensorManager :
     }
 
     override fun docsLink(): String {
-        return "https://companion.home-assistant.io/docs/core/location"
+        return "https://docs.cofarmer.enkitek.eu/docs/core/location"
     }
 
     override val name: Int

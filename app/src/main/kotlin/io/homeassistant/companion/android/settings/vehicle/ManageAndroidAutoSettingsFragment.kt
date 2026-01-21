@@ -37,7 +37,7 @@ class ManageAndroidAutoSettingsFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        addHelpMenuProvider("https://companion.home-assistant.io/docs/android-auto")
+        addHelpMenuProvider("https://docs.cofarmer.enkitek.eu/docs/android-auto")
     }
 
     override fun onResume() {

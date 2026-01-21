@@ -146,7 +146,7 @@ class AudioSensorManager : SensorManager {
     }
 
     override fun docsLink(): String {
-        return "https://companion.home-assistant.io/docs/core/sensors#audio-sensors"
+        return "https://docs.cofarmer.enkitek.eu/docs/core/sensors#audio-sensors"
     }
 
     override val name: Int

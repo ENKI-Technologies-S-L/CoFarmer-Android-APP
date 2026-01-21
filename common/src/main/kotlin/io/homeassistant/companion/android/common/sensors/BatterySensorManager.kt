@@ -129,7 +129,7 @@ class BatterySensorManager : SensorManager {
     }
 
     override fun docsLink(): String {
-        return "https://companion.home-assistant.io/docs/core/sensors#battery-sensors"
+        return "https://docs.cofarmer.enkitek.eu/docs/core/sensors#battery-sensors"
     }
 
     override val name: Int

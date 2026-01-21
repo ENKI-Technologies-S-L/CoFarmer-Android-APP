@@ -46,7 +46,7 @@ import kotlinx.serialization.Serializable
 
 @VisibleForTesting
 const val URL_GETTING_STARTED_DOCUMENTATION =
-    "https://companion.home-assistant.io/docs/getting_started/"
+    "https://docs.cofarmer.enkitek.eu/docs/getting_started/"
 
 /**
  * Navigation route for the main onboarding flow.
@@ -431,7 +431,7 @@ internal fun NavGraphBuilder.wearOnboarding(
             onBackClick = navController::popBackStack,
             onHelpClick = {
                 navController.navigateToUri(
-                    "https://companion.home-assistant.io/docs/getting_started/#tls-client-authentication",
+                    "https://docs.cofarmer.enkitek.eu/docs/getting_started/#tls-client-authentication",
                 )
             },
             onNext = onOnboardingDone,

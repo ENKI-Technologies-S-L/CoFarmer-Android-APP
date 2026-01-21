@@ -81,7 +81,7 @@ class WebsocketSettingFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        addHelpMenuProvider("https://companion.home-assistant.io/docs/notifications/notification-local")
+        addHelpMenuProvider("https://docs.cofarmer.enkitek.eu/docs/notifications/notification-local")
     }
 
     override fun onResume() {

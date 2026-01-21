@@ -33,7 +33,7 @@ class NotificationChannelFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         addHelpMenuProvider(
-            "https://companion.home-assistant.io/docs/notifications/notifications-basic#notification-channels",
+            "https://docs.cofarmer.enkitek.eu/docs/notifications/notifications-basic#notification-channels",
         )
     }
 

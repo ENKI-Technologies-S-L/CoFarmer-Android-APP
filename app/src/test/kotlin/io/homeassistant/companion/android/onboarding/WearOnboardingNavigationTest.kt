@@ -315,7 +315,7 @@ internal class WearOnboardingNavigationTest {
             onNodeWithText(stringResource(commonR.string.wear_mtls_content)).assertIsDisplayed()
 
             onNodeWithContentDescription(stringResource(commonR.string.get_help)).performClick()
-            verify { any<NavController>().navigateToUri("https://companion.home-assistant.io/docs/getting_started/#tls-client-authentication") }
+            verify { any<NavController>().navigateToUri("https://docs.cofarmer.enkitek.eu/docs/getting_started/#tls-client-authentication") }
 
             onNodeWithText(stringResource(commonR.string.wear_mtls_next)).performScrollTo().assertIsDisplayed().assertIsEnabled().performClick()
 

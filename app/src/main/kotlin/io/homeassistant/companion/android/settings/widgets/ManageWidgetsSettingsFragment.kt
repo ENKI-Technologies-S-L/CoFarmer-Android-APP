@@ -29,7 +29,7 @@ class ManageWidgetsSettingsFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        addHelpMenuProvider("https://companion.home-assistant.io/docs/integrations/android-widgets")
+        addHelpMenuProvider("https://docs.cofarmer.enkitek.eu/docs/integrations/android-widgets")
     }
 
     override fun onResume() {

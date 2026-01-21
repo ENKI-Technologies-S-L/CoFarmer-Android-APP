@@ -100,7 +100,7 @@ class ConnectionErrorScreenTest {
 
             onNodeWithContentDescription(stringResource(commonR.string.connection_error_documentation_content_description))
                 .performScrollTo().assertIsDisplayed().performClick()
-            assertEquals("https://companion.home-assistant.io/docs/troubleshooting/faqs/", urlClicked)
+            assertEquals("https://docs.cofarmer.enkitek.eu/docs/troubleshooting/faqs/", urlClicked)
 
             onNodeWithContentDescription(stringResource(commonR.string.connection_error_forum_content_description))
                 .performScrollTo().assertIsDisplayed().performClick()

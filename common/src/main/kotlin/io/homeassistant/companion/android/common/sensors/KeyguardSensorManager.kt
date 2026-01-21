@@ -42,7 +42,7 @@ class KeyguardSensorManager : SensorManager {
     }
 
     override fun docsLink(): String {
-        return "https://companion.home-assistant.io/docs/core/sensors#keyguard-sensors"
+        return "https://docs.cofarmer.enkitek.eu/docs/core/sensors#keyguard-sensors"
     }
 
     override val name: Int
