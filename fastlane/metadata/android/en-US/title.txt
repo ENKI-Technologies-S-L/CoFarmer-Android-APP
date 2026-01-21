@@ -1,1 +1,1 @@
-Home Assistant
+CoFarmer - Farm Monitoring
