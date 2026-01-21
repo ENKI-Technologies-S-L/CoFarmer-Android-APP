@@ -38,7 +38,7 @@
     <string name="app_name">CoFarmer</string>
     <string name="app_version_info">App version info</string>
     <string name="acknowledgments">Acknowledgments</string>
-    <string name="acknowledgments_summary">Based on Home Assistant Companion App</string>
+    <string name="acknowledgments_summary">Third-party licenses</string>
     <string name="acknowledgments_detail">CoFarmer is built upon the Home Assistant Companion App, licensed under Apache License 2.0. We thank the Home Assistant community for their contributions.</string>
     <string name="application_version">Application version</string>
     <string name="attempting_authentication">Authenticating…</string>
@@ -1374,7 +1374,7 @@
     <string name="server_discovery_no_server_info">Check that your CoFarmer server is powered on and you\'re connected to the same network. You can enter the address manually if you know it.</string>
     <string name="server_discovery_connect">Connect</string>
     <string name="welcome_home_assistant_title">CoFarmer</string>
-    <string name="welcome_details">Monitor and manage your agricultural installation from anywhere.\n\nTrack sensors, automate climate control, and receive real-time alerts — all with complete privacy and local-first architecture.</string>
+    <string name="welcome_details">Monitor and manage your farm from anywhere.\n\nTrack sensors, automate climate control, and receive real-time alerts — all with complete privacy and local-first architecture.</string>
     <string name="welcome_connect_to_ha">Connect to my farm</string>
     <string name="welcome_learn_more">Learn more</string>
     <string name="name_your_device_title">How would you like to name this device?</string>
