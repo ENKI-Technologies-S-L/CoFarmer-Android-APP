@@ -1370,9 +1370,9 @@
     <string name="searching_home_network">Scanning\nlocal network</string>
     <string name="server_discovery_no_server_info">Check that your CoFarmer server is powered on and you\'re connected to the same network. You can enter the address manually if you know it.</string>
     <string name="server_discovery_connect">Connect</string>
-    <string name="welcome_home_assistant_title">CoFarmer\nCompanion app</string>
-    <string name="welcome_details">Access your CoFarmer server on the go.\n\nCoFarmer is open source farm automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts.</string>
-    <string name="welcome_connect_to_ha">Connect to my CoFarmer server</string>
+    <string name="welcome_home_assistant_title">CoFarmer</string>
+    <string name="welcome_details">Monitor and manage your agricultural installation from anywhere.\n\nCoFarmer is an open source platform for smart farming. Track sensors, automate climate control, and receive real-time alerts — all with complete privacy and local-first architecture.</string>
+    <string name="welcome_connect_to_ha">Connect to my farm</string>
     <string name="welcome_learn_more">Learn more</string>
     <string name="name_your_device_title">How would you like to name this device?</string>
     <string name="name_your_device_content">This is used to identify your device.</string>
