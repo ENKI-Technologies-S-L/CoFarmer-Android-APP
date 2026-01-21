@@ -256,6 +256,11 @@
             app:isPreferenceVisible="false"
             android:title="@string/crash_reporting"
             android:summary="@string/crash_reporting_summary" />
+        <Preference
+            android:key="acknowledgments"
+            android:icon="@drawable/ic_baseline_info_24"
+            android:title="@string/acknowledgments"
+            android:summary="@string/acknowledgments_summary" />
     </PreferenceCategory>
 
 </androidx.preference.PreferenceScreen>

@@ -373,6 +373,15 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
             it.intent = Intent(Intent.ACTION_VIEW, it.summary.toString().toUri())
         }
 
+        findPreference<Preference>("acknowledgments")?.setOnPreferenceClickListener {
+            androidx.appcompat.app.AlertDialog.Builder(requireContext())
+                .setTitle(commonR.string.acknowledgments)
+                .setMessage(commonR.string.acknowledgments_detail)
+                .setPositiveButton(android.R.string.ok, null)
+                .show()
+            true
+        }
+
         findPreference<Preference>("developer")?.setOnPreferenceClickListener {
             parentFragmentManager.commit {
                 replace(R.id.content, DeveloperSettingsFragment::class.java, null)
