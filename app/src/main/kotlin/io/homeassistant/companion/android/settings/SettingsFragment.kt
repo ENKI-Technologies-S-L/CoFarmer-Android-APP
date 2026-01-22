@@ -51,6 +51,7 @@ import io.homeassistant.companion.android.settings.vehicle.ManageAndroidAutoSett
 import io.homeassistant.companion.android.settings.wear.SettingsWearActivity
 import io.homeassistant.companion.android.settings.wear.SettingsWearDetection
 import io.homeassistant.companion.android.settings.widgets.ManageWidgetsSettingsFragment
+import io.homeassistant.companion.android.util.CoFarmerFeatures
 import io.homeassistant.companion.android.util.QuestUtil
 import io.homeassistant.companion.android.util.applyBottomSafeDrawingInsets
 import io.homeassistant.companion.android.webview.WebViewActivity
@@ -91,7 +92,7 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
 
         findPreference<Preference>("nfc_tags")?.let {
             val pm: PackageManager = requireContext().packageManager
-            it.isVisible = pm.hasSystemFeature(PackageManager.FEATURE_NFC)
+            it.isVisible = CoFarmerFeatures.NFC_ENABLED && pm.hasSystemFeature(PackageManager.FEATURE_NFC)
             it.onPreferenceClickListener = Preference.OnPreferenceClickListener {
                 startActivity(NfcSetupActivity.newInstance(requireActivity()))
                 true
@@ -150,14 +151,18 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
             }
         }
 
-        findPreference<Preference>("sensors")?.setOnPreferenceClickListener {
-            parentFragmentManager.commit {
-                replace(R.id.content, SensorSettingsFragment::class.java, null)
-                addToBackStack(getString(commonR.string.sensors))
+        findPreference<Preference>("sensors")?.let {
+            it.isVisible = CoFarmerFeatures.SENSORS_ENABLED
+            it.setOnPreferenceClickListener {
+                parentFragmentManager.commit {
+                    replace(R.id.content, SensorSettingsFragment::class.java, null)
+                    addToBackStack(getString(commonR.string.sensors))
+                }
+                return@setOnPreferenceClickListener true
             }
-            return@setOnPreferenceClickListener true
         }
         findPreference<Preference>("sensor_update_frequency")?.let {
+            it.isVisible = CoFarmerFeatures.SENSOR_FREQUENCY_ENABLED
             it.setOnPreferenceClickListener {
                 parentFragmentManager.commit {
                     replace(R.id.content, SensorUpdateFrequencyFragment::class.java, null)
@@ -167,15 +172,19 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
             }
         }
 
-        findPreference<Preference>("gestures")?.setOnPreferenceClickListener {
-            parentFragmentManager.commit {
-                replace(R.id.content, GesturesFragment::class.java, null)
-                addToBackStack(getString(commonR.string.gestures))
+        findPreference<Preference>("gestures")?.let {
+            it.isVisible = CoFarmerFeatures.GESTURES_ENABLED
+            it.setOnPreferenceClickListener {
+                parentFragmentManager.commit {
+                    replace(R.id.content, GesturesFragment::class.java, null)
+                    addToBackStack(getString(commonR.string.gestures))
+                }
+                return@setOnPreferenceClickListener true
             }
-            return@setOnPreferenceClickListener true
         }
 
         findPreference<ListPreference>("page_zoom")?.let {
+            it.isVisible = CoFarmerFeatures.PAGE_ZOOM_ENABLED
             // The list of percentages for iOS/Android should match
             // https://github.com/home-assistant/iOS/blob/ff66bbf2e3f9add0abb0b492499b81e824db36ed/Sources/Shared/Settings/SettingsStore.swift#L108
             val percentages = listOf(50, 75, 85, 100, 115, 125, 150, 175, 200)
@@ -187,9 +196,11 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
 
         val isAutomotive = requireContext().isAutomotive()
 
-        findPreference<PreferenceCategory>("assist")?.isVisible = !isAutomotive
+        // CoFarmer: Hide voice assist feature
+        findPreference<PreferenceCategory>("assist")?.isVisible = CoFarmerFeatures.VOICE_ASSIST_ENABLED && !isAutomotive
 
-        findPreference<PreferenceCategory>("widgets")?.isVisible = !QuestUtil.isQuest && !isAutomotive
+        // CoFarmer: Hide widgets feature
+        findPreference<PreferenceCategory>("widgets")?.isVisible = CoFarmerFeatures.WIDGETS_ENABLED && !QuestUtil.isQuest && !isAutomotive
         findPreference<Preference>("manage_widgets")?.setOnPreferenceClickListener {
             parentFragmentManager.commit {
                 replace(R.id.content, ManageWidgetsSettingsFragment::class.java, null)
@@ -200,8 +211,9 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
 
         if (!QuestUtil.isQuest) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
+                // CoFarmer: Hide shortcuts feature
                 findPreference<PreferenceCategory>("shortcuts")?.let {
-                    it.isVisible = true
+                    it.isVisible = CoFarmerFeatures.SHORTCUTS_ENABLED
                 }
                 findPreference<Preference>("manage_shortcuts")?.setOnPreferenceClickListener {
                     parentFragmentManager.commit {
@@ -213,8 +225,9 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
             }
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                // CoFarmer: Hide quick tiles feature
                 findPreference<PreferenceCategory>("quick_settings")?.let {
-                    it.isVisible = true
+                    it.isVisible = CoFarmerFeatures.TILES_ENABLED
                 }
                 findPreference<Preference>("manage_tiles")?.setOnPreferenceClickListener {
                     parentFragmentManager.commit {
@@ -226,8 +239,9 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
             }
 
             if (!isAutomotive && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                // CoFarmer: Hide device controls feature
                 findPreference<PreferenceCategory>("device_controls")?.let {
-                    it.isVisible = true
+                    it.isVisible = CoFarmerFeatures.DEVICE_CONTROLS_ENABLED
                 }
                 findPreference<Preference>("manage_device_controls")?.setOnPreferenceClickListener {
                     parentFragmentManager.commit {
@@ -240,7 +254,7 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
         }
 
         findPreference<PreferenceCategory>("notifications")?.let {
-            it.isVisible = true
+            it.isVisible = CoFarmerFeatures.NOTIFICATIONS_ENABLED
         }
 
         updateNotificationChannelPrefs()
@@ -265,7 +279,7 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
         }
 
         findPreference<Preference>("notification_history")?.let {
-            it.isVisible = true
+            it.isVisible = CoFarmerFeatures.NOTIFICATION_HISTORY_ENABLED
             it.setOnPreferenceClickListener {
                 parentFragmentManager.commit {
                     replace(R.id.content, NotificationHistoryFragment::class.java, null)
@@ -275,7 +289,7 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
             }
         }
 
-        if (BuildConfig.FLAVOR == "full") {
+        if (BuildConfig.FLAVOR == "full" && CoFarmerFeatures.NOTIFICATION_RATE_LIMIT_ENABLED) {
             findPreference<Preference>("notification_rate_limit")?.let {
                 lifecycleScope.launch(Dispatchers.Main) {
                     // Runs in IO Dispatcher
@@ -323,7 +337,9 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
             }
         }
 
+        // CoFarmer: Hide changelog features
         findPreference<Preference>("changelog_github")?.let {
+            it.isVisible = CoFarmerFeatures.CHANGELOG_ENABLED
             val link = if (BuildConfig.VERSION_NAME.startsWith("LOCAL")) {
                 "https://github.com/home-assistant/android/releases"
             } else {
@@ -336,14 +352,18 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
             it.intent = Intent(Intent.ACTION_VIEW, link.toUri())
         }
 
-        findPreference<Preference>("changelog_prompt")?.setOnPreferenceClickListener {
-            lifecycleScope.launch {
-                presenter.showChangeLog(requireContext())
+        findPreference<Preference>("changelog_prompt")?.let {
+            it.isVisible = CoFarmerFeatures.CHANGELOG_ENABLED
+            it.setOnPreferenceClickListener {
+                lifecycleScope.launch {
+                    presenter.showChangeLog(requireContext())
+                }
+                true
             }
-            true
         }
 
         findPreference<SwitchPreference>("change_log_popup_enabled")?.let {
+            it.isVisible = CoFarmerFeatures.CHANGELOG_ENABLED
             lifecycleScope.launch {
                 it.isChecked = presenter.isChangeLogPopupEnabled()
             }
@@ -361,6 +381,7 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
         }
 
         findPreference<ListPreference>("languages")?.let {
+            it.isVisible = CoFarmerFeatures.LANGUAGE_ENABLED
             lifecycleScope.launch {
                 val languages = langProvider.getSupportedLanguages(requireContext())
                 it.entries = languages.keys.toTypedArray()
@@ -390,8 +411,9 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
             return@setOnPreferenceClickListener true
         }
 
+        // CoFarmer: Hide Android Auto feature
         findPreference<PreferenceCategory>("android_auto")?.let {
-            it.isVisible =
+            it.isVisible = CoFarmerFeatures.ANDROID_AUTO_ENABLED &&
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.O &&
                 (BuildConfig.FLAVOR == "full" || isAutomotive)
             if (isAutomotive) {
@@ -425,6 +447,9 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
     }
 
     private fun removeSystemFromThemesIfNeeded() {
+        // CoFarmer: Hide theme picker - app follows remote HA theme
+        findPreference<ListPreference>("themes")?.isVisible = CoFarmerFeatures.THEME_PICKER_ENABLED
+        
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) {
             val pref = findPreference<ListPreference>("themes")
             if (pref != null) {
@@ -465,6 +490,9 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
 
     private fun updateBackgroundAccessPref() {
         findPreference<Preference>("background")?.let {
+            // CoFarmer: Hide background access - not needed without phone sensors
+            it.isVisible = CoFarmerFeatures.BACKGROUND_ACCESS_ENABLED
+            
             if (context?.isIgnoringBatteryOptimizations() == true) {
                 it.setSummary(commonR.string.background_access_enabled)
                 it.icon = AppCompatResources.getDrawable(requireContext(), R.drawable.ic_check)

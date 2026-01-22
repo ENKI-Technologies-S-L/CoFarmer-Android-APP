@@ -5,9 +5,9 @@ import androidx.appcompat.app.AppCompatDelegate
 import io.homeassistant.companion.android.common.data.prefs.NightModeTheme
 import io.homeassistant.companion.android.common.data.prefs.NightModeTheme.ANDROID
 import io.homeassistant.companion.android.common.data.prefs.NightModeTheme.DARK
-import io.homeassistant.companion.android.common.data.prefs.NightModeTheme.LIGHT
 import io.homeassistant.companion.android.common.data.prefs.NightModeTheme.SYSTEM
 import io.homeassistant.companion.android.common.data.prefs.PrefsRepository
+import io.homeassistant.companion.android.util.CoFarmerFeatures
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -19,17 +19,25 @@ import timber.log.Timber
  * This class is responsible for retrieving, saving, and applying the night mode theme.
  * It interacts with [PrefsRepository] to persist the selected theme.
  *
+ * When [CoFarmerFeatures.THEME_PICKER_ENABLED] is false, the theme always follows the system,
+ * allowing the WebView to display Home Assistant themes (like Graphite Auto) correctly.
+ *
  * @property prefsRepository The repository for accessing and storing application preferences.
  */
 class NightModeManager @Inject constructor(private val prefsRepository: PrefsRepository) {
 
     suspend fun getCurrentNightMode(): NightModeTheme {
+        // When theme picker is disabled, always follow system
+        if (!CoFarmerFeatures.THEME_PICKER_ENABLED) {
+            return SYSTEM
+        }
+
         val nightMode = prefsRepository.getCurrentNightModeTheme()
         return if (nightMode == null) {
             val nightModeThemeToSet = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
                 SYSTEM
             } else {
-                LIGHT
+                SYSTEM // Also default to SYSTEM for consistency
             }
             prefsRepository.saveNightModeTheme(nightModeThemeToSet)
             nightModeThemeToSet
@@ -39,6 +47,13 @@ class NightModeManager @Inject constructor(private val prefsRepository: PrefsRep
     }
 
     suspend fun saveNightMode(nightModeTheme: NightModeTheme?) {
+        // When theme picker is disabled, don't allow changing the theme
+        if (!CoFarmerFeatures.THEME_PICKER_ENABLED) {
+            Timber.d("Theme picker disabled, forcing FOLLOW_SYSTEM")
+            SYSTEM.setAsDefaultNightMode()
+            return
+        }
+
         if (nightModeTheme !== null) {
             val currentNightMode = getCurrentNightMode()
             if (currentNightMode != nightModeTheme) {

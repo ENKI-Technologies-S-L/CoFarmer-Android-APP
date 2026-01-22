@@ -23,7 +23,8 @@
             android:summary="@string/wear_os_settings_summary" />
     </PreferenceCategory>
     <PreferenceCategory
-        android:title="@string/sensors">
+        android:title="@string/sensors"
+        app:isPreferenceVisible="false">
         <Preference
             android:key="sensors"
             android:icon="@drawable/leak"
@@ -73,11 +74,14 @@
             android:key="autoplay_video"
             android:icon="@drawable/ic_baseline_video_settings_24"
             android:title="@string/autoplay_video"
+            app:isPreferenceVisible="false"
             android:summary="@string/autoplay_video_summary" />
         <SwitchPreference
             android:key="always_show_first_view_on_app_start"
             android:icon="@drawable/ic_home_variant_outline"
             android:title="@string/always_show_first_view_on_app_start"
+            android:defaultValue="true"
+            app:isPreferenceVisible="false"
             android:summary="@string/always_show_first_view_on_app_start_summary" />
         <Preference
             android:key="nfc_tags"
