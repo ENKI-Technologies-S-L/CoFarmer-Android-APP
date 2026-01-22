@@ -455,7 +455,7 @@
     <string name="qr_scanner_button">Scan QR Code</string>
     <string name="qr_scanner_title">Scan Hub QR Code</string>
     <string name="qr_scanner_subtitle">Point your camera at the QR code on your CoFarmer hub or setup documentation</string>
-    <string name="qr_scanner_help">Your installer may have provided a QR code for quick setup</string>
+    <string name="qr_scanner_help">Find the QR code in your CoFarmer Hub settings</string>
     <string name="qr_scanner_error_invalid_url">This doesn\'t look like a CoFarmer hub code. Try another code or enter the address manually.</string>
     <string name="qr_scanner_error_connection_failed">Found address, but can\'t connect. Make sure you\'re on the same network as your hub.</string>
     <string name="qr_scanner_permission_title">Camera Access Needed</string>
@@ -1373,10 +1373,18 @@
     <string name="searching_home_network">Scanning\nlocal network</string>
     <string name="server_discovery_no_server_info">Check that your CoFarmer server is powered on and you\'re connected to the same network. You can enter the address manually if you know it.</string>
     <string name="server_discovery_connect">Connect</string>
+    <!-- Welcome Screen - QR First Design -->
     <string name="welcome_home_assistant_title">CoFarmer</string>
     <string name="welcome_details">Monitor and manage your farm from anywhere.\n\nTrack sensors, automate climate control, and receive real-time alerts — all with complete privacy and local-first architecture.</string>
     <string name="welcome_connect_to_ha">Connect to my farm</string>
     <string name="welcome_learn_more">Learn more</string>
+    <string name="welcome_scan_qr">Scan QR code</string>
+    <string name="welcome_scan_qr_description">The fastest way to connect. Find your QR code in your CoFarmer Hub settings.</string>
+    <string name="welcome_other_options">Other connection methods</string>
+    <string name="welcome_option_autodiscover">Find on local network</string>
+    <string name="welcome_option_autodiscover_description">Automatically discover hubs on your Wi-Fi</string>
+    <string name="welcome_option_manual">Enter address manually</string>
+    <string name="welcome_option_manual_description">Type your hub URL directly</string>
     <string name="name_your_device_title">How would you like to name this device?</string>
     <string name="name_your_device_content">This is used to identify your device.</string>
     <string name="name_your_device_save">Save</string>

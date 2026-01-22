@@ -125,12 +125,21 @@ internal fun NavGraphBuilder.onboarding(
 
     navigation<OnboardingRoute>(startDestination = startDestination) {
         welcomeScreen(
-            onConnectClick = {
+            onScanQrClick = {
+                // QR Scanner is the primary action
+                navController.navigateToQrScanner()
+            },
+            onAutoDiscoverClick = {
+                // Auto-discover on local network
                 if (urlToOnboard.isNullOrEmpty()) {
                     navController.navigateToServerDiscovery(serverDiscoveryMode)
                 } else {
                     navController.navigateToConnection(urlToOnboard)
                 }
+            },
+            onManualSetupClick = {
+                // Manual URL entry
+                navController.navigateToManualServer()
             },
             onLearnMoreClick = {
                 navController.navigateToUri(URL_GETTING_STARTED_DOCUMENTATION)

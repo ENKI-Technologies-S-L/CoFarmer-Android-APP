@@ -24,6 +24,7 @@ val threadPolicyIgnoredViolationRules = listOf(
     IgnoreAndroidAutoRendererServiceDiskRead,
     IgnoreMiuiFontSettingsDiskRead,
     IgnoreMiuiTurboSchedMonitorDiskRead,
+    IgnoreMediaTekBoostFwkDiskRead,
 )
 
 /**
@@ -224,6 +225,28 @@ private data object IgnoreMiuiTurboSchedMonitorDiskRead : IgnoreViolationRule {
 
         return violation.stackTrace.any {
             it.className == "android.os.TurboSchedMonitorImpl"
+        }
+    }
+}
+
+/**
+ * Ignore a [DiskReadViolation] in MediaTek BoostFwk (used by Motorola and other OEMs).
+ * This occurs when MediaTek's performance framework checks if an app is a game during
+ * touch/scroll events to optimize performance. This is beyond application control.
+ *
+ * Stack trace typically includes:
+ * - com.mediatek.boostfwk.utils.Util.isGameApp
+ * - com.mediatek.boostfwk.identify.scroll.ScrollIdentify.checkAppType
+ * - com.motorola.perf.MTKBoostFwkAdapter.scrollScenarioCallBySbe
+ */
+private data object IgnoreMediaTekBoostFwkDiskRead : IgnoreViolationRule {
+    @RequiresApi(Build.VERSION_CODES.P)
+    override fun shouldIgnore(violation: Violation): Boolean {
+        if (violation !is DiskReadViolation) return false
+
+        return violation.stackTrace.any {
+            it.className.startsWith("com.mediatek.boostfwk.") ||
+                it.className.startsWith("com.motorola.perf.")
         }
     }
 }

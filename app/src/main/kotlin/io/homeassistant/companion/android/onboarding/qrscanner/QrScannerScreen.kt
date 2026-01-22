@@ -7,7 +7,6 @@ import android.net.Uri
 import android.provider.Settings
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.compose.animation.core.FastOutSlowInEasing
-import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
@@ -258,24 +257,55 @@ private fun QrScannerViewfinder(
         }
     }
 
-    // Animated scan line position (moves up and down)
+    // Modern pulse animation (expanding rings from center)
     val infiniteTransition = rememberInfiniteTransition(label = "scanner_animation")
-    val scanLinePosition by infiniteTransition.animateFloat(
-        initialValue = 0f,
+    
+    // Primary pulse ring
+    val pulseScale1 by infiniteTransition.animateFloat(
+        initialValue = 0.3f,
         targetValue = 1f,
         animationSpec = infiniteRepeatable(
             animation = tween(durationMillis = 2000, easing = FastOutSlowInEasing),
-            repeatMode = RepeatMode.Reverse,
+            repeatMode = RepeatMode.Restart,
         ),
-        label = "scan_line_position",
+        label = "pulse_scale_1",
+    )
+    val pulseAlpha1 by infiniteTransition.animateFloat(
+        initialValue = 0.6f,
+        targetValue = 0f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(durationMillis = 2000, easing = FastOutSlowInEasing),
+            repeatMode = RepeatMode.Restart,
+        ),
+        label = "pulse_alpha_1",
+    )
+    
+    // Secondary pulse ring (delayed)
+    val pulseScale2 by infiniteTransition.animateFloat(
+        initialValue = 0.3f,
+        targetValue = 1f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(durationMillis = 2000, delayMillis = 600, easing = FastOutSlowInEasing),
+            repeatMode = RepeatMode.Restart,
+        ),
+        label = "pulse_scale_2",
+    )
+    val pulseAlpha2 by infiniteTransition.animateFloat(
+        initialValue = 0.5f,
+        targetValue = 0f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(durationMillis = 2000, delayMillis = 600, easing = FastOutSlowInEasing),
+            repeatMode = RepeatMode.Restart,
+        ),
+        label = "pulse_alpha_2",
     )
 
     // Pulsing corners
     val cornerAlpha by infiniteTransition.animateFloat(
-        initialValue = 0.6f,
+        initialValue = 0.7f,
         targetValue = 1f,
         animationSpec = infiniteRepeatable(
-            animation = tween(durationMillis = 1000, easing = LinearEasing),
+            animation = tween(durationMillis = 1500, easing = FastOutSlowInEasing),
             repeatMode = RepeatMode.Reverse,
         ),
         label = "corner_alpha",
@@ -308,9 +338,12 @@ private fun QrScannerViewfinder(
                 .clip(RoundedCornerShape(HARadius.XL)),
         )
 
-        // Custom scanning overlay with animated corners and scan line
+        // Custom scanning overlay with animated corners and pulse effect
         ScannerOverlay(
-            scanLinePosition = scanLinePosition,
+            pulseScale1 = pulseScale1,
+            pulseAlpha1 = pulseAlpha1,
+            pulseScale2 = pulseScale2,
+            pulseAlpha2 = pulseAlpha2,
             cornerAlpha = cornerAlpha,
             modifier = Modifier.fillMaxSize(),
         )
@@ -318,11 +351,14 @@ private fun QrScannerViewfinder(
 }
 
 /**
- * Custom scanner overlay with animated corners and a gradient scan line.
+ * Custom scanner overlay with animated corners and modern pulse effect.
  */
 @Composable
 private fun ScannerOverlay(
-    scanLinePosition: Float,
+    pulseScale1: Float,
+    pulseAlpha1: Float,
+    pulseScale2: Float,
+    pulseAlpha2: Float,
     cornerAlpha: Float,
     modifier: Modifier = Modifier,
 ) {
@@ -408,22 +444,42 @@ private fun ScannerOverlay(
             cap = StrokeCap.Round,
         )
 
-        // Animated scan line with gradient
-        val scanLineY = cornerLengthPx + (height - 2 * cornerLengthPx) * scanLinePosition
-        val scanLineGradient = Brush.horizontalGradient(
-            colors = listOf(
-                Color.Transparent,
-                primaryColor.copy(alpha = 0.8f),
-                secondaryColor.copy(alpha = 0.8f),
-                Color.Transparent,
-            ),
+        // Modern pulse effect - expanding rings from center
+        val centerX = width / 2
+        val centerY = height / 2
+        val maxRadius = minOf(width, height) / 2 * 0.7f
+
+        // First pulse ring
+        drawCircle(
+            color = primaryColor.copy(alpha = pulseAlpha1),
+            radius = maxRadius * pulseScale1,
+            center = Offset(centerX, centerY),
+            style = Stroke(width = 2.dp.toPx()),
         )
 
+        // Second pulse ring (delayed)
+        drawCircle(
+            color = secondaryColor.copy(alpha = pulseAlpha2),
+            radius = maxRadius * pulseScale2,
+            center = Offset(centerX, centerY),
+            style = Stroke(width = 2.dp.toPx()),
+        )
+
+        // Center crosshair for alignment (subtle)
+        val crosshairSize = 20.dp.toPx()
+        val crosshairAlpha = 0.4f
         drawLine(
-            brush = scanLineGradient,
-            start = Offset(cornerLengthPx, scanLineY),
-            end = Offset(width - cornerLengthPx, scanLineY),
-            strokeWidth = 3.dp.toPx(),
+            color = primaryColor.copy(alpha = crosshairAlpha),
+            start = Offset(centerX - crosshairSize, centerY),
+            end = Offset(centerX + crosshairSize, centerY),
+            strokeWidth = 1.5.dp.toPx(),
+            cap = StrokeCap.Round,
+        )
+        drawLine(
+            color = primaryColor.copy(alpha = crosshairAlpha),
+            start = Offset(centerX, centerY - crosshairSize),
+            end = Offset(centerX, centerY + crosshairSize),
+            strokeWidth = 1.5.dp.toPx(),
             cap = StrokeCap.Round,
         )
     }
