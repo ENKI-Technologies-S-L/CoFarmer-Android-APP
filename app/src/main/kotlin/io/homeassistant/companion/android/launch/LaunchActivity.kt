@@ -7,7 +7,11 @@ import android.os.Parcelable
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.core.content.IntentCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -17,6 +21,7 @@ import dagger.hilt.android.lifecycle.withCreationCallback
 import io.homeassistant.companion.android.common.compose.theme.HATheme
 import io.homeassistant.companion.android.util.compose.HAApp
 import io.homeassistant.companion.android.util.enableEdgeToEdgeCompat
+import kotlinx.coroutines.delay
 import kotlinx.parcelize.Parcelize
 
 private const val DEEP_LINK_KEY = "deep_link_key"
@@ -61,6 +66,9 @@ class LaunchActivity : AppCompatActivity() {
     }
 
     companion object {
+        /** Duration to display the CoFarmer branding screen in milliseconds */
+        private const val BRANDING_DISPLAY_DURATION_MS = 2500L
+
         fun newInstance(context: Context, deepLink: DeepLink? = null): Intent {
             return Intent(context, LaunchActivity::class.java).apply {
                 if (deepLink != null) {
@@ -80,11 +88,8 @@ class LaunchActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val splashScreen = installSplashScreen()
-
-        splashScreen.setKeepOnScreenCondition {
-            viewModel.shouldShowSplashScreen()
-        }
+        // Install splash screen but don't keep it - go directly to branding screen
+        installSplashScreen()
 
         enableEdgeToEdgeCompat()
 
@@ -93,13 +98,20 @@ class LaunchActivity : AppCompatActivity() {
                 val navController = rememberNavController()
                 val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
-                when (val state = uiState) {
-                    is LaunchUiState.Ready -> HAApp(navController, state.startDestination)
-                    LaunchUiState.NetworkUnavailable -> NetworkUnavailableDialog(onBackClick = ::finish)
-                    LaunchUiState.WearUnsupported -> WearUnsupportedDialog(onBackClick = ::finish)
-                    LaunchUiState.Loading -> {
-                        // Splash screen is still showing
-                    }
+                // Show branding screen for minimum duration before showing main content
+                var showBranding by remember { mutableStateOf(true) }
+                
+                LaunchedEffect(Unit) {
+                    delay(BRANDING_DISPLAY_DURATION_MS)
+                    showBranding = false
+                }
+
+                when {
+                    showBranding -> BrandingSplashScreen()
+                    uiState is LaunchUiState.Ready -> HAApp(navController, (uiState as LaunchUiState.Ready).startDestination)
+                    uiState == LaunchUiState.NetworkUnavailable -> NetworkUnavailableDialog(onBackClick = ::finish)
+                    uiState == LaunchUiState.WearUnsupported -> WearUnsupportedDialog(onBackClick = ::finish)
+                    else -> BrandingSplashScreen() // Loading state
                 }
             }
         }

@@ -1,9 +1,10 @@
-<!-- CoFarmer / Enkitek logo for Android 12+ splash screen -->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- CoFarmer Logo with Enkitek E icon for splash screen -->
 <!-- Based on official Enkitek brand SVG -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:aapt="http://schemas.android.com/aapt"
-    android:width="288dp"
-    android:height="288dp"
+    android:width="200dp"
+    android:height="200dp"
     android:viewportWidth="186"
     android:viewportHeight="186">
     

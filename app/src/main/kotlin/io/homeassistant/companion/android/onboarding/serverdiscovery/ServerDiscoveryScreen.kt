@@ -33,11 +33,10 @@ import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.layout.windowInsetsPadding
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Storage
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -231,21 +230,31 @@ private fun ScreenContent(
         modifier = Modifier
             .fillMaxSize()
             .padding(contentPadding)
-            .verticalScroll(rememberScrollState())
             .padding(horizontal = HADimens.SPACE4),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
+        // Title
         Text(
             text = stringResource(commonR.string.searching_home_network),
             style = HATextStyle.Headline,
-            modifier = Modifier.padding(top = HADimens.SPACE6),
+            textAlign = TextAlign.Center,
+            modifier = Modifier.padding(top = HADimens.SPACE4),
         )
 
+        // Local access warning chip
+        LocalAccessWarningChip(
+            modifier = Modifier.padding(top = HADimens.SPACE3),
+        )
+
+        // Animated scanning icon - centered and flexible
         when (discoveryState) {
-            is Started, NoServerFound, is ServerDiscovered -> ScanningForServer(discoveryState)
-            is ServersDiscovered -> ServersDiscoveredContent(discoveryState, onConnectClick)
+            is Started, NoServerFound, is ServerDiscovered -> CompactScanningContent(discoveryState)
+            is ServersDiscovered -> CompactServersFound(discoveryState, onConnectClick)
         }
 
+        Spacer(modifier = Modifier.weight(1f))
+
+        // Bottom buttons
         HAAccentButton(
             text = stringResource(commonR.string.qr_scanner_button),
             onClick = onQrScanClick,
@@ -257,8 +266,133 @@ private fun ScreenContent(
         HAPlainButton(
             text = stringResource(commonR.string.manual_setup),
             onClick = onManualSetupClick,
-            modifier = Modifier.fillMaxWidth().padding(bottom = HADimens.SPACE6),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = HADimens.SPACE4),
         )
+    }
+}
+
+@Composable
+private fun ColumnScope.CompactServersFound(state: ServersDiscovered, onConnectClick: (URL) -> Unit) {
+    Spacer(modifier = Modifier.height(HADimens.SPACE4))
+    
+    // Show found servers in a compact card list
+    state.servers.take(3).forEach { server ->
+        ServerItemContent(server, onConnectClick)
+    }
+    
+    if (state.servers.size > 3) {
+        Text(
+            text = "+${state.servers.size - 3} more",
+            style = HATextStyle.BodyMedium,
+            color = LocalHAColorScheme.current.colorTextSecondary,
+            modifier = Modifier.padding(top = HADimens.SPACE2),
+        )
+    }
+    
+    // Show scanning indicator
+    Row(
+        horizontalArrangement = Arrangement.Center,
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier.padding(top = HADimens.SPACE4),
+    ) {
+        HALoading()
+        Spacer(modifier = Modifier.padding(start = HADimens.SPACE2))
+        Text(
+            text = "Still searching...",
+            style = HATextStyle.BodyMedium,
+            color = LocalHAColorScheme.current.colorTextSecondary,
+        )
+    }
+}
+
+@Composable
+private fun ColumnScope.CompactScanningContent(discoveryState: DiscoveryState) {
+    Spacer(modifier = Modifier.height(HADimens.SPACE6))
+    
+    // Compact animated icon
+    CompactAnimatedIcon()
+    
+    Spacer(modifier = Modifier.height(HADimens.SPACE4))
+
+    // Status text
+    val statusText = when (discoveryState) {
+        NoServerFound -> stringResource(commonR.string.server_discovery_no_server_info)
+        else -> stringResource(commonR.string.loading_content_description)
+    }
+    
+    val currentAlpha: Float by animateFloatAsState(
+        targetValue = if (discoveryState == NoServerFound) 1f else 0.6f,
+        animationSpec = tween(durationMillis = 1000, easing = FastOutSlowInEasing),
+    )
+
+    Text(
+        text = statusText,
+        style = HATextStyle.Body,
+        textAlign = TextAlign.Center,
+        color = LocalHAColorScheme.current.colorTextSecondary,
+        modifier = Modifier
+            .padding(horizontal = HADimens.SPACE4)
+            .alpha(currentAlpha)
+            .widthIn(max = MaxContentWidth),
+    )
+}
+
+@Composable
+private fun CompactAnimatedIcon() {
+    Box(
+        modifier = Modifier.size(160.dp),
+        contentAlignment = Alignment.Center,
+    ) {
+        val rotation by rememberInfiniteTransition(label = "dots_rotation").animateFloat(
+            initialValue = 0f,
+            targetValue = 360f,
+            animationSpec = infiniteRepeatable(
+                animation = tween(durationMillis = 5000, easing = LinearEasing),
+                repeatMode = RepeatMode.Restart,
+            ),
+            label = "dots_rotation_value",
+        )
+        val pulse by rememberInfiniteTransition(label = "icon_pulse").animateFloat(
+            initialValue = 1f,
+            targetValue = 1.1f,
+            animationSpec = infiniteRepeatable(
+                animation = tween(durationMillis = 800, easing = LinearEasing),
+                repeatMode = RepeatMode.Reverse,
+            ),
+            label = "icon_pulse_value",
+        )
+        
+        // Rotating dots
+        Image(
+            imageVector = ImageVector.vectorResource(R.drawable.dots),
+            contentDescription = null,
+            modifier = Modifier
+                .size(160.dp)
+                .rotate(rotation),
+        )
+        
+        // Center icon with gradient
+        Box(
+            modifier = Modifier
+                .size(60.dp)
+                .scale(pulse)
+                .background(
+                    brush = Brush.linearGradient(
+                        colors = listOf(HABrandColors.Primary, HABrandColors.Secondary)
+                    ),
+                    shape = CircleShape
+                ),
+            contentAlignment = Alignment.Center,
+        ) {
+            Icon(
+                imageVector = ImageVector.vectorResource(commonR.drawable.ic_stat_ic_notification_blue),
+                contentDescription = null,
+                modifier = Modifier.size(32.dp),
+                tint = HABrandColors.Background,
+            )
+        }
     }
 }
 
@@ -414,6 +548,93 @@ private fun AnimatedIcon() {
                 tint = HABrandColors.Background,
             )
         }
+    }
+}
+
+/**
+ * Warning card explaining local network discovery limitations.
+ * Informs users that discovered servers only work on local network (inside the farm)
+ * and suggests using QR code from Quick Start Guide for remote access.
+ */
+@Composable
+private fun LocalNetworkWarningCard() {
+    val warningShape = RoundedCornerShape(size = HARadius.L)
+    Column(
+        modifier = Modifier
+            .widthIn(max = MaxContentWidth)
+            .fillMaxWidth()
+            .padding(vertical = HADimens.SPACE3, horizontal = HADimens.SPACE2)
+            .background(
+                color = LocalHAColorScheme.current.colorFillPrimaryQuietResting,
+                shape = warningShape,
+            )
+            .border(
+                border = BorderStroke(HABorderWidth.S, LocalHAColorScheme.current.colorBorderPrimaryNormal),
+                shape = warningShape,
+            )
+            .padding(HADimens.SPACE4),
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.padding(bottom = HADimens.SPACE2),
+        ) {
+            Icon(
+                imageVector = Icons.Default.Info,
+                contentDescription = null,
+                tint = LocalHAColorScheme.current.colorFillPrimaryLoudResting,
+                modifier = Modifier
+                    .size(HASize.XL)
+                    .padding(end = HADimens.SPACE2),
+            )
+            Text(
+                text = stringResource(commonR.string.local_network_warning_title),
+                style = HATextStyle.BodyMedium,
+                color = LocalHAColorScheme.current.colorFillPrimaryLoudResting,
+            )
+        }
+        Text(
+            text = stringResource(commonR.string.local_network_warning_message),
+            style = HATextStyle.Body,
+            color = LocalHAColorScheme.current.colorTextSecondary,
+        )
+    }
+}
+
+/**
+ * Visual warning chip indicating that servers found are local-only.
+ * Features a modern design with icon, colored background, and rounded corners.
+ */
+@Composable
+private fun LocalAccessWarningChip(
+    modifier: Modifier = Modifier,
+) {
+    Row(
+        modifier = modifier
+            .background(
+                color = LocalHAColorScheme.current.colorFillDangerQuietResting,
+                shape = RoundedCornerShape(HARadius.XL),
+            )
+            .border(
+                width = 1.dp,
+                color = LocalHAColorScheme.current.colorFillDangerLoudResting.copy(alpha = 0.3f),
+                shape = RoundedCornerShape(HARadius.XL),
+            )
+            .padding(horizontal = HADimens.SPACE3, vertical = HADimens.SPACE2),
+        horizontalArrangement = Arrangement.Center,
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Icon(
+            imageVector = Icons.Default.Info,
+            contentDescription = null,
+            modifier = Modifier.size(16.dp),
+            tint = LocalHAColorScheme.current.colorFillDangerLoudResting,
+        )
+        Spacer(modifier = Modifier.padding(start = HADimens.SPACE2))
+        Text(
+            text = stringResource(commonR.string.local_network_access_warning),
+            style = HATextStyle.BodyMedium,
+            color = LocalHAColorScheme.current.colorOnDangerNormal,
+        )
     }
 }
 

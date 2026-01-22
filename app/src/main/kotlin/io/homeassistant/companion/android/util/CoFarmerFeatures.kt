@@ -183,14 +183,33 @@ object CoFarmerFeatures {
     const val TROUBLESHOOTING_ENABLED = true
 
     /**
-     * Crash reporting (opt-in).
-     * ENABLED: Important for stability, but opt-in only.
+     * Crash reporting via Sentry.
+     * ENABLED: Important for stability monitoring.
+     *
+     * Behavior:
+     * - Only active in "full" flavor (not minimal/FOSS builds)
+     * - Only active in release builds (disabled in debug)
+     * - User can opt-out in Settings > Version Info > Crash Reporting toggle
+     * - Requires SENTRY_DSN environment variable to be set at build time
+     *
+     * For enterprise deployments:
+     * - Set SENTRY_DSN="" (empty) to completely disable
+     * - Or users can individually disable via Settings toggle
+     *
+     * Privacy: Only user ID is retained (email/username stripped)
+     * Ignored: Network errors (ConnectException, SSLException, etc.)
      */
     const val CRASH_REPORTING_ENABLED = true
 
     /**
-     * Pinch-to-zoom.
-     * ENABLED: Essential for farm maps and diagrams. Always on, not configurable.
+     * Pinch-to-zoom toggle in Settings.
+     * ENABLED: Shows toggle in Settings > App Settings.
+     *
+     * Behavior:
+     * - User can toggle pinch-to-zoom on/off
+     * - ON by default (good for farm maps, diagrams)
+     * - May need to be OFF for industrial tablets with resistive touchscreens
+     * - Affects WebView zoom behavior in dashboard
      */
     const val PINCH_TO_ZOOM_ENABLED = true
 
@@ -199,4 +218,23 @@ object CoFarmerFeatures {
      * ENABLED: Hardcoded ON - emergency access to main dashboard.
      */
     const val ALWAYS_SHOW_DASHBOARD_ENABLED = true
+
+    /**
+     * Allow as home app / launcher mode.
+     * ENABLED: Useful for kiosk deployments on dedicated farm tablets.
+     *
+     * Behavior:
+     * - Located in Settings > App Settings > Device Home Screen
+     * - When enabled, CoFarmer appears in "Set default home app" dialog
+     * - User can set CoFarmer as the device's home screen launcher
+     * - Uses activity-alias LauncherAlias with HOME category
+     * - Disabled by default, user must explicitly enable
+     *
+     * Use case: Dedicated tablets mounted in farm buildings that should
+     * boot directly into CoFarmer dashboard without Android home screen.
+     *
+     * WARNING: The alias name is hardcoded. Do NOT rename the component
+     * as it would break existing users who set it as default launcher.
+     */
+    const val HOME_APP_LAUNCHER_ENABLED = true
 }

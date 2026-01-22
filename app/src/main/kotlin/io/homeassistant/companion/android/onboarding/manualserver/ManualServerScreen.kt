@@ -62,7 +62,7 @@ internal fun ManualServerScreen(
 
     ManualServerScreen(
         onConnectClick = {
-            val url = URL(serverUrl)
+            val url = URL(viewModel.getNormalizedUrl())
             onConnectTo(url)
         },
         onHelpClick = onHelpClick,
@@ -174,7 +174,7 @@ private fun ServerUrlTextField(
         },
         placeholder = {
             Text(
-                text = "http://cofarmer.local:8123",
+                text = "greenfarm.co-farmer.com",
                 style = HATextStyle.UserInput,
                 color = LocalHAColorScheme.current.colorOnNeutralNormal,
             )

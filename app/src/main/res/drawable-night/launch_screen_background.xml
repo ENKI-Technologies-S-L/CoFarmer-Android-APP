@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- CoFarmer branded splash screen - displays logo with branding during app launch -->
+<!-- CoFarmer branded splash screen - NIGHT MODE version -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Background color -->
+    <!-- Dark background color -->
     <item android:drawable="@color/colorLaunchScreenBackground" />
     
-    <!-- Subtle gradient accent at bottom -->
+    <!-- Subtle gradient accent at bottom - darker for night mode -->
     <item>
         <shape android:shape="rectangle">
             <gradient
@@ -12,7 +12,7 @@
                 android:angle="90"
                 android:startColor="#0004D288"
                 android:centerColor="#0004D288"
-                android:endColor="#1504D288"
+                android:endColor="#1004D288"
                 android:centerY="0.9"/>
         </shape>
     </item>
@@ -25,7 +25,7 @@
         android:height="160dp"
         android:drawable="@drawable/splash_logo_cofarmer" />
     
-    <!-- COFARMER text below logo -->
+    <!-- COFARMER text below logo - night mode version -->
     <item
         android:gravity="center_horizontal|center_vertical"
         android:top="100dp"
@@ -33,19 +33,19 @@
         android:height="36dp"
         android:drawable="@drawable/splash_text_cofarmer" />
     
-    <!-- Tagline text - smaller, below CoFarmer -->
+    <!-- Tagline text - smaller, below CoFarmer - night mode version -->
     <item
         android:gravity="center_horizontal|center_vertical"
         android:top="155dp"
         android:width="180dp"
         android:height="18dp"
-        android:drawable="@drawable/splash_tagline" />
+        android:drawable="@drawable/splash_tagline_night" />
     
-    <!-- "by ENKITEK" at bottom -->
+    <!-- "by ENKITEK" at bottom - night mode version -->
     <item
         android:gravity="center_horizontal|bottom"
         android:bottom="48dp"
         android:width="100dp"
         android:height="24dp"
-        android:drawable="@drawable/splash_by_enkitek" />
+        android:drawable="@drawable/splash_by_enkitek_night" />
 </layer-list>

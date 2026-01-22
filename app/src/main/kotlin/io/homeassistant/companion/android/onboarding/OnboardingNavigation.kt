@@ -28,6 +28,7 @@ import io.homeassistant.companion.android.onboarding.nameyourdevice.navigation.n
 import io.homeassistant.companion.android.onboarding.nameyourdevice.navigation.navigateToNameYourDevice
 import io.homeassistant.companion.android.onboarding.nameyourweardevice.navigation.nameYourWearDeviceScreen
 import io.homeassistant.companion.android.onboarding.nameyourweardevice.navigation.navigateToNameYourWearDevice
+import io.homeassistant.companion.android.onboarding.qrscanner.navigation.QrScannerRoute
 import io.homeassistant.companion.android.onboarding.qrscanner.navigation.navigateToQrScanner
 import io.homeassistant.companion.android.onboarding.qrscanner.navigation.qrScannerScreen
 import io.homeassistant.companion.android.onboarding.serverdiscovery.navigation.ServerDiscoveryMode
@@ -117,9 +118,11 @@ internal fun NavGraphBuilder.onboarding(
         ServerDiscoveryMode.NORMAL
     }
 
+    // CoFarmer: When adding a new server (skipWelcome=true), go directly to QR Scanner
+    // since all CoFarmer hubs come with a QR code in the Quick Start Guide
     val startDestination = when {
         !skipWelcome -> WelcomeRoute
-        urlToOnboard.isNullOrEmpty() -> ServerDiscoveryRoute(serverDiscoveryMode)
+        urlToOnboard.isNullOrEmpty() -> QrScannerRoute // Direct to QR Scanner
         else -> ConnectionRoute(urlToOnboard)
     }
 
@@ -145,7 +148,7 @@ internal fun NavGraphBuilder.onboarding(
                 navController.navigateToUri(URL_GETTING_STARTED_DOCUMENTATION)
             },
         )
-        commonScreens(navController = navController)
+        commonScreens(navController = navController, serverDiscoveryMode = serverDiscoveryMode)
         nameYourDeviceScreen(
             onBackClick = navController::popBackStack,
             onDeviceNamed = { serverId, hasPlainTextAccess, isPubliclyAccessible ->
@@ -247,7 +250,11 @@ internal fun NavGraphBuilder.onboarding(
  * - Manual server entry: Direct URL input for server connection
  * - Connection: Authentication and server validation
  */
-private fun NavGraphBuilder.commonScreens(navController: NavController, wearNameToOnboard: String? = null) {
+private fun NavGraphBuilder.commonScreens(
+    navController: NavController,
+    wearNameToOnboard: String? = null,
+    serverDiscoveryMode: ServerDiscoveryMode = ServerDiscoveryMode.NORMAL,
+) {
     serverDiscoveryScreen(
         onConnectClick = {
             navController.navigateToConnection(it.toString())
@@ -274,6 +281,9 @@ private fun NavGraphBuilder.commonScreens(navController: NavController, wearName
             navController.navigateToConnection(it.toString())
         },
         onManualSetupClick = navController::navigateToManualServer,
+        onNetworkDiscoveryClick = {
+            navController.navigateToServerDiscovery(serverDiscoveryMode)
+        },
     )
     manualServerScreen(
         onBackClick = navController::popBackStack,

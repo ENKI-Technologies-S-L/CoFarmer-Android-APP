@@ -89,6 +89,7 @@ private val SCANNER_BORDER_WIDTH = 3.dp
  * @param onBackClick Callback when user presses back
  * @param onUrlScanned Callback when a valid URL is successfully scanned
  * @param onManualSetupClick Callback when user chooses to enter URL manually
+ * @param onNetworkDiscoveryClick Optional callback when user chooses network discovery (null hides the option)
  */
 @OptIn(ExperimentalPermissionsApi::class)
 @Composable
@@ -96,6 +97,7 @@ internal fun QrScannerScreen(
     onBackClick: () -> Unit,
     onUrlScanned: (URL) -> Unit,
     onManualSetupClick: () -> Unit,
+    onNetworkDiscoveryClick: (() -> Unit)? = null,
     modifier: Modifier = Modifier,
 ) {
     val cameraPermissionState = rememberPermissionState(Manifest.permission.CAMERA)
@@ -110,6 +112,7 @@ internal fun QrScannerScreen(
                 QrScannerContent(
                     onUrlScanned = onUrlScanned,
                     onManualSetupClick = onManualSetupClick,
+                    onNetworkDiscoveryClick = onNetworkDiscoveryClick,
                     modifier = Modifier.padding(contentPadding),
                 )
             }
@@ -142,6 +145,7 @@ internal fun QrScannerScreen(
 private fun QrScannerContent(
     onUrlScanned: (URL) -> Unit,
     onManualSetupClick: () -> Unit,
+    onNetworkDiscoveryClick: (() -> Unit)?,
     modifier: Modifier = Modifier,
 ) {
     var errorMessage by remember { mutableStateOf<String?>(null) }
@@ -222,6 +226,17 @@ private fun QrScannerContent(
         )
 
         Spacer(modifier = Modifier.weight(1f))
+
+        // Network discovery option (if available)
+        onNetworkDiscoveryClick?.let { onClick ->
+            HAPlainButton(
+                text = stringResource(commonR.string.welcome_option_autodiscover),
+                onClick = onClick,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = HADimens.SPACE2),
+            )
+        }
 
         HAPlainButton(
             text = stringResource(commonR.string.manual_setup),
@@ -315,12 +330,14 @@ private fun QrScannerViewfinder(
         modifier = modifier.size(SCANNER_SIZE),
         contentAlignment = Alignment.Center,
     ) {
-        // Camera preview (without the default red line)
+        // Camera preview (without the default red line and status text)
         AndroidView(
             factory = { ctx ->
                 DecoratedBarcodeView(ctx).apply {
                     // Hide the default viewfinder (red line)
                     viewFinder.visibility = android.view.View.INVISIBLE
+                    // Hide the default status text ("Place a barcode inside...")
+                    statusView.visibility = android.view.View.GONE
 
                     decodeContinuous(object : BarcodeCallback {
                         override fun barcodeResult(result: BarcodeResult?) {

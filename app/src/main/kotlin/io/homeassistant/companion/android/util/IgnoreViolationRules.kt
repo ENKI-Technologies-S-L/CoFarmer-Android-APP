@@ -435,6 +435,9 @@ private data object IgnorePocoDiskRead : IgnoreViolationRule {
  * - android.view.MiuiInput* (MIUI input extensions)
  * - android.view.InputEvent* on MIUI (modified input stack)
  * - MotionEvent handling on MIUI devices
+ * - android.view.ViewRootImpl on MIUI (modified view handling)
+ * - android.view.InputManager on MIUI (modified input manager)
+ * - Input dispatch chain on MIUI devices
  */
 private data object IgnoreMiuiInputDiskRead : IgnoreViolationRule {
     @RequiresApi(Build.VERSION_CODES.P)
@@ -446,10 +449,14 @@ private data object IgnoreMiuiInputDiskRead : IgnoreViolationRule {
                 it.className.contains("MiuiMotion") ||
                 it.className.contains("MiuiTouch") ||
                 it.className.contains("MiInputMethod") ||
-                // Catch generic input violations on MIUI
+                it.className.contains("MiuiInputManager") ||
+                // Catch view/input violations on MIUI
                 (it.className.startsWith("android.view.") &&
                     (it.methodName?.contains("dispatch") == true ||
-                        it.methodName?.contains("onTouch") == true))
+                        it.methodName?.contains("onTouch") == true ||
+                        it.methodName?.contains("processPointerEvent") == true ||
+                        it.methodName?.contains("deliverPointerEvent") == true ||
+                        it.methodName?.contains("handleMotionEvent") == true))
         }
     }
 }

@@ -104,15 +104,15 @@ class ConnectionErrorScreenTest {
 
             onNodeWithContentDescription(stringResource(commonR.string.connection_error_forum_content_description))
                 .performScrollTo().assertIsDisplayed().performClick()
-            assertEquals("https://community.home-assistant.io/c/mobile-apps/android-companion/42", urlClicked)
+            assertEquals("https://docs.cofarmer.enkitek.eu/support", urlClicked)
 
             onNodeWithContentDescription(stringResource(commonR.string.connection_error_github_content_description))
                 .performScrollTo().assertIsDisplayed().performClick()
-            assertEquals("https://github.com/home-assistant/android/issues", urlClicked)
+            assertEquals("https://github.com/Enkitek/CoFarmer-Android-APP/issues", urlClicked)
 
             onNodeWithContentDescription(stringResource(commonR.string.connection_error_discord_content_description))
                 .performScrollTo().assertIsDisplayed().performClick()
-            assertEquals("https://discord.com/channels/330944238910963714/1284965926336335993", urlClicked)
+            assertEquals("https://docs.cofarmer.enkitek.eu/community", urlClicked)
 
             onNodeWithText(stringResource(commonR.string.back)).performScrollTo().assertIsDisplayed().performClick()
             assertTrue(onCloseClicked)

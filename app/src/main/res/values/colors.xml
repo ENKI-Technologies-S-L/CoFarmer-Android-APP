@@ -4,5 +4,6 @@
     <color name="cofarmer_primary">#04D288</color>
     <color name="cofarmer_secondary">#0066CC</color>
     <color name="ic_launcher_foreground">#FFF2F2F2</color>
-    <color name="ic_launcher_background">#04D288</color>
+    <!-- White background for adaptive icon - works well with rounded square launchers -->
+    <color name="ic_launcher_background">#FFFFFF</color>
 </resources>

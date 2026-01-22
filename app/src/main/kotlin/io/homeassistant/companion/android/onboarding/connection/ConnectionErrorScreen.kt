@@ -59,9 +59,9 @@ private val MaxContentWidth = MaxButtonWidth
 internal const val URL_INFO_TAG = "url_info"
 
 private const val URL_DOCUMENTATION = "https://docs.cofarmer.enkitek.eu/docs/troubleshooting/faqs/"
-private const val URL_COMMUNITY_FORUM = "https://community.home-assistant.io/c/mobile-apps/android-companion/42"
-private const val URL_GITHUB_ISSUES = "https://github.com/home-assistant/android/issues"
-private const val URL_DISCORD = "https://discord.com/channels/330944238910963714/1284965926336335993"
+private const val URL_COMMUNITY_FORUM = "https://docs.cofarmer.enkitek.eu/support"
+private const val URL_GITHUB_ISSUES = "https://github.com/Enkitek/CoFarmer-Android-APP/issues"
+private const val URL_DISCORD = "https://docs.cofarmer.enkitek.eu/community"
 
 @Composable
 internal fun ConnectionErrorScreen(

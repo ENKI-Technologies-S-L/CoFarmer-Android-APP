@@ -1,19 +1,27 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
-    android:viewportWidth="186"
-    android:viewportHeight="186">
-    <!-- CoFarmer / Enkitek E logo for Wear OS -->
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- CoFarmer / Enkitek E logo for Wear OS - foreground only (no circle background) -->
+    <!-- Scaled and centered for adaptive icon safe zone (66dp centered in 108dp) -->
     <group
-        android:translateX="0"
-        android:translateY="0">
-        <!-- Main E shape -->
+        android:translateX="18"
+        android:translateY="18"
+        android:scaleX="0.52"
+        android:scaleY="0.52">
+        <!-- Main E shape paths - extracted from original logo -->
+        <!-- Bottom bar -->
         <path
             android:fillColor="#F2F2F2"
-            android:pathData="M93,30c-34.8,0-63,28.2-63,63s28.2,63,63,63c34.8,0,63-28.2,63-63S127.8,30,93,30zM59.5,74.2v-6.1c0,-2.1,1.7,-3.9,3.9,-3.9h6.1h11.6h11.9h11.5l-17,29.5l-3.6,6.1c-0.8,1.3,-2.2,2.1,-3.7,2.1h-3.3h-7.4h-10V74.2zM94.9,121.8h-2.7H69.5H62c-1.4,0,-2.5,-1.1,-2.5,-2.5v-7.5h10h16.9h2.7h4.7h1.8c1.5,0,2.8,0.8,3.5,2l4.6,7.9H94.9zM126.5,121.8H117c-1.3,0,-2.5,-0.7,-3.1,-1.8l-10.6,-17.9l-4.1,-6.9c-0.8,-1.4,-0.8,-3.1,0,-4.5l4.1,-6.9l10.3,-17.4c0.8,-1.4,2.4,-2.3,4,-2.3h8.9l-17,28.8L126.5,121.8z"/>
-        <!-- Inner detail -->
+            android:pathData="M95.6,111.8h-1.8h-4.7h-2.7H69.5h-10v7.5c0,1.4,1.1,2.5,2.5,2.5h7.5h22.7h2.7h8.8l-4.6,-7.9C98.4,112.6,97,111.8,95.6,111.8z"/>
+        <!-- Main body with cutout -->
         <path
             android:fillColor="#F2F2F2"
-            android:pathData="M78,89.8l8.1,-15.6H75.3h-1.9c-2.1,0,-3.9,1.7,-3.9,3.9v6.2v7.7h5C76,91.9,77.3,91.1,78,89.8z"/>
+            android:pathData="M76.9,101.9h3.3c1.5,0,2.9,-0.8,3.7,-2.1l3.6,-6.1l17,-29.5H92.9H81.1H69.5h-6.1c-2.1,0,-3.9,1.7,-3.9,3.9v6.1v27.7h10H76.9zM69.5,84.2V78c0,-2.1,1.7,-3.9,3.9,-3.9h1.9h10.8L78,89.8c-0.7,1.3,-2,2.1,-3.5,2.1h-5V84.2z"/>
+        <!-- Right arrow part -->
+        <path
+            android:fillColor="#F2F2F2"
+            android:pathData="M117.6,64.2c-1.7,0,-3.2,0.9,-4,2.3l-10.3,17.4l-4.1,6.9c-0.8,1.4,-0.8,3.1,0,4.5l4.1,6.9l10.6,17.9c0.7,1.1,1.8,1.8,3.1,1.8h9.5l-17,-28.8l17,-28.8H117.6z"/>
     </group>
 </vector>
