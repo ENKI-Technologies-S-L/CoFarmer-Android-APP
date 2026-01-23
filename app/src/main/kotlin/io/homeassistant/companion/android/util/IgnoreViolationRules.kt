@@ -18,6 +18,8 @@ val threadPolicyIgnoredViolationRules = listOf(
     IgnoreNotificationHistoryFragmentLoadSharedPrefDiskRead,
     IgnoreComposeTextContextMenuDiskRead,
     IgnoreActivityThreadVsyncDiskReadWrite,
+    // AndroidX AppCompat
+    IgnoreAppCompatLocalesStorageDiskRead,
     // Samsung
     IgnoreSamsungInputRuneDiskRead,
     IgnoreSamsungKnoxProKioskDiskRead,
@@ -170,6 +172,29 @@ private data object IgnoreActivityThreadVsyncDiskReadWrite : IgnoreViolationRule
         return violation.stackTrace.any {
             it.className == "android.app.ActivityThread" &&
                 it.methodName == "scheduleVsyncSS"
+        }
+    }
+}
+
+/**
+ * Ignore a [DiskReadViolation] and [DiskWriteViolation] in AndroidX AppCompat's AppLocalesStorageHelper.
+ * This occurs when AppCompat syncs locale settings during Activity.attachBaseContext(),
+ * which performs disk I/O on the main thread to persist locale preferences.
+ * This is an internal AndroidX implementation detail and cannot be avoided.
+ *
+ * Stack trace example:
+ * - androidx.core.app.AppLocalesStorageHelper.persistLocales
+ * - androidx.appcompat.app.AppCompatDelegate.syncRequestedAndStoredLocales
+ * - androidx.appcompat.app.AppCompatDelegateImpl.attachBaseContext2
+ */
+private data object IgnoreAppCompatLocalesStorageDiskRead : IgnoreViolationRule {
+    @RequiresApi(Build.VERSION_CODES.P)
+    override fun shouldIgnore(violation: Violation): Boolean {
+        if (violation !is DiskReadViolation && violation !is DiskWriteViolation) return false
+
+        return violation.stackTrace.any {
+            it.className == "androidx.core.app.AppLocalesStorageHelper" &&
+                it.methodName == "persistLocales"
         }
     }
 }
