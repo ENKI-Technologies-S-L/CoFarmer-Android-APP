@@ -4,7 +4,7 @@
     <string name="aa_driving_optimized_change">Use CoFarmer in drive mode?</string>
     <string name="aa_navigation">Navigation</string>
     <string name="aa_no_entities_with_locations">No entities with locations found</string>
-    <string name="aa_change_server">Change server</string>
+    <string name="aa_change_server">Change hub</string>
     <string name="account">Account</string>
     <string name="accuracy">Accuracy</string>
     <string name="action_reply">Reply</string>
@@ -252,7 +252,7 @@
     <string name="error_connection_failed_no_network">Network unavailable, please check your connection</string>
     <string name="error_loading_entities">Error loading entities</string>
     <string name="error_ssl">Unable to communicate with CoFarmer because of a SSL error. Please ensure your certificate is valid.</string>
-    <string name="error_with_registration">The \'Mobile App\' integration is required to use the app, but it is not available on your CoFarmer server. Please check your server configuration and try again.</string>
+    <string name="error_with_registration">The \'Mobile App\' integration is required to use the app, but it is not available on your CoFarmer Hub. Please check your hub configuration and try again.</string>
     <string name="errors">Errors</string>
     <string name="event_error">Failed to notify HA of picked option.</string>
     <string name="exit">Exit</string>
@@ -383,7 +383,7 @@
     <string name="lights">Lights</string>
     <string name="button_widgets">Button widgets</string>
     <string name="entity_state_widgets">Entity state widgets</string>
-    <string name="list_header_instances">Instances</string>
+    <string name="list_header_instances">Hubs</string>
     <string name="media_player_widgets">Media player widgets</string>
     <string name="template_widgets">Template widgets</string>
     <string name="loading_entities">Please wait while we load your entities</string>
@@ -467,9 +467,9 @@
 
     <string name="matter_commissioning_unavailable">Matter is currently unavailable</string>
     <string name="matter_shared_title">Add Matter device</string>
-    <string name="matter_shared_status_not_registered">Please connect to your CoFarmer server before adding a Matter device.</string>
-    <string name="matter_shared_status_select_server">Which server would you like to use?</string>
-    <string name="matter_shared_status_not_supported">To add a Matter device, please update your CoFarmer server and add Matter first.</string>
+    <string name="matter_shared_status_not_registered">Please connect to your CoFarmer Hub before adding a Matter device.</string>
+    <string name="matter_shared_status_select_server">Which hub would you like to use?</string>
+    <string name="matter_shared_status_not_supported">To add a Matter device, please update your CoFarmer Hub and add Matter first.</string>
     <string name="matter_shared_status_confirmation_named">Do you want to add %1$s to CoFarmer?</string>
     <string name="matter_shared_status_confirmation">Do you want to add this Matter device to CoFarmer?</string>
     <string name="matter_shared_status_working">Adding device, this may take a minute or two.</string>
@@ -550,7 +550,7 @@
     <string name="prioritize_internal_on_expanded">Use internal connection URL (use this if you typically turn location access off)</string>
     <string name="prioritize_internal_off">Use CoFarmer URL (recommended)</string>
     <string name="privacy_policy">Privacy policy</string>
-    <string name="privacy_url">https://docs.cofarmer.enkitek.eu/privacy</string>
+    <string name="privacy_url">https://privacy.enkitek.eu</string>
     <string name="qrcode_processing_tag_error">Error while processing QR code tag</string>
     <string name="quick_settings">Quick settings</string>
     <string name="rate_limit_summary">Rate limit data</string>
@@ -945,7 +945,7 @@
     <string name="tile_label">Tile label (required)</string>
     <string name="tile_not_setup">Requires setup</string>
     <string name="tile_save">Update tile data</string>
-    <string name="tile_server">Select a server (required)</string>
+    <string name="tile_server">Select a hub (required)</string>
     <string name="tile_subtitle">Tile subtitle</string>
     <string name="tile_updated">Tile data updated</string>
     <string name="tiles">Tiles</string>
@@ -1021,7 +1021,7 @@
     <string name="widget_media_show_source">Show source label</string>
     <string name="widget_no_configuration">Oops. It looks like this widget is not configured.</string>
     <string name="widget_separator_input_hint">No separator</string>
-    <string name="widget_spinner_server">Server:</string>
+    <string name="widget_spinner_server">Hub:</string>
     <string name="widget_state_separator_label">State and attribute separator:</string>
     <string name="widget_static_image_description">Entity state</string>
     <string name="todo_widgets">To-do widgets</string>
@@ -1051,8 +1051,8 @@
     <string name="sensor_description_last_used_app">Application name or package name of the last used application on the device</string>
     <string name="sensor_name_last_app">Last used app</string>
     <string name="websocket_setting_name">Persistent connection</string>
-    <string name="websocket_setting_summary">Manage when we have a persistent connection to your CoFarmer server.</string>
-    <string name="websocket_setting_description">The app can maintain a persistent connection with your CoFarmer instance. This allows the app to receive push notifications directly.\n\nWhen do you want to use a persistent connection:</string>
+    <string name="websocket_setting_summary">Manage when we have a persistent connection to your CoFarmer Hub.</string>
+    <string name="websocket_setting_description">The app can maintain a persistent connection with your CoFarmer Hub. This allows the app to receive push notifications directly.\n\nWhen do you want to use a persistent connection:</string>
     <string name="websocket_setting_never">Never\n\nNotifications will be delivered via Google. This option is the most battery efficient.</string>
     <string name="websocket_setting_never_minimal">Never\n\nDisables notifications</string>
     <string name="websocket_setting_while_screen_on">While the screen is on\n\nWhen the screen is off, notifications will be delivered via Google</string>
@@ -1179,9 +1179,9 @@
     <string name="thread_debug_result_mismatch_detail">(device prefers: %1$s)</string>
     <string name="thread_debug_result_none">No credentials to sync</string>
     <string name="thread_debug_result_removed">Removed old network from CoFarmer on this device</string>
-    <string name="thread_debug_result_unsupported_server">The CoFarmer server does not support Thread</string>
+    <string name="thread_debug_result_unsupported_server">The CoFarmer Hub does not support Thread</string>
     <string name="thread_debug_result_updated">Updated network from CoFarmer on this device</string>
-    <string name="thread_debug_summary">Manually update device and server Thread credentials and verify results</string>
+    <string name="thread_debug_summary">Manually update device and hub Thread credentials and verify results</string>
     <string name="thread_export_success">Imported credential</string>
     <string name="thread_export_none">You don\'t have any credentials to import.</string>
     <string name="thread_export_not_connected">You are not connected to a local network. Connect to Wi-Fi or ethernet to import Thread credentials.</string>
@@ -1209,7 +1209,7 @@
     <string name="assist_start_listening">Start listening</string>
     <string name="assist_stop_listening">Stop listening</string>
     <string name="not_registered">Please open the CoFarmer app and log in to start using Assist</string>
-    <string name="ha_assist">HA: Assist</string>
+    <string name="ha_assist">CF: Assist</string>
     <string name="only_favorites">Only show favorites</string>
     <string name="beacon_scanning">Beacon monitor scanning</string>
     <string name="basic_sensor_name_car_fuel_type">Car fuel type</string>
@@ -1372,9 +1372,14 @@
     <string name="loading_content_description">Loading</string>
     <string name="searching_home_network">Scanning\nlocal network</string>
     <string name="local_network_warning_title">Local access only</string>
-    <string name="local_network_warning_message">Servers found here will only work when connected to the same network (inside your farm).\n\nFor remote access from anywhere, scan the QR code from your CoFarmer Quick Start Guide or product box.</string>
+    <string name="local_network_warning_message">Hubs found here will only work when connected to the same network (inside your farm).\n\nFor remote access from anywhere, scan the QR code from your CoFarmer Quick Start Guide or product box.</string>
     <string name="local_network_access_warning">Local only — requires same Wi-Fi network</string>
-    <string name="server_discovery_no_server_info">Check that your CoFarmer server is powered on and you\'re connected to the same network. You can enter the address manually if you know it.</string>
+    <!-- Local Connection Confirmation Dialog -->
+    <string name="local_connection_confirm_title">Local connection only</string>
+    <string name="local_connection_confirm_message">By connecting this way, you will only be able to access your CoFarmer Hub when connected to the same Wi-Fi network.\n\nFor remote access from anywhere, we recommend scanning the QR code from your Quick Start Guide instead.</string>
+    <string name="local_connection_confirm_understand">I understand, connect anyway</string>
+    <string name="local_connection_confirm_use_qr">Use QR code instead</string>
+    <string name="server_discovery_no_server_info">Check that your CoFarmer Hub is powered on and you\'re connected to the same network. You can enter the address manually if you know it.</string>
     <string name="server_discovery_connect">Connect</string>
     <!-- Welcome Screen - QR First Design -->
     <string name="welcome_home_assistant_title">CoFarmer</string>
@@ -1388,6 +1393,21 @@
     <string name="welcome_option_autodiscover_description">Automatically discover hubs on your Wi-Fi</string>
     <string name="welcome_option_manual">Enter address manually</string>
     <string name="welcome_option_manual_description">Type your hub URL directly</string>
+    <!-- Hub Setup Screen - New User Onboarding -->
+    <string name="hub_setup_title">Welcome to CoFarmer</string>
+    <string name="hub_setup_question">Do you have a CoFarmer Hub?</string>
+    <string name="hub_setup_yes_have_hub">Yes, I have a CoFarmer Hub</string>
+    <string name="hub_setup_no_hub">I don\'t have a CoFarmer Hub</string>
+    <string name="hub_setup_instructions_title">Let\'s set up your Hub</string>
+    <string name="hub_setup_step_1">Connect the power cable to your CoFarmer Hub</string>
+    <string name="hub_setup_step_2">Connect an Ethernet cable to your router</string>
+    <string name="hub_setup_step_3">Wait for the power button LED to turn on</string>
+    <string name="hub_setup_step_4">Wait approximately 2 minutes for the system to boot</string>
+    <string name="hub_setup_ready">My Hub is ready</string>
+    <string name="hub_setup_no_hub_title">Get a CoFarmer Hub</string>
+    <string name="hub_setup_no_hub_description">CoFarmer Hub is the brain of your smart farm. Visit our website to learn more and purchase your Hub.</string>
+    <string name="hub_setup_visit_website">Visit Enkitek Website</string>
+    <string name="hub_setup_enkitek_url">https://www.enkitek.eu</string>
     <string name="name_your_device_title">How would you like to name this device?</string>
     <string name="name_your_device_content">This is used to identify your device.</string>
     <string name="name_your_device_save">Save</string>
@@ -1418,7 +1438,7 @@
     <string name="block_insecure_retry">Retry</string>
     <string name="block_insecure_open_settings">Open settings</string>
     <string name="block_insecure_change_security_level">Change security level</string>
-    <string name="wear_mtls_content">Your CoFarmer server requires TLS client certificate authentication. Select a TLS client certificate file to install it on your Wear OS device.</string>
+    <string name="wear_mtls_content">Your CoFarmer Hub requires TLS client certificate authentication. Select a TLS client certificate file to install it on your Wear OS device.</string>
     <string name="wear_mtls_next">Next</string>
     <string name="wear_mtls_open_error">This password does not open this file.</string>
     <string name="wear_mtls_deselect_file">Deselect file</string>

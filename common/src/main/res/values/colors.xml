@@ -50,4 +50,10 @@
     <color name="colorOnSurfaceVariant">#49454E</color> <!-- M3 On Surface Variant -->
     <color name="colorBottomSheetHandle">#6649454E</color> <!-- M3 On Surface Variant 40% opacity -->
     <color name="colorLauncherBackground">@color/cofarmer_primary</color>
+
+    <!-- Enkitek Menu Icon Tints -->
+    <color name="iconTintPrimary">@color/cofarmer_primary</color> <!-- Verde Enkitek - Primary actions -->
+    <color name="iconTintSecondary">@color/cofarmer_secondary</color> <!-- Azul Enkitek - Info/Help -->
+    <color name="iconTintWarning">#FF6B35</color> <!-- Pastel Orange - Settings/Warnings -->
+    <color name="iconTintNeutral">#5A5A5A</color> <!-- Dark Gray - Less important items -->
 </resources>

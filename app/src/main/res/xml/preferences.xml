@@ -12,6 +12,7 @@
         <Preference
             android:key="server_add"
             android:icon="@drawable/ic_plus"
+            app:iconTint="@color/iconTintPrimary"
             android:order="998"
             android:title="@string/server_add" />
         <Preference
@@ -19,6 +20,7 @@
             app:isPreferenceVisible="false"
             android:title="@string/wear_os_settings_title"
             android:icon="@drawable/ic_baseline_watch_24"
+            app:iconTint="@color/iconTintSecondary"
             android:order="999"
             android:summary="@string/wear_os_settings_summary" />
     </PreferenceCategory>
@@ -28,11 +30,13 @@
         <Preference
             android:key="sensors"
             android:icon="@drawable/leak"
+            app:iconTint="@color/iconTintPrimary"
             android:title="@string/sensor_title"
             android:summary="@string/sensor_summary"/>
         <Preference
             android:key="sensor_update_frequency"
             android:icon="@drawable/ic_clock_fast"
+            app:iconTint="@color/iconTintPrimary"
             android:title="@string/sensor_update_frequency"
             android:summary="@string/sensor_update_frequency_summary" />
     </PreferenceCategory>
@@ -41,10 +45,12 @@
         <Preference
             android:key="gestures"
             android:icon="@drawable/ic_gestures"
+            app:iconTint="@color/iconTintNeutral"
             android:title="@string/gestures"/>
         <SwitchPreference
             android:key="fullscreen"
             android:icon="@drawable/ic_fullscreen"
+            app:iconTint="@color/iconTintNeutral"
             android:title="@string/fullscreen"
             android:summary="@string/fullscreen_def"/>
         <ListPreference
@@ -53,32 +59,38 @@
             android:entries="@array/pref_screen_orientation_option_labels"
             android:entryValues="@array/pref_screen_orientation_option_values"
             android:icon="@drawable/ic_screen_orientation"
+            app:iconTint="@color/iconTintNeutral"
             android:title="@string/screen_orientation_title_settings"
             app:useSimpleSummaryProvider="true"/>
         <SwitchPreference
             android:key="keep_screen_on"
             android:icon="@drawable/ic_phone_check"
+            app:iconTint="@color/iconTintNeutral"
             android:title="@string/keep_screen_on"
             android:summary="@string/keep_screen_on_def"/>
         <ListPreference
             android:key="page_zoom"
             android:icon="@drawable/ic_zoom_in"
+            app:iconTint="@color/iconTintNeutral"
             android:title="@string/page_zoom"
             app:useSimpleSummaryProvider="true"/>
         <SwitchPreference
             android:key="pinch_to_zoom"
             android:icon="@drawable/ic_gesture_pinch"
+            app:iconTint="@color/iconTintNeutral"
             android:title="@string/pinch_to_zoom"
             android:summary="@string/pinch_to_zoom_def"/>
         <SwitchPreference
             android:key="autoplay_video"
             android:icon="@drawable/ic_baseline_video_settings_24"
+            app:iconTint="@color/iconTintNeutral"
             android:title="@string/autoplay_video"
             app:isPreferenceVisible="false"
             android:summary="@string/autoplay_video_summary" />
         <SwitchPreference
             android:key="always_show_first_view_on_app_start"
             android:icon="@drawable/ic_home_variant_outline"
+            app:iconTint="@color/iconTintNeutral"
             android:title="@string/always_show_first_view_on_app_start"
             android:defaultValue="true"
             app:isPreferenceVisible="false"
@@ -86,12 +98,14 @@
         <Preference
             android:key="nfc_tags"
             android:icon="@drawable/ic_nfc"
+            app:iconTint="@color/iconTintPrimary"
             android:title="@string/nfc_title_settings"
             android:summary="@string/nfc_summary" />
         <ListPreference
             android:key="languages"
             android:defaultValue="@string/lang_option_value_default"
             android:icon="@drawable/ic_languages"
+            app:iconTint="@color/iconTintSecondary"
             android:title="@string/lang_title_settings"
             android:summary="@string/lang_summary_settings" />
         <ListPreference
@@ -100,6 +114,7 @@
             android:entries="@array/pref_theme_option_labels"
             android:entryValues="@array/pref_theme_option_values"
             android:icon="@drawable/ic_color_lens_24dp"
+            app:iconTint="@color/iconTintSecondary"
             android:title="@string/themes_title_settings"
             app:useSimpleSummaryProvider="true"/>
         <Preference
@@ -115,18 +130,21 @@
             android:title="@string/notification_permission"
             android:summary="@string/notification_permission_summary"
             app:isPreferenceVisible="false"
-            android:icon="@drawable/ic_notification_off" />
+            android:icon="@drawable/ic_notification_off"
+            app:iconTint="@color/iconTintWarning" />
         <Preference
             android:key="notification_channels"
             android:title="@string/notification_channels"
             android:summary="@string/notification_channels_summary"
             app:isPreferenceVisible="false"
-            android:icon="@drawable/ic_notification_channel" />
+            android:icon="@drawable/ic_notification_channel"
+            app:iconTint="@color/iconTintPrimary" />
         <Preference
             android:key="notification_history"
             app:isPreferenceVisible="false"
             android:title="@string/notification_history"
             android:icon="@drawable/ic_notification_history"
+            app:iconTint="@color/iconTintPrimary"
             android:summary="@string/notification_history_summary" />
         <Preference
             android:key="notification_rate_limit"
@@ -134,6 +152,7 @@
             app:isPreferenceVisible="false"
             app:enableCopying="true"
             android:icon="@drawable/ic_notifications"
+            app:iconTint="@color/iconTintPrimary"
             android:summary="@string/rate_limit_summary"/>
     </PreferenceCategory>
     <PreferenceCategory
@@ -142,6 +161,7 @@
         <SwitchPreference
             android:key="assist_voice_command_intent"
             android:icon="@drawable/ic_headphones_settings"
+            app:iconTint="@color/iconTintSecondary"
             android:title="@string/open_with_headphone_button"
             android:summary="@string/open_with_headphone_button_summary" />
     </PreferenceCategory>
@@ -151,6 +171,7 @@
         <Preference
             android:key="auto_favorites"
             android:icon="@drawable/ic_car"
+            app:iconTint="@color/iconTintSecondary"
             android:title="@string/aa_favorites"
             android:summary="@string/aa_favorites_summary" />
     </PreferenceCategory>
@@ -161,6 +182,7 @@
         <Preference
             android:key="manage_device_controls"
             android:icon="@drawable/ic_home_variant_outline"
+            app:iconTint="@color/iconTintPrimary"
             android:title="@string/controls_setting_title"
             android:summary="@string/controls_setting_summary" />
     </PreferenceCategory>
@@ -171,6 +193,7 @@
         <Preference
             android:key="manage_tiles"
             android:icon="@drawable/ic_tile"
+            app:iconTint="@color/iconTintPrimary"
             android:title="@string/manage_tiles"
             android:summary="@string/manage_tiles_summary" />
     </PreferenceCategory>
@@ -181,6 +204,7 @@
         <Preference
             android:key="manage_shortcuts"
             android:icon="@drawable/ic_shortcut"
+            app:iconTint="@color/iconTintPrimary"
             android:title="@string/manage_shortcuts"
             android:summary="@string/manage_shortcuts_summary" />
     </PreferenceCategory>
@@ -190,6 +214,7 @@
         <Preference
             android:key="manage_widgets"
             android:icon="@drawable/ic_widget"
+            app:iconTint="@color/iconTintPrimary"
             android:title="@string/manage_widgets"
             android:summary="@string/manage_widgets_summary" />
     </PreferenceCategory>
@@ -200,6 +225,7 @@
         <SwitchPreference
             android:key="enable_ha_launcher"
             android:icon="@drawable/ic_android_debug_bridge"
+            app:iconTint="@color/iconTintWarning"
             app:isPreferenceVisible="true"
             android:title="@string/launcher_option_title"
             android:summary="@string/launcher_option_summary" />
@@ -207,13 +233,15 @@
             android:key="set_launcher_app"
             android:title="@string/default_launcher_prompt"
             android:summary="@string/default_launcher_prompt_def"
-            android:icon="@drawable/ic_home_variant_outline" />
+            android:icon="@drawable/ic_home_variant_outline"
+            app:iconTint="@color/iconTintNeutral" />
     </PreferenceCategory>
     <PreferenceCategory
         android:title="@string/need_help">
         <Preference
             android:key="docs"
             android:icon="@drawable/ic_question"
+            app:iconTint="@color/iconTintSecondary"
             android:title="@string/documentation"
             android:summary="https://docs.cofarmer.enkitek.eu"
             app:enableCopying="true">
@@ -223,6 +251,7 @@
         <Preference
             android:key="developer"
             android:icon="@drawable/ic_bug_report"
+            app:iconTint="@color/iconTintWarning"
             android:title="@string/troubleshooting"
             android:summary="@string/troubleshooting_summary"/>
     </PreferenceCategory>
@@ -231,38 +260,45 @@
         <Preference
             android:key="changelog_prompt"
             android:icon="@drawable/ic_changelog"
+            app:iconTint="@color/iconTintSecondary"
             android:title="@string/show_changelog"
             android:summary="@string/show_changelog_summary" />
         <SwitchPreference
             android:key="change_log_popup_enabled"
             android:icon="@drawable/ic_changelog"
+            app:iconTint="@color/iconTintSecondary"
             android:title="@string/enable_change_log_popup"
             android:summary="@string/enable_change_log_popup_summary" />
         <Preference
             android:key="changelog_github"
             android:title="@string/changelog"
             android:icon="@drawable/ic_github"
+            app:iconTint="@color/iconTintSecondary"
             android:summary="https://github.com/Enkitek/CoFarmer-Android-APP/releases"
             app:enableCopying="true" />
         <Preference
             android:key="version"
             android:icon="@drawable/ic_stat_ic_notification_blue"
+            app:iconTint="@color/iconTintPrimary"
             android:title="@string/application_version"
             android:summary="1.0.0 (1)"/>
         <Preference
             android:key="privacy"
             android:icon="@drawable/ic_incognito"
+            app:iconTint="@color/iconTintWarning"
             android:title="@string/privacy_policy"
             android:summary="@string/privacy_url" />
         <SwitchPreference
             android:key="crash_reporting"
             android:icon="@drawable/ic_android_debug_bridge"
+            app:iconTint="@color/iconTintWarning"
             app:isPreferenceVisible="false"
             android:title="@string/crash_reporting"
             android:summary="@string/crash_reporting_summary" />
         <Preference
             android:key="acknowledgments"
             android:icon="@drawable/ic_baseline_info_24"
+            app:iconTint="@color/iconTintSecondary"
             android:title="@string/acknowledgments"
             android:summary="@string/acknowledgments_summary" />
     </PreferenceCategory>

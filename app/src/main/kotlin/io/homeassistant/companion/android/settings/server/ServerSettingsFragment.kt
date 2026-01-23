@@ -6,18 +6,12 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.text.InputType
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
-import androidx.core.view.MenuHost
-import androidx.core.view.MenuProvider
 import androidx.fragment.app.commit
 import androidx.fragment.app.setFragmentResultListener
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.preference.EditTextPreference
 import androidx.preference.Preference
@@ -39,13 +33,10 @@ import io.homeassistant.companion.android.settings.websocket.WebsocketSettingFra
 import io.homeassistant.companion.android.util.QuestUtil
 import io.homeassistant.companion.android.util.applyBottomSafeDrawingInsets
 import io.homeassistant.companion.android.webview.WebViewActivity
-import java.net.URLEncoder
 import javax.inject.Inject
 import kotlinx.coroutines.launch
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import timber.log.Timber
-
-private const val BASE_INVITE_URL = "https://my.home-assistant.io/invite/#"
 
 @AndroidEntryPoint
 class ServerSettingsFragment :
@@ -239,50 +230,6 @@ class ServerSettingsFragment :
         setFragmentResultListener(ConnectionSecurityLevelFragment.RESULT_KEY) { _, _ ->
             updateSecurityLevelSummary()
         }
-
-        val menuHost: MenuHost = requireActivity()
-        menuHost.addMenuProvider(
-            object : MenuProvider {
-                override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-                    menuInflater.inflate(R.menu.menu_fragment_share, menu)
-                }
-
-                override fun onPrepareMenu(menu: Menu) {
-                    super.onPrepareMenu(menu)
-                    lifecycleScope.launch {
-                        menu.findItem(R.id.share_server).isVisible = presenter.serverURL() != null
-                    }
-                }
-
-                override fun onMenuItemSelected(menuItem: MenuItem): Boolean = when (menuItem.itemId) {
-                    R.id.share_server -> {
-                        menuItem.isChecked = true
-                        lifecycleScope.launch {
-                            val sendIntent: Intent = Intent().apply {
-                                action = Intent.ACTION_SEND
-                                putExtra(Intent.EXTRA_SUBJECT, getString(commonR.string.join_our_server))
-                                putExtra(
-                                    Intent.EXTRA_TEXT,
-                                    "$BASE_INVITE_URL${
-                                        URLEncoder.encode(
-                                            presenter.serverURL(),
-                                            Charsets.UTF_8.toString(),
-                                        )
-                                    }",
-                                )
-                                type = "text/plain"
-                            }
-                            startActivity(Intent.createChooser(sendIntent, null))
-                        }
-                        true
-                    }
-
-                    else -> false
-                }
-            },
-            viewLifecycleOwner,
-            Lifecycle.State.RESUMED,
-        )
     }
 
     override fun updateServerName(name: String) {

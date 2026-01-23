@@ -38,10 +38,13 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Storage
+import androidx.compose.material.icons.filled.Warning
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.rememberStandardBottomSheetState
 import androidx.compose.material3.ripple
 import androidx.compose.runtime.Composable
@@ -142,6 +145,7 @@ internal fun ServerDiscoveryScreen(
         OneServerFound(
             onConnectClick = onConnectClick,
             onDismiss = onDismissOneServerFound,
+            onQrScanClick = onQrScanClick,
             discoveryState = discoveryState,
         )
     }
@@ -155,12 +159,14 @@ internal const val ONE_SERVER_FOUND_MODAL_TAG = "OneServerFoundModal"
 private fun OneServerFound(
     onConnectClick: (serverUrl: URL) -> Unit,
     onDismiss: () -> Unit,
+    onQrScanClick: () -> Unit,
     discoveryState: DiscoveryState,
 ) {
     val bottomSheetState = rememberStandardBottomSheetState(skipHiddenState = false)
     // Use a cached state to be able to use the animation from the modal otherwise if we simply use if(visible)
     // the animation is not played correctly.
     var serverDiscoveredCached by remember { mutableStateOf(discoveryState as? ServerDiscovered) }
+    var showConfirmationDialog by remember { mutableStateOf(false) }
 
     // If we get the ServerDiscovered we display the modal and we keep it even if the state change so that
     // the user is in control of it.
@@ -169,6 +175,32 @@ private fun OneServerFound(
     }
 
     val coroutineScope = rememberCoroutineScope()
+
+    // Local Connection Confirmation Dialog
+    if (showConfirmationDialog) {
+        serverDiscoveredCached?.let { serverDiscovered ->
+            LocalConnectionConfirmationDialog(
+                onConfirm = {
+                    showConfirmationDialog = false
+                    coroutineScope.launch {
+                        bottomSheetState.hide()
+                        onConnectClick(serverDiscovered.url)
+                    }
+                },
+                onUseQrCode = {
+                    showConfirmationDialog = false
+                    coroutineScope.launch {
+                        bottomSheetState.hide()
+                        onDismiss()
+                        onQrScanClick()
+                    }
+                },
+                onDismiss = {
+                    showConfirmationDialog = false
+                },
+            )
+        }
+    }
 
     serverDiscoveredCached?.let { serverDiscovered ->
         HAModalBottomSheet(
@@ -206,16 +238,65 @@ private fun OneServerFound(
                 HAAccentButton(
                     text = stringResource(commonR.string.server_discovery_connect),
                     onClick = {
-                        coroutineScope.launch {
-                            bottomSheetState.hide()
-                            onConnectClick(serverDiscovered.url)
-                        }
+                        showConfirmationDialog = true
                     },
                     modifier = Modifier.padding(bottom = HADimens.SPACE6).fillMaxWidth(),
                 )
             }
         }
     }
+}
+
+/**
+ * Dialog to confirm that the user understands local-only connection limitations.
+ */
+@Composable
+private fun LocalConnectionConfirmationDialog(
+    onConfirm: () -> Unit,
+    onUseQrCode: () -> Unit,
+    onDismiss: () -> Unit,
+) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        icon = {
+            Icon(
+                imageVector = Icons.Default.Warning,
+                contentDescription = null,
+                tint = HABrandColors.Warning,
+                modifier = Modifier.size(48.dp),
+            )
+        },
+        title = {
+            Text(
+                text = stringResource(commonR.string.local_connection_confirm_title),
+                style = HATextStyle.HeadlineMedium,
+                textAlign = TextAlign.Center,
+            )
+        },
+        text = {
+            Text(
+                text = stringResource(commonR.string.local_connection_confirm_message),
+                style = HATextStyle.Body,
+                textAlign = TextAlign.Center,
+            )
+        },
+        confirmButton = {
+            TextButton(onClick = onConfirm) {
+                Text(
+                    text = stringResource(commonR.string.local_connection_confirm_understand),
+                    color = LocalHAColorScheme.current.colorFillPrimaryLoudResting,
+                )
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onUseQrCode) {
+                Text(
+                    text = stringResource(commonR.string.local_connection_confirm_use_qr),
+                    color = LocalHAColorScheme.current.colorTextSecondary,
+                )
+            }
+        },
+    )
 }
 
 @Composable

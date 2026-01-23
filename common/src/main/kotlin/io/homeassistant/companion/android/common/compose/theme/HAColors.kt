@@ -229,6 +229,7 @@ object HABrandColors {
     val Primary = Color(0xFF04D288)  // Enkitek Primary Green
     val Secondary = Color(0xFF0066CC)  // Enkitek Secondary Blue
     val Accent = Color(0xFF03B799)  // Enkitek Accent Teal
+    val Warning = Color(0xFFFF9800)  // Amber/Orange for warnings
 }
 
 @Immutable

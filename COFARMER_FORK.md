@@ -256,7 +256,7 @@ The following remain unchanged to maintain compatibility with upstream:
 **URLs Updated:**
 | Original | CoFarmer |
 |----------|----------|
-| `home-assistant.io/privacy` | `docs.cofarmer.enkitek.eu/privacy` |
+| `home-assistant.io/privacy` | `privacy.enkitek.eu` |
 | `github.com/home-assistant/android/releases` | `github.com/Enkitek/CoFarmer-Android-APP/releases` |
 | `community.home-assistant.io/*` | `docs.cofarmer.enkitek.eu/support` |
 | `github.com/home-assistant/android/issues` | `github.com/Enkitek/CoFarmer-Android-APP/issues` |

@@ -12,6 +12,14 @@ import io.homeassistant.companion.android.launch.HAStartDestinationRoute
 import io.homeassistant.companion.android.onboarding.connection.navigation.ConnectionRoute
 import io.homeassistant.companion.android.onboarding.connection.navigation.connectionScreen
 import io.homeassistant.companion.android.onboarding.connection.navigation.navigateToConnection
+import io.homeassistant.companion.android.onboarding.hubsetup.navigation.HubSetupInstructionsRoute
+import io.homeassistant.companion.android.onboarding.hubsetup.navigation.HubSetupRoute
+import io.homeassistant.companion.android.onboarding.hubsetup.navigation.NoHubRoute
+import io.homeassistant.companion.android.onboarding.hubsetup.navigation.hubSetupInstructionsScreen
+import io.homeassistant.companion.android.onboarding.hubsetup.navigation.hubSetupScreen
+import io.homeassistant.companion.android.onboarding.hubsetup.navigation.navigateToHubSetupInstructions
+import io.homeassistant.companion.android.onboarding.hubsetup.navigation.navigateToNoHub
+import io.homeassistant.companion.android.onboarding.hubsetup.navigation.noHubScreen
 import io.homeassistant.companion.android.onboarding.localfirst.navigation.LocalFirstRoute
 import io.homeassistant.companion.android.onboarding.localfirst.navigation.localFirstScreen
 import io.homeassistant.companion.android.onboarding.localfirst.navigation.navigateToLocalFirst
@@ -48,6 +56,9 @@ import kotlinx.serialization.Serializable
 @VisibleForTesting
 const val URL_GETTING_STARTED_DOCUMENTATION =
     "https://docs.cofarmer.enkitek.eu/docs/getting_started/"
+
+@VisibleForTesting
+const val URL_ENKITEK_WEBSITE = "https://www.enkitek.eu"
 
 /**
  * Navigation route for the main onboarding flow.
@@ -120,13 +131,36 @@ internal fun NavGraphBuilder.onboarding(
 
     // CoFarmer: When adding a new server (skipWelcome=true), go directly to QR Scanner
     // since all CoFarmer hubs come with a QR code in the Quick Start Guide
+    // For new users (skipWelcome=false), show the Hub Setup screen first
     val startDestination = when {
-        !skipWelcome -> WelcomeRoute
-        urlToOnboard.isNullOrEmpty() -> QrScannerRoute // Direct to QR Scanner
+        !skipWelcome -> HubSetupRoute // New users: Start with Hub Setup
+        urlToOnboard.isNullOrEmpty() -> QrScannerRoute // Adding server: Direct to QR Scanner
         else -> ConnectionRoute(urlToOnboard)
     }
 
     navigation<OnboardingRoute>(startDestination = startDestination) {
+        // CoFarmer Hub Setup Flow
+        hubSetupScreen(
+            onYesHaveHub = {
+                navController.navigateToHubSetupInstructions()
+            },
+            onNoHub = {
+                navController.navigateToNoHub()
+            },
+        )
+        hubSetupInstructionsScreen(
+            onBackClick = navController::popBackStack,
+            onReadyClick = {
+                // After hub setup, go to the welcome/connection screen
+                navController.navigateToQrScanner()
+            },
+        )
+        noHubScreen(
+            onBackClick = navController::popBackStack,
+            onVisitWebsiteClick = {
+                navController.navigateToUri(URL_ENKITEK_WEBSITE)
+            },
+        )
         welcomeScreen(
             onScanQrClick = {
                 // QR Scanner is the primary action

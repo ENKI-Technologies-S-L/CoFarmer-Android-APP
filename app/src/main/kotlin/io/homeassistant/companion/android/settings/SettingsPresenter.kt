@@ -9,7 +9,6 @@ import kotlinx.coroutines.flow.StateFlow
 
 interface SettingsPresenter {
     companion object {
-        const val SUGGESTION_ASSISTANT_APP = "assistant_app"
         const val SUGGESTION_NOTIFICATION_PERMISSION = "notification_permission"
     }
 

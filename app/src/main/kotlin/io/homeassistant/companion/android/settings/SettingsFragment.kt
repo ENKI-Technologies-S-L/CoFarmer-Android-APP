@@ -1,9 +1,6 @@
 package io.homeassistant.companion.android.settings
 
-import android.annotation.SuppressLint
 import android.app.UiModeManager
-import android.content.ActivityNotFoundException
-import android.content.ComponentName
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.Configuration
@@ -121,7 +118,6 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
                             it.setIcon(suggestion.icon)
                             it.setOnPreferenceClickListener {
                                 when (suggestion.id) {
-                                    SettingsPresenter.SUGGESTION_ASSISTANT_APP -> updateAssistantApp()
                                     SettingsPresenter.SUGGESTION_NOTIFICATION_PERMISSION -> openNotificationSettings()
                                 }
                                 return@setOnPreferenceClickListener true
@@ -390,7 +386,7 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
         }
 
         findPreference<Preference>("privacy")?.let {
-            it.summary = "https://www.home-assistant.io/privacy/"
+            it.summary = getString(commonR.string.privacy_url)
             it.intent = Intent(Intent.ACTION_VIEW, it.summary.toString().toUri())
         }
 
@@ -465,26 +461,6 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
                     }
                 }
             }
-        }
-    }
-
-    @SuppressLint("InlinedApi")
-    private fun updateAssistantApp() {
-        // On Android Q+, this is a workaround as Android doesn't allow requesting the assistant role
-        try {
-            val openIntent = Intent("android.settings.VOICE_INPUT_SETTINGS")
-            openIntent.component =
-                ComponentName("com.android.settings", "com.android.settings.Settings\$ManageAssistActivity")
-            openIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-            startActivity(openIntent)
-        } catch (e: ActivityNotFoundException) {
-            // The exact activity/package doesn't exist on this device, use the official intent
-            // which sends the user to the 'Default apps' screen (one more tap required to change)
-            startActivity(
-                Intent(Settings.ACTION_MANAGE_DEFAULT_APPS_SETTINGS).apply {
-                    flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                },
-            )
         }
     }
 
