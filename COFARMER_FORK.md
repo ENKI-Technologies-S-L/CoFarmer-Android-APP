@@ -421,6 +421,164 @@ See [UPSTREAM_SYNC.md](UPSTREAM_SYNC.md) for detailed instructions on how to mer
 | 2026-01-20 | 1.0.0-alpha | Initial rebrand: package ID, icons, colors, strings, QR scanner |
 | 2026-01-21 | 1.0.0-alpha.5 | Settings UX: Farm Sites, multilang (ES/FR/DE), URL rebrand, QR primary CTA |
 | 2026-01-22 | 1.0.0-alpha.6 | Complete app icon rebrand, custom branding splash screen, local network warning, 40+ OEM StrictMode rules |
+| 2026-01-23 | 1.0.0-alpha.7 | Settings improvements, onboarding enhancements, confirmation popups |
+
+---
+
+### 21. Remove "Assist from Anywhere" Popup
+
+**Files Modified:**
+- `app/src/main/kotlin/io/homeassistant/companion/android/settings/SettingsPresenter.kt`
+- `app/src/main/kotlin/io/homeassistant/companion/android/settings/SettingsPresenterImpl.kt`
+- `app/src/main/kotlin/io/homeassistant/companion/android/settings/SettingsFragment.kt`
+
+**Changes:**
+- Removed `showAssistFromAnywhere()` method from SettingsPresenter interface
+- Removed implementation that showed the Assist dialog popup
+- CoFarmer doesn't use voice assistant features, so this popup was unnecessary
+
+---
+
+### 22. Fix Privacy Policy URL
+
+**Files Modified:**
+- `app/src/main/kotlin/io/homeassistant/companion/android/settings/SettingsFragment.kt`
+
+**Changes:**
+- Changed hardcoded URL from `https://www.home-assistant.io/privacy/` to use string resource
+- Now correctly points to `https://privacy.enkitek.eu`
+
+---
+
+### 23. Remove Share Button from Farm Settings
+
+**Files Modified:**
+- `app/src/main/kotlin/io/homeassistant/companion/android/settings/server/ServerSettingsFragment.kt`
+
+**Changes:**
+- Removed share menu option from toolbar
+- `onCreateOptionsMenu()` now creates empty menu
+- `onOptionsItemSelected()` simplified to only handle navigation
+
+---
+
+### 24. Distinctive Colors for Menu Icons
+
+**Files Modified:**
+- `common/src/main/res/values/colors.xml`
+- `app/src/main/res/xml/preferences.xml`
+
+**New Colors Added:**
+| Color | Hex Code | Usage |
+|-------|----------|-------|
+| `iconTintEnkitekVerde` | `#04D288` | Primary menu items (Farm Sites, Companion App) |
+| `iconTintEnkitekAzul` | `#0066CC` | Secondary items (Sensors, Notifications, Shortcuts) |
+| `iconTintEnkitekNegro` | `#0A0A0A` | Utility items (Privacy, Acknowledgments) |
+
+**Icons Updated:**
+- Farm Sites → Verde
+- Companion App → Verde
+- Manage sensors → Azul
+- Notifications → Azul
+- Shortcuts → Azul
+- Privacy Policy → Negro
+- Acknowledgments → Negro
+- Developer Settings → Negro
+
+---
+
+### 25. Hub Setup Onboarding Screen
+
+**Files Created:**
+- `app/src/main/kotlin/io/homeassistant/companion/android/onboarding/hubsetup/HubSetupScreen.kt`
+- `app/src/main/kotlin/io/homeassistant/companion/android/onboarding/hubsetup/navigation/HubSetupNavigation.kt`
+
+**Files Modified:**
+- `app/src/main/kotlin/io/homeassistant/companion/android/onboarding/OnboardingNavigation.kt`
+- `common/src/main/res/values/strings.xml`
+
+**Feature Description:**
+Modern step-by-step hub setup instructions with:
+- Visual step cards with circular icon backgrounds
+- Icons: Power (plug), Cable (ethernet), Lightbulb (LED), Timer (wait)
+- Each step has title and descriptive subtitle
+- Material3 Card elevation for visual hierarchy
+- "Continue" button to proceed to server discovery
+
+**New Strings:**
+- `hub_setup_title` → "Set up your CoFarmer Hub"
+- `hub_setup_subtitle` → "Follow these steps to connect your hub"
+- `hub_setup_step1_*` → Power connection instructions
+- `hub_setup_step2_*` → Ethernet connection instructions
+- `hub_setup_step3_*` → LED indicator guidance
+- `hub_setup_step4_*` → Wait time instructions
+- `hub_setup_continue` → "Continue"
+
+---
+
+### 26. Local Connection Confirmation Popup
+
+**Files Modified:**
+- `app/src/main/kotlin/io/homeassistant/companion/android/onboarding/serverdiscovery/ServerDiscoveryScreen.kt`
+- `common/src/main/kotlin/io/homeassistant/companion/android/common/compose/theme/HAColors.kt`
+- `common/src/main/res/values/strings.xml`
+
+**Feature Description:**
+When user clicks "Connect" on a locally-discovered server:
+1. Shows confirmation AlertDialog with warning icon (amber)
+2. Explains that local connection only works on same Wi-Fi network
+3. Recommends using QR code for remote access
+4. Two buttons:
+   - "I understand, connect anyway" → Proceeds with local connection
+   - "Use QR code instead" → Navigates to QR scanner
+
+**New Color:**
+- `HABrandColors.Warning` → `#FF9800` (Amber/Orange for warnings)
+
+**New Strings:**
+- `local_connection_confirm_title` → "Local connection only"
+- `local_connection_confirm_message` → Warning about Wi-Fi requirement and QR recommendation
+- `local_connection_confirm_understand` → "I understand, connect anyway"
+- `local_connection_confirm_use_qr` → "Use QR code instead"
+
+**Components Created:**
+- `LocalConnectionConfirmationDialog` composable
+- Integrates with `OneServerFound` bottom sheet
+
+---
+
+### 27. Language Consistency Review
+
+**Files Modified:**
+- `common/src/main/res/values/strings.xml`
+
+**Strings Reviewed and Updated (~15):**
+- Ensured consistent "CoFarmer" branding throughout
+- "farm" terminology instead of "home"
+- "Hub" for server references in user-facing text
+- Agricultural context in descriptions
+
+---
+
+## Pending Work
+
+### High Priority
+- [x] ~~Update remaining "Home Assistant" references in help URLs~~
+- [x] ~~Replace "homeassistant.io" documentation links with CoFarmer docs~~
+- [x] ~~Fix privacy URL hardcoded in SettingsFragment~~
+- [ ] Integrate Lato font family
+- [ ] Update README.md for CoFarmer
+
+### Medium Priority
+- [ ] Review and update Wear OS specific strings
+- [ ] Create CoFarmer-specific onboarding illustrations
+- [ ] Update app store metadata (descriptions, screenshots)
+- [ ] Add Spanish translations for new Day 5 strings
+
+### Low Priority
+- [ ] Custom error pages
+- [ ] About screen with Enkitek branding
+- [ ] Changelog updates
 
 ---
 
