@@ -11,6 +11,7 @@ import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.app.NotificationManagerCompat
+import androidx.core.content.ContextCompat
 import androidx.core.content.getSystemService
 import androidx.core.net.toUri
 import androidx.fragment.app.commit
@@ -86,6 +87,9 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
         preferenceManager.preferenceDataStore = presenter.getPreferenceDataStore()
 
         setPreferencesFromResource(R.xml.preferences, rootKey)
+
+        // Apply icon tints programmatically (XML iconTint is not supported by AndroidX Preference)
+        applyIconTints()
 
         findPreference<Preference>("nfc_tags")?.let {
             val pm: PackageManager = requireContext().packageManager
@@ -471,13 +475,17 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
             
             if (context?.isIgnoringBatteryOptimizations() == true) {
                 it.setSummary(commonR.string.background_access_enabled)
-                it.icon = AppCompatResources.getDrawable(requireContext(), R.drawable.ic_check)
+                val checkDrawable = AppCompatResources.getDrawable(requireContext(), R.drawable.ic_check)
+                checkDrawable?.setTint(ContextCompat.getColor(requireContext(), commonR.color.iconTintEnkitekVerde))
+                it.icon = checkDrawable
                 it.setOnPreferenceClickListener {
                     true
                 }
             } else {
                 it.setSummary(commonR.string.background_access_disabled)
-                it.icon = AppCompatResources.getDrawable(requireContext(), R.drawable.ic_close)
+                val closeDrawable = AppCompatResources.getDrawable(requireContext(), R.drawable.ic_close)
+                closeDrawable?.setTint(ContextCompat.getColor(requireContext(), commonR.color.iconTintWarning))
+                it.icon = closeDrawable
                 it.setOnPreferenceClickListener {
                     context?.maybeAskForIgnoringBatteryOptimizations()
                     true
@@ -511,8 +519,10 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
             serverPreference.key = serverKeys[index]
             serverPreference.order = index
             try {
-                serverPreference.icon =
-                    AppCompatResources.getDrawable(requireContext(), commonR.drawable.ic_stat_ic_notification_blue)
+                val drawable = AppCompatResources.getDrawable(requireContext(), commonR.drawable.ic_stat_ic_notification_blue)
+                // CoFarmer: Apply verde tint for visual variety
+                drawable?.setTint(ContextCompat.getColor(requireContext(), commonR.color.iconTintEnkitekVerde))
+                serverPreference.icon = drawable
             } catch (e: Exception) {
                 Timber.e(e, "Unable to set the server icon")
             }
@@ -655,5 +665,85 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
     override fun onDestroy() {
         presenter.onFinish()
         super.onDestroy()
+    }
+
+    /**
+     * Applies tint colors to preference icons programmatically.
+     *
+     * AndroidX Preference library does NOT support the `app:iconTint` XML attribute.
+     * The only way to tint preference icons is to do it programmatically after
+     * the preferences are loaded.
+     */
+    private fun applyIconTints() {
+        val context = requireContext()
+
+        // Helper to apply tint to a preference icon
+        fun applyTint(key: String, colorResId: Int) {
+            findPreference<Preference>(key)?.icon?.mutate()?.setTint(
+                ContextCompat.getColor(context, colorResId),
+            )
+        }
+
+        // Servers & Devices (Instalaciones) - Verde Enkitek
+        applyTint("server_add", commonR.color.iconTintEnkitekVerde)
+
+        // Display Settings - Negro
+        applyTint("themes", commonR.color.iconTintEnkitekNegro)
+        applyTint("languages", commonR.color.iconTintEnkitekNegro)
+        applyTint("fullscreen", commonR.color.iconTintEnkitekNegro)
+        applyTint("keep_screen_on", commonR.color.iconTintEnkitekNegro)
+
+        // Advanced Display - Negro
+        applyTint("gestures", commonR.color.iconTintEnkitekNegro)
+        applyTint("screen_orientation", commonR.color.iconTintEnkitekNegro)
+        applyTint("page_zoom", commonR.color.iconTintEnkitekNegro)
+        applyTint("pinch_to_zoom", commonR.color.iconTintEnkitekNegro)
+        applyTint("autoplay_video", commonR.color.iconTintEnkitekNegro)
+        applyTint("always_show_first_view_on_app_start", commonR.color.iconTintEnkitekNegro)
+        applyTint("nfc_tags", commonR.color.iconTintEnkitekNegro)
+
+        // Notifications - Verde Enkitek
+        applyTint("notification_permission", commonR.color.iconTintEnkitekVerde)
+        applyTint("notification_channels", commonR.color.iconTintEnkitekVerde)
+        applyTint("notification_history", commonR.color.iconTintEnkitekVerde)
+        applyTint("notification_rate_limit", commonR.color.iconTintEnkitekVerde)
+
+        // Widgets - Verde Enkitek
+        applyTint("manage_widgets", commonR.color.iconTintEnkitekVerde)
+
+        // Quick Settings - Verde Enkitek
+        applyTint("manage_tiles", commonR.color.iconTintEnkitekVerde)
+
+        // Shortcuts - Verde Enkitek
+        applyTint("manage_shortcuts", commonR.color.iconTintEnkitekVerde)
+
+        // Device Controls - Verde Enkitek
+        applyTint("manage_device_controls", commonR.color.iconTintEnkitekVerde)
+
+        // Launcher (Device as Home App) - Negro
+        applyTint("enable_ha_launcher", commonR.color.iconTintEnkitekNegro)
+        applyTint("set_launcher_app", commonR.color.iconTintEnkitekNegro)
+
+        // Help & Support (Need help?) - Gris
+        applyTint("docs", commonR.color.iconTintNeutral)
+        applyTint("developer", commonR.color.iconTintNeutral)
+
+        // About - Gris
+        applyTint("version", commonR.color.iconTintNeutral)
+        applyTint("changelog_prompt", commonR.color.iconTintNeutral)
+        applyTint("privacy", commonR.color.iconTintNeutral)
+        applyTint("acknowledgments", commonR.color.iconTintNeutral)
+
+        // Developer Options (hidden) - Gris
+        applyTint("change_log_popup_enabled", commonR.color.iconTintNeutral)
+        applyTint("changelog_github", commonR.color.iconTintNeutral)
+        applyTint("crash_reporting", commonR.color.iconTintNeutral)
+
+        // Hidden categories (in case they are shown)
+        applyTint("sensors", commonR.color.iconTintEnkitekVerde)
+        applyTint("sensor_update_frequency", commonR.color.iconTintEnkitekVerde)
+        applyTint("wear_settings", commonR.color.iconTintNeutral)
+        applyTint("assist_voice_command_intent", commonR.color.iconTintNeutral)
+        applyTint("auto_favorites", commonR.color.iconTintNeutral)
     }
 }

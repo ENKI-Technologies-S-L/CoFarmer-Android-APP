@@ -30,6 +30,9 @@
     <string name="add_ssid_name_suggestion">Add %1$s</string>
     <string name="add_widget">Add widget</string>
     <string name="advanced">Advanced</string>
+    <string name="advanced_settings">Advanced</string>
+    <string name="advanced_display_settings">Advanced Display</string>
+    <string name="about_app">About</string>
     <string name="all_entities">All entities</string>
     <string name="all_results">All results</string>
     <string name="allow">Allow</string>
@@ -203,6 +206,9 @@
     <string name="device_name">Device name</string>
     <string name="device_registration">Device registration</string>
     <string name="device_tracker">Device tracker</string>
+    <string name="developer_options">Developer Options</string>
+    <string name="danger_zone">Danger Zone</string>
+    <string name="display_settings">Display</string>
     <string name="disable">Disable</string>
     <string name="disabled">Disabled</string>
     <string name="documentation">Documentation</string>
@@ -1408,6 +1414,15 @@
     <string name="hub_setup_no_hub_description">CoFarmer Hub is the brain of your smart farm. Visit our website to learn more and purchase your Hub.</string>
     <string name="hub_setup_visit_website">Visit Enkitek Website</string>
     <string name="hub_setup_enkitek_url">https://www.enkitek.eu</string>
+    <!-- Hub Settings - Server Configuration Menu -->
+    <string name="hub_identity">Hub Identity</string>
+    <string name="hub_name">Hub name</string>
+    <string name="hub_delete">Remove this hub</string>
+    <string name="hub_delete_summary">Disconnect this hub from your app</string>
+    <string name="connection_settings">Connection</string>
+    <string name="remote_access_url">Remote access URL</string>
+    <string name="local_network_wifi">Local Wi-Fi networks</string>
+    <string name="local_hub_url">Local hub URL</string>
     <string name="name_your_device_title">How would you like to name this device?</string>
     <string name="name_your_device_content">This is used to identify your device.</string>
     <string name="name_your_device_save">Save</string>

@@ -1,82 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- SWITCH HUB - Only visible when multiple hubs configured                 -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <Preference
         android:key="activate_server"
         android:icon="@drawable/ic_launch"
+        app:iconTint="@color/iconTintEnkitekVerde"
         android:title="@string/server_activate"
         app:isPreferenceVisible="false"/>
     <Preference
         android:key="activate_server_hint"
         android:summary="@string/server_activate_gesture_hint"
         app:isPreferenceVisible="false"/>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- HUB IDENTITY - Name and device registration                             -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <PreferenceCategory
-        android:title="@string/device_registration">
+        android:title="@string/hub_identity">
         <EditTextPreference
             android:key="server_name"
             android:icon="@drawable/ic_stat_ic_notification_blue"
-            android:title="@string/server_name"/>
+            app:iconTint="@color/iconTintEnkitekAzul"
+            android:title="@string/hub_name"/>
         <EditTextPreference
             android:key="registration_name"
             android:icon="@drawable/ic_edit"
+            app:iconTint="@color/iconTintNeutral"
             android:title="@string/device_name"
             app:useSimpleSummaryProvider="true"/>
     </PreferenceCategory>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- CONNECTION - Network settings for the hub                               -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <PreferenceCategory
-        android:title="@string/pref_connection_title">
+        android:title="@string/connection_settings">
         <Preference
             android:key="connection_external"
             android:icon="@drawable/ic_globe"
-            android:title="@string/pref_connection_url"/>
+            app:iconTint="@color/iconTintEnkitekVerde"
+            android:title="@string/remote_access_url"/>
         <Preference
             android:key="connection_internal_ssids"
             android:icon="@drawable/ic_wifi"
-            android:title="@string/pref_connection_homenetwork"/>
+            app:iconTint="@color/iconTintEnkitekAzul"
+            android:title="@string/local_network_wifi"/>
         <EditTextPreference
             android:key="connection_internal"
-            android:title="@string/pref_connection_internal"
+            android:icon="@drawable/ic_computer"
+            app:iconTint="@color/iconTintNeutral"
+            android:title="@string/local_hub_url"
             app:useSimpleSummaryProvider="true"/>
-        <Preference
-            android:key="connection_security_level"
-            android:icon="@drawable/ic_lock"
-            android:title="@string/connection_security_level_title"/>
     </PreferenceCategory>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- SECURITY - Access control and protection                                -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <PreferenceCategory
         android:key="security_category"
         android:title="@string/security">
         <SwitchPreference
-            android:key="trust_server"
-            android:defaultValue="true"
-            android:icon="@drawable/ic_settings_remote"
-            android:title="@string/trust_server_title"
-            android:summary="@string/trust_server_summary"/>
-        <SwitchPreference
             android:key="app_lock"
             android:icon="@drawable/ic_lock"
+            app:iconTint="@color/iconTintWarning"
             android:title="@string/lock_title"
             android:summary="@string/lock_summary"/>
         <SwitchPreference
             android:key="app_lock_home_bypass"
             android:icon="@drawable/ic_wifi"
+            app:iconTint="@color/iconTintEnkitekAzul"
             android:title="@string/lock_home_bypass_title"
             android:summary="@string/lock_home_bypass_summary"/>
         <EditTextPreference
             android:key="session_timeout"
             android:icon="@drawable/ic_timeout"
+            app:iconTint="@color/iconTintNeutral"
             android:title="@string/session_timeout_title"
             app:isPreferenceVisible="false"
             app:useSimpleSummaryProvider="true"/>
     </PreferenceCategory>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- ADVANCED - Technical settings (hidden by default)                       -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <PreferenceCategory
-        android:title="@string/other_settings">
+        android:title="@string/advanced_settings"
+        app:isPreferenceVisible="false">
+        <SwitchPreference
+            android:key="trust_server"
+            android:defaultValue="true"
+            android:icon="@drawable/ic_settings_remote"
+            app:iconTint="@color/iconTintNeutral"
+            android:title="@string/trust_server_title"
+            android:summary="@string/trust_server_summary"/>
+        <Preference
+            android:key="connection_security_level"
+            android:icon="@drawable/ic_lock"
+            app:iconTint="@color/iconTintNeutral"
+            android:title="@string/connection_security_level_title"/>
         <Preference
             android:key="websocket"
             android:icon="@drawable/ic_websocket"
+            app:iconTint="@color/iconTintNeutral"
             android:title="@string/websocket_setting_name"
             android:summary="@string/websocket_setting_summary" />
+    </PreferenceCategory>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- DANGER ZONE - Destructive actions                                       -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <PreferenceCategory
+        android:title="@string/danger_zone">
         <Preference
             android:key="delete_server"
             android:icon="@drawable/ic_clear"
-            android:title="@string/server_delete"/>
+            app:iconTint="@color/iconTintWarning"
+            android:title="@string/hub_delete"
+            android:summary="@string/hub_delete_summary"/>
     </PreferenceCategory>
 </PreferenceScreen>

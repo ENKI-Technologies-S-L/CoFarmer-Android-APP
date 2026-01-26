@@ -422,6 +422,7 @@ See [UPSTREAM_SYNC.md](UPSTREAM_SYNC.md) for detailed instructions on how to mer
 | 2026-01-21 | 1.0.0-alpha.5 | Settings UX: Farm Sites, multilang (ES/FR/DE), URL rebrand, QR primary CTA |
 | 2026-01-22 | 1.0.0-alpha.6 | Complete app icon rebrand, custom branding splash screen, local network warning, 40+ OEM StrictMode rules |
 | 2026-01-23 | 1.0.0-alpha.7 | Settings improvements, onboarding enhancements, confirmation popups |
+| 2026-01-26 | 1.0.0-alpha.8 | Settings menu reorganization, icon tinting system, feature flags integration |
 
 ---
 
@@ -560,12 +561,115 @@ When user clicks "Connect" on a locally-discovered server:
 
 ---
 
+## Day 6 Changes - Settings Menu Reorganization
+
+### 28. Settings Menu Complete Reorganization
+
+**Files Modified:**
+- `app/src/main/res/xml/preferences.xml`
+- `app/src/main/kotlin/io/homeassistant/companion/android/settings/SettingsFragment.kt`
+
+**Menu Structure (Before → After):**
+
+| Before | After |
+|--------|-------|
+| Flat list of all settings | Organized into logical categories |
+| All features visible | Non-CoFarmer features hidden |
+| No visual hierarchy | Category headers with icons |
+
+**New Category Structure:**
+1. **Farm Sites** - Add/manage farm connections
+2. **Display Settings** - Theme, language, fullscreen, keep screen on
+3. **Advanced Display** *(hidden)* - Gestures, screen orientation, zoom, NFC
+4. **Widgets** - Manage widgets
+5. **Help & Support** - Documentation, troubleshooting
+6. **About** - Version, changelog, privacy, acknowledgments
+7. **Developer Options** *(hidden)* - Changelog popup, GitHub releases, crash reporting
+
+**Hidden Sections:**
+- Sensors (not relevant for CoFarmer agricultural use)
+- Notifications (simplified UX)
+- Wear OS (not supported in CoFarmer)
+- Android Auto (not supported in CoFarmer)
+- Assist / Voice Assistant (not supported in CoFarmer)
+- Advanced Display (internal/debugging only)
+- Developer Options (debugging only)
+
+---
+
+### 29. Icon Tinting System
+
+**Files Modified:**
+- `app/src/main/res/values/colors.xml`
+- `common/src/main/res/values/colors.xml`
+- `app/src/main/kotlin/io/homeassistant/companion/android/settings/SettingsFragment.kt`
+
+**Semantic Icon Colors Added:**
+
+| Color | Hex Code | Usage |
+|-------|----------|-------|
+| `iconTintEnkitekVerde` | `#04D288` | Primary brand actions (Farm Sites) |
+| `iconTintEnkitekAzul` | `#0066CC` | Secondary/info items |
+| `iconTintEnkitekNegro` | `#0A0A0A` | Neutral/utility items |
+| `iconTintPrimary` | `#04D288` | Theme, display settings |
+| `iconTintSecondary` | `#0066CC` | Help, documentation |
+| `iconTintWarning` | `#FF9800` | Caution items |
+| `iconTintNeutral` | `#666666` | About, version info |
+
+**Implementation:**
+- `applyIconTints()` function in `SettingsFragment.kt`
+- Programmatically applies colors using `ContextCompat.getColor()`
+- Colors applied on `onResume()` to ensure consistent display
+
+---
+
+### 30. Server/Hub Menu Reorganization
+
+**Files Modified:**
+- `app/src/main/res/xml/preferences_server.xml`
+- `app/src/main/kotlin/io/homeassistant/companion/android/settings/server/ServerSettingsFragment.kt`
+
+**New Hub Menu Structure:**
+1. **Hub Identity** - Name, internal/external URLs
+2. **Connection Settings** - SSL, WebSocket settings
+3. **Advanced** *(hidden)* - SSID management, high accuracy mode
+4. **Danger Zone** *(hidden)* - Remove hub
+
+**New Strings Added:**
+- `hub_identity` → "Hub Identity"
+- `hub_name` → "Hub Name"
+- `connection_settings` → "Connection Settings"
+- `advanced_settings` → "Advanced Settings"
+- `danger_zone` → "Danger Zone"
+
+---
+
+### 31. CoFarmerFeatures Integration
+
+**Files Modified:**
+- `app/src/main/kotlin/io/homeassistant/companion/android/settings/SettingsFragment.kt`
+
+**Feature Flags Used:**
+- `CoFarmerFeatures.SENSORS_ENABLED` → Controls sensors visibility
+- `CoFarmerFeatures.NOTIFICATIONS_ENABLED` → Controls notifications visibility
+- `CoFarmerFeatures.WEAR_OS_ENABLED` → Controls Wear OS visibility
+- `CoFarmerFeatures.ANDROID_AUTO_ENABLED` → Controls Android Auto visibility
+- `CoFarmerFeatures.VOICE_ASSISTANT_ENABLED` → Controls Assist visibility
+
+**Purpose:**
+- Clean separation between UI visibility and feature configuration
+- Easy to enable features later without code changes
+- Consistent pattern across the app
+
+---
+
 ## Pending Work
 
 ### High Priority
 - [x] ~~Update remaining "Home Assistant" references in help URLs~~
 - [x] ~~Replace "homeassistant.io" documentation links with CoFarmer docs~~
 - [x] ~~Fix privacy URL hardcoded in SettingsFragment~~
+- [x] ~~Reorganize Settings menu for CoFarmer UX~~
 - [ ] Integrate Lato font family
 - [ ] Update README.md for CoFarmer
 
@@ -573,7 +677,7 @@ When user clicks "Connect" on a locally-discovered server:
 - [ ] Review and update Wear OS specific strings
 - [ ] Create CoFarmer-specific onboarding illustrations
 - [ ] Update app store metadata (descriptions, screenshots)
-- [ ] Add Spanish translations for new Day 5 strings
+- [ ] Add Spanish translations for new Day 5/6 strings
 
 ### Low Priority
 - [ ] Custom error pages

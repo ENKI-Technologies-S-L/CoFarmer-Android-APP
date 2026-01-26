@@ -6,4 +6,9 @@
     <color name="ic_launcher_foreground">#FFF2F2F2</color>
     <!-- White background for adaptive icon - works well with rounded square launchers -->
     <color name="ic_launcher_background">#FFFFFF</color>
+
+    <!-- Menu Icon Tint Colors - Enkitek Brand -->
+    <color name="iconTintEnkitekVerde">#04D288</color>
+    <color name="iconTintEnkitekAzul">#0066CC</color>
+    <color name="iconTintEnkitekNegro">#0A0A0A</color>
 </resources>

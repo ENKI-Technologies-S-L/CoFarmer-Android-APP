@@ -68,6 +68,9 @@ class ServerSettingsFragment :
 
         setPreferencesFromResource(R.xml.preferences_server, rootKey)
 
+        // Apply icon tints programmatically (XML iconTint is not supported by AndroidX Preference)
+        applyIconTints()
+
         val onChangeUrlValidator = OnPreferenceChangeListener { _, newValue ->
             val isValid = newValue.toString().isBlank() || newValue.toString().toHttpUrlOrNull() != null
             if (!isValid) {
@@ -240,11 +243,16 @@ class ServerSettingsFragment :
     }
 
     override fun enableInternalConnection(isEnabled: Boolean) {
-        val iconTint = if (isEnabled) {
-            ContextCompat.getColor(
-                requireContext(),
-                commonR.color.colorAccent,
-            )
+        // CoFarmer: Use distinct colors for visual variety
+        // Local URL uses neutral gray, Home bypass uses blue
+        val localUrlTint = if (isEnabled) {
+            ContextCompat.getColor(requireContext(), commonR.color.iconTintNeutral)
+        } else {
+            Color.DKGRAY
+        }
+
+        val homeBypassTint = if (isEnabled) {
+            ContextCompat.getColor(requireContext(), commonR.color.iconTintEnkitekAzul)
         } else {
             Color.DKGRAY
         }
@@ -254,7 +262,7 @@ class ServerSettingsFragment :
             try {
                 val unwrappedDrawable =
                     AppCompatResources.getDrawable(requireContext(), R.drawable.ic_computer)
-                unwrappedDrawable?.setTint(iconTint)
+                unwrappedDrawable?.setTint(localUrlTint)
                 it.icon = unwrappedDrawable
             } catch (e: Exception) {
                 Timber.e(e, "Unable to set the icon tint")
@@ -266,7 +274,7 @@ class ServerSettingsFragment :
             try {
                 val unwrappedDrawable =
                     AppCompatResources.getDrawable(requireContext(), R.drawable.ic_wifi)
-                unwrappedDrawable?.setTint(iconTint)
+                unwrappedDrawable?.setTint(homeBypassTint)
                 it.icon = unwrappedDrawable
             } catch (e: Exception) {
                 Timber.e(e, "Unable to set the icon tint")
@@ -353,4 +361,47 @@ class ServerSettingsFragment :
     }
 
     fun getServerId(): Int = serverId
+
+    /**
+     * Applies tint colors to preference icons programmatically.
+     *
+     * AndroidX Preference library does NOT support the `app:iconTint` XML attribute.
+     * The only way to tint preference icons is to do it programmatically after
+     * the preferences are loaded.
+     */
+    private fun applyIconTints() {
+        val context = requireContext()
+
+        // Helper to apply tint to a preference icon
+        fun applyTint(key: String, colorResId: Int) {
+            findPreference<Preference>(key)?.icon?.mutate()?.setTint(
+                ContextCompat.getColor(context, colorResId),
+            )
+        }
+
+        // Switch Hub
+        applyTint("activate_server", commonR.color.iconTintEnkitekVerde)
+
+        // Hub Identity
+        applyTint("server_name", commonR.color.iconTintEnkitekAzul)
+        applyTint("registration_name", commonR.color.iconTintNeutral)
+
+        // Connection
+        applyTint("connection_external", commonR.color.iconTintEnkitekVerde)
+        applyTint("connection_internal_ssids", commonR.color.iconTintEnkitekAzul)
+        applyTint("connection_internal", commonR.color.iconTintNeutral)
+
+        // Security
+        applyTint("app_lock", commonR.color.iconTintWarning)
+        applyTint("app_lock_home_bypass", commonR.color.iconTintEnkitekAzul)
+        applyTint("session_timeout", commonR.color.iconTintNeutral)
+
+        // Advanced
+        applyTint("trust_server", commonR.color.iconTintNeutral)
+        applyTint("connection_security_level", commonR.color.iconTintNeutral)
+        applyTint("websocket", commonR.color.iconTintNeutral)
+
+        // Danger Zone
+        applyTint("delete_server", commonR.color.iconTintWarning)
+    }
 }
