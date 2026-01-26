@@ -115,11 +115,6 @@ fun AboutScreen(
                     context.startActivity(
                         Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.cofarmer.enkitek.eu"))
                     )
-                },
-                onGitHubClick = {
-                    context.startActivity(
-                        Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/ENKI-Technologies-S-L/CoFarmer-Android-APP"))
-                    )
                 }
             )
 
@@ -230,8 +225,7 @@ private fun VersionRow(label: String, value: String) {
 private fun LinksCard(
     onPrivacyClick: () -> Unit,
     onWebsiteClick: () -> Unit,
-    onDocumentationClick: () -> Unit,
-    onGitHubClick: () -> Unit
+    onDocumentationClick: () -> Unit
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -253,11 +247,6 @@ private fun LinksCard(
             LinkItem(
                 title = stringResource(commonR.string.documentation),
                 onClick = onDocumentationClick
-            )
-            HorizontalDivider(modifier = Modifier.padding(horizontal = 16.dp))
-            LinkItem(
-                title = stringResource(commonR.string.about_github),
-                onClick = onGitHubClick
             )
         }
     }
