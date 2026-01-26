@@ -1,63 +1,131 @@
 # CoFarmer - Agricultural IoT Companion for Android
 
-[![Build Status](https://github.com/ENKI-Technologies-S-L/CoFarmer-Android-APP/actions/workflows/onPush.yml/badge.svg)](https://github.com/ENKI-Technologies-S-L/CoFarmer-Android-APP/actions/workflows/onPush.yml)  
-[![Play Store](https://img.shields.io/badge/Play%20Store-Download-blue?logo=google-play)](https://play.google.com/store/apps/details?id=com.enkitek.cofarmer)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/ENKI-Technologies-S-L/CoFarmer-Android-APP)
+<p align="center">
+  <img src="branding-assets/logos/cofarmer-app-icon.svg" alt="CoFarmer Logo" width="200"/>
+</p>
 
-Welcome to **CoFarmer** - the agricultural IoT companion app for monitoring and managing your farm installations. Built on proven open-source technology, CoFarmer brings professional-grade monitoring capabilities to farms of all sizes: greenhouses, open fields, vertical farms, vineyards, and more.
+<p align="center">
+  <a href="https://github.com/ENKI-Technologies-S-L/CoFarmer-Android-APP/actions/workflows/onPush.yml"><img src="https://github.com/ENKI-Technologies-S-L/CoFarmer-Android-APP/actions/workflows/onPush.yml/badge.svg" alt="Build Status"/></a>
+  <a href="https://play.google.com/store/apps/details?id=com.enkitek.cofarmer"><img src="https://img.shields.io/badge/Play%20Store-Download-00C853?logo=google-play&logoColor=white" alt="Play Store"/></a>
+  <a href="LICENSE.md"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License"/></a>
+  <a href="https://github.com/ENKI-Technologies-S-L/CoFarmer-Android-APP"><img src="https://img.shields.io/badge/Android-7.0+-3DDC84?logo=android&logoColor=white" alt="Android 7.0+"/></a>
+</p>
+
+<p align="center">
+  <strong>Professional agricultural IoT monitoring for farms of all sizes</strong><br>
+  Greenhouses • Open Fields • Vertical Farms • Vineyards • Orchards
+</p>
 
 ---
 
-## Features
+## 🌱 About CoFarmer
 
-- **Monitor Your Installation**: Real-time sensor data from climate systems, soil sensors, HVAC equipment, and actuators.
-- **Local-First Architecture**: Your CoFarmer hub runs on your farm. Data stays local unless you explicitly configure remote access.
-- **Native Android Experience**: Widgets for quick status checks, background sensors for continuous monitoring, and reliable notifications.
-- **Works Offline**: Designed for agricultural environments where connectivity can be unreliable. Core functionality works without internet.
-- **Open Source**: Built on transparent, auditable technology. Full control over your agricultural data.
+**CoFarmer** is the official Android companion app for monitoring and managing your agricultural IoT installations. Built by [Enkitek](https://enkitek.eu) on proven open-source technology, CoFarmer brings professional-grade monitoring capabilities to agricultural professionals.
 
-## Get the app
+Connect to your CoFarmer hub to monitor climate systems, soil sensors, irrigation equipment, and actuators — all from your Android device.
 
-- **[Download from the Play Store](https://play.google.com/store/apps/details?id=com.enkitek.cofarmer)**  
-  Available now on Google Play for Android devices.
-- **[View on GitHub](https://github.com/ENKI-Technologies-S-L/CoFarmer-Android-APP)**: Access the latest code and contribute.
+---
 
-## Documentation
+## ✨ Features
 
-For detailed setup instructions, sensor information, and troubleshooting:
-- **[CoFarmer Documentation](https://docs.cofarmer.io)** *(In development)*
-- **[Fork Information](COFARMER_FORK.md)**: What's different from the original Home Assistant app
-- **[Upstream Sync Guide](UPSTREAM_SYNC.md)**: How we keep up with upstream improvements
-- **[Agro-Tech Terminology](AGRO_TECH_TERMINOLOGY.md)**: Understanding agricultural IoT concepts in CoFarmer
+| Feature | Description |
+|---------|-------------|
+| 📊 **Real-Time Monitoring** | Live sensor data from climate systems, soil sensors, HVAC equipment, and actuators |
+| 🏠 **Local-First Architecture** | Your CoFarmer hub runs on your farm. Data stays local unless you configure remote access |
+| 📱 **Native Android Experience** | Home screen widgets, background sensors, and reliable push notifications |
+| 📵 **Works Offline** | Designed for agricultural environments with unreliable connectivity |
+| 🔒 **Privacy-Focused** | No cloud dependency. Your agricultural data stays under your control |
+| ⌚ **Wear OS Support** | Quick access from your smartwatch |
+| 🚗 **Android Auto** | Monitor your farm while driving to the fields |
+| 📷 **QR Scanner** | Quick hub connection setup |
 
-## Report a bug or request a feature
+---
 
-Found an issue or have an idea for improvement? Let us know!  
+## 📥 Download
 
-- **[Open a Bug Report](https://github.com/ENKI-Technologies-S-L/CoFarmer-Android-APP/issues/new?template=Bug_report.md)**  
-- **[Request a Feature](https://github.com/ENKI-Technologies-S-L/CoFarmer-Android-APP/issues/new?template=feature_request.md)**  
+<p align="center">
+  <a href="https://play.google.com/store/apps/details?id=com.enkitek.cofarmer">
+    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="80"/>
+  </a>
+</p>
 
-Your feedback helps us build better tools for agricultural professionals.
+**Alternative downloads:**
+- [GitHub Releases](https://github.com/ENKI-Technologies-S-L/CoFarmer-Android-APP/releases) - Direct APK download
+- F-Droid *(coming soon)*
 
-## Contributing
+---
 
-We welcome contributions from developers and agricultural professionals. Whether you're reporting bugs, adding features, or improving documentation, your help makes CoFarmer better.
+## 📚 Documentation
 
-### Getting started
+| Resource | Description |
+|----------|-------------|
+| 📖 [CoFarmer Docs](https://docs.cofarmer.enkitek.eu) | Setup guides, sensor information, troubleshooting |
+| 🔄 [Fork Information](COFARMER_FORK.md) | What's different from the original Home Assistant app |
+| 🔃 [Upstream Sync Guide](UPSTREAM_SYNC.md) | How we keep up with upstream improvements |
+| 🌾 [Agro-Tech Terminology](AGRO_TECH_TERMINOLOGY.md) | Agricultural IoT concepts in CoFarmer |
 
-1. Read the [Developer Guide](https://github.com/ENKI-Technologies-S-L/CoFarmer-Android-APP/wiki/Developer-Guide) *(coming soon)*
-2. Fork the repository and create a branch for your changes.
-3. Submit a pull request with a clear description of your changes.
+---
 
-## Architecture & Technology
+## 🐛 Report Issues
 
-- **Language**: 100% Kotlin
-- **UI Framework**: Jetpack Compose
-- **Dependency Injection**: Hilt
-- **State Management**: Flow & StateFlow
-- **Database**: Room
-- **Networking**: Retrofit + OkHttp
+Found a bug or have a feature idea? We'd love to hear from you!
 
-## About the Fork
+- 🐛 [Report a Bug](https://github.com/ENKI-Technologies-S-L/CoFarmer-Android-APP/issues/new?template=Bug_report.md)
+- 💡 [Request a Feature](https://github.com/ENKI-Technologies-S-L/CoFarmer-Android-APP/issues/new?template=feature_request.md)
 
-CoFarmer is built on the proven foundation of [Home Assistant](https://github.com/home-assistant/android), adapted specifically for agricultural IoT. See [COFARMER_FORK.md](COFARMER_FORK.md) for detailed information about our modifications and [UPSTREAM_SYNC.md](UPSTREAM_SYNC.md) for how we keep up with upstream improvements.
+---
+
+## 🤝 Contributing
+
+We welcome contributions from developers and agricultural professionals!
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+
+---
+
+## 🛠 Technology Stack
+
+| Component | Technology |
+|-----------|------------|
+| Language | 100% Kotlin |
+| UI Framework | Jetpack Compose |
+| Dependency Injection | Hilt |
+| State Management | Kotlin Flow & StateFlow |
+| Database | Room |
+| Networking | Retrofit + OkHttp |
+| Min SDK | Android 7.0 (API 24) |
+
+---
+
+## 🔗 About the Fork
+
+CoFarmer is built on the excellent foundation of [Home Assistant Android](https://github.com/home-assistant/android), adapted specifically for agricultural IoT use cases. We maintain compatibility with upstream while adding agricultural-specific features and branding.
+
+See [COFARMER_FORK.md](COFARMER_FORK.md) for detailed modification information.
+
+---
+
+## 📞 Support & Contact
+
+<p align="center">
+  <a href="https://enkitek.eu"><img src="https://img.shields.io/badge/Website-enkitek.eu-00B8D4?style=for-the-badge" alt="Website"/></a>
+  <a href="mailto:support@enkitek.eu"><img src="https://img.shields.io/badge/Email-support%40enkitek.eu-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
+</p>
+
+---
+
+## 📄 License
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE.md](LICENSE.md) file for details.
+
+---
+
+<p align="center">
+  Made with 💚 by <a href="https://enkitek.eu"><strong>Enkitek</strong></a> for agricultural professionals worldwide
+</p>
