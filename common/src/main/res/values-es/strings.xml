@@ -209,6 +209,14 @@
     <string name="app_version_info">Información de versión de la app</string>
     <string name="application_version">Versión de la aplicación</string>
     <string name="about_app">Acerca de</string>
+    <string name="about_tagline">Compañero de IoT Agrícola</string>
+    <string name="about_build_type">Tipo de compilación</string>
+    <string name="about_flavor">Variante</string>
+    <string name="about_website">Sitio web de Enkitek</string>
+    <string name="about_github">Repositorio en GitHub</string>
+    <string name="about_made_by">Hecho con 💚 por</string>
+    <string name="about_documentation">Documentación</string>
+    <string name="about_privacy">Política de Privacidad</string>
     <string name="privacy_policy">Política de privacidad</string>
     <string name="terms_of_service">Términos de servicio</string>
     <string name="acknowledgments">Reconocimientos</string>

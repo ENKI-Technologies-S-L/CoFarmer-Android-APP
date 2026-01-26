@@ -33,6 +33,15 @@
     <string name="advanced_settings">Advanced</string>
     <string name="advanced_display_settings">Advanced Display</string>
     <string name="about_app">About</string>
+    <string name="about_tagline">Agricultural IoT Companion</string>
+    <string name="about_build_type">Build type</string>
+    <string name="about_flavor">Flavor</string>
+    <string name="about_website">Enkitek Website</string>
+    <string name="about_github">GitHub Repository</string>
+    <string name="about_made_by">Made with 💚 by</string>
+    <string name="about_documentation">Documentation</string>
+    <string name="about_privacy">Privacy Policy</string>
+    <string name="version_info">Version Information</string>
     <string name="all_entities">All entities</string>
     <string name="all_results">All results</string>
     <string name="allow">Allow</string>

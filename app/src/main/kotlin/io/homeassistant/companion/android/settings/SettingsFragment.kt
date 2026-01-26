@@ -34,6 +34,7 @@ import io.homeassistant.companion.android.common.util.maybeAskForIgnoringBattery
 import io.homeassistant.companion.android.database.server.Server
 import io.homeassistant.companion.android.launch.intentLaunchOnboarding
 import io.homeassistant.companion.android.nfc.NfcSetupActivity
+import io.homeassistant.companion.android.settings.about.AboutFragment
 import io.homeassistant.companion.android.settings.controls.ManageControlsSettingsFragment
 import io.homeassistant.companion.android.settings.developer.DeveloperSettingsFragment
 import io.homeassistant.companion.android.settings.gestures.GesturesFragment
@@ -395,11 +396,10 @@ class SettingsFragment(private val presenter: SettingsPresenter, private val lan
         }
 
         findPreference<Preference>("acknowledgments")?.setOnPreferenceClickListener {
-            androidx.appcompat.app.AlertDialog.Builder(requireContext())
-                .setTitle(commonR.string.acknowledgments)
-                .setMessage(commonR.string.acknowledgments_detail)
-                .setPositiveButton(android.R.string.ok, null)
-                .show()
+            parentFragmentManager.commit {
+                replace(R.id.content, AboutFragment::class.java, null)
+                addToBackStack(getString(commonR.string.about_app))
+            }
             true
         }
 
