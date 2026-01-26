@@ -174,7 +174,7 @@ This document describes all modifications made to the original [Home Assistant C
 
 **Files Added:**
 - `branding-assets/logos/` - 20 Enkitek logo variants (SVG)
-- `branding-assets/fonts/Lato/` - Lato font family (pending integration)
+- `branding-assets/icons/` - App icons for all densities
 
 ---
 
@@ -197,7 +197,6 @@ The following remain unchanged to maintain compatibility with upstream:
 ### High Priority
 - [x] Update remaining "Home Assistant" references in help URLs
 - [x] Replace "homeassistant.io" documentation links with CoFarmer docs
-- [ ] Integrate Lato font family
 - [ ] Update README.md for CoFarmer
 
 ### Medium Priority
@@ -670,7 +669,6 @@ When user clicks "Connect" on a locally-discovered server:
 - [x] ~~Replace "homeassistant.io" documentation links with CoFarmer docs~~
 - [x] ~~Fix privacy URL hardcoded in SettingsFragment~~
 - [x] ~~Reorganize Settings menu for CoFarmer UX~~
-- [ ] Integrate Lato font family
 - [ ] Update README.md for CoFarmer
 
 ### Medium Priority
