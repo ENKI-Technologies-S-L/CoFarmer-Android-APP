@@ -222,6 +222,9 @@
     <string name="acknowledgments">Reconocimientos</string>
     <string name="acknowledgments_summary">Licencias de terceros</string>
     <string name="acknowledgments_detail">CoFarmer está construido sobre la Home Assistant Companion App, bajo licencia Apache License 2.0. Agradecemos a la comunidad de Home Assistant por sus contribuciones.</string>
+    <string name="disclosures">Divulgaciones</string>
+    <string name="disclosures_based_on">Basado en Home Assistant Companion App</string>
+    <string name="disclosures_license">Licenciado bajo Apache License 2.0</string>
     
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <!-- TROUBLESHOOTING                                                          -->
@@ -292,6 +295,16 @@
     <string name="domain_climate">Clima</string>
     <string name="domain_cover">Persiana</string>
     <string name="domain_fan">Ventilador</string>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- KIOSK MODE                                                               -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="launcher">Modo Kiosko</string>
+    <string name="launcher_option_title">Activar modo kiosko</string>
+    <string name="launcher_option_summary">Usar este dispositivo como pantalla dedicada de CoFarmer. Al activarlo, presionar el botón Inicio abrirá CoFarmer en lugar del launcher normal.</string>
+    <string name="default_launcher_prompt">Establecer como pantalla de inicio</string>
+    <string name="default_launcher_prompt_def">Configurar CoFarmer como pantalla de inicio del dispositivo. Actualmente: %s</string>
+    <string name="unknown_launcher_label">app desconocida</string>
     
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <!-- MISCELLANEOUS                                                            -->

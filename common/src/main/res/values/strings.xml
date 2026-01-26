@@ -52,6 +52,9 @@
     <string name="acknowledgments">Acknowledgments</string>
     <string name="acknowledgments_summary">Third-party licenses</string>
     <string name="acknowledgments_detail">CoFarmer is built upon the Home Assistant Companion App, licensed under Apache License 2.0. We thank the Home Assistant community for their contributions.</string>
+    <string name="disclosures">Disclosures</string>
+    <string name="disclosures_based_on">Based on Home Assistant Companion App</string>
+    <string name="disclosures_license">Licensed under Apache License 2.0</string>
     <string name="application_version">Application version</string>
     <string name="attempting_authentication">Authenticating…</string>
     <string name="attempting_connection">Connecting…</string>
@@ -1372,11 +1375,11 @@
     <string name="thermostat_tile">Thermostat tile</string>
     <string name="climate_heating">Heating</string>
     <string name="climate_cooling">Cooling</string>
-    <string name="launcher">Device home screen</string>
-    <string name="launcher_option_title">Allow as home app</string>
-    <string name="launcher_option_summary">Include CoFarmer in the list of available home apps/launchers that can replace your device\'s home screen</string>
-    <string name="default_launcher_prompt">Change home app</string>
-    <string name="default_launcher_prompt_def">Open settings to choose your default home app. Currently set to %s.</string>
+    <string name="launcher">Kiosk Mode</string>
+    <string name="launcher_option_title">Enable kiosk mode</string>
+    <string name="launcher_option_summary">Use this device as a dedicated CoFarmer display. When enabled, pressing the Home button will open CoFarmer instead of the normal launcher.</string>
+    <string name="default_launcher_prompt">Set as home screen</string>
+    <string name="default_launcher_prompt_def">Configure CoFarmer as this device\'s home screen. Currently set to: %s</string>
     <string name="unknown_launcher_label">unknown app</string>
     <string name="open_settings">Open settings</string>
     <string name="connection_security_level_title">Remote connection security level</string>
