@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- CoFarmer French Translations -->
+    
+    <!-- App name and branding -->
+    <string name="app_name">CoFarmer</string>
+    <string name="app_name_full">CoFarmer</string>
+    
+    <!-- Settings categories -->
+    <string name="servers_devices_category">Sites agricoles</string>
+    <string name="other_settings">Paramètres</string>
+    
+    <!-- Farm/Server related -->
+    <string name="server">Site</string>
+    <string name="server_settings">Paramètres du site</string>
+    <string name="server_add">Ajouter un site</string>
+    <string name="server_add_success">Site ajouté</string>
+    <string name="server_add_failed">Impossible d\'ajouter le site</string>
+    <string name="server_select">Sélectionner un site</string>
+    <string name="server_delete">Supprimer le site</string>
+    <string name="server_delete_confirm">Êtes-vous sûr de vouloir supprimer ce site de l\'application ?</string>
+    <string name="server_delete_working">Suppression du site…</string>
+    <string name="server_name">Nom du site</string>
+    
+    <!-- Common actions -->
+    <string name="ok">OK</string>
+    <string name="cancel">Annuler</string>
+    <string name="save">Enregistrer</string>
+    <string name="delete">Supprimer</string>
+    <string name="done">Terminé</string>
+    <string name="next">Suivant</string>
+    <string name="back">Retour</string>
+    <string name="retry">Réessayer</string>
+    <string name="close">Fermer</string>
+    <string name="confirm">Confirmer</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    
+    <!-- Onboarding -->
+    <string name="welcome_title">Bienvenue sur CoFarmer</string>
+    <string name="welcome_subtitle">Connectez votre exploitation agricole</string>
+    <string name="qr_scanner_button">Scanner le code QR</string>
+    <string name="manual_setup">Configuration manuelle</string>
+    <string name="searching_home_network">Recherche sur le réseau local</string>
+    
+    <!-- Settings options -->
+    <string name="fullscreen">Plein écran</string>
+    <string name="fullscreen_def">Masquer la barre d\'état du système</string>
+    <string name="keep_screen_on">Garder l\'écran allumé</string>
+    <string name="keep_screen_on_def">Empêcher l\'écran de s\'éteindre automatiquement</string>
+    <string name="screen_orientation_title_settings">Orientation de l\'écran</string>
+    <string name="pinch_to_zoom">Pincer pour zoomer</string>
+    <string name="pinch_to_zoom_def">Autoriser le zoom par geste de pincement</string>
+    <string name="lang_title_settings">Langue</string>
+    <string name="lang_summary_settings">Sélectionnez la langue de l\'application</string>
+    
+    <!-- Notifications -->
+    <string name="notifications">Notifications</string>
+    <string name="notification_channels">Canaux de notification</string>
+    <string name="notification_history">Historique des notifications</string>
+    
+    <!-- Connection -->
+    <string name="connection_failed">Échec de la connexion</string>
+    <string name="connecting">Connexion en cours…</string>
+    <string name="connected">Connecté</string>
+    <string name="disconnected">Déconnecté</string>
+    
+    <!-- Errors -->
+    <string name="error">Erreur</string>
+    <string name="error_generic">Une erreur s\'est produite</string>
+    <string name="no_internet">Pas de connexion Internet</string>
+    
+    <!-- Version info -->
+    <string name="version_info">Informations de version</string>
+    <string name="privacy_policy">Politique de confidentialité</string>
+    <string name="terms_of_service">Conditions d\'utilisation</string>
+    
+    <!-- Troubleshooting -->
+    <string name="troubleshooting">Dépannage</string>
+    <string name="crash_reporting">Rapports d\'erreurs</string>
+    
+    <!-- Network Discovery Warning -->
+    <string name="local_network_warning_title">Accès local uniquement</string>
+    <string name="local_network_warning_message">Les serveurs trouvés ici ne fonctionneront que sur le même réseau (à l\'intérieur de votre exploitation).\n\nPour un accès à distance depuis n\'importe où, scannez le code QR du Guide de Démarrage Rapide CoFarmer ou de l\'emballage du produit.</string>
+    <string name="local_network_access_warning">Local uniquement — même réseau Wi-Fi requis</string>
+    
+</resources>

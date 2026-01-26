@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- CoFarmer Korean Translations -->
+    
+    <!-- App name and branding -->
+    <string name="app_name">CoFarmer</string>
+    <string name="app_name_full">CoFarmer</string>
+    
+    <!-- Settings categories -->
+    <string name="servers_devices_category">시설</string>
+    <string name="display_settings">디스플레이</string>
+    <string name="advanced_settings">고급</string>
+    <string name="other_settings">설정</string>
+    
+    <!-- Farm/Server related -->
+    <string name="server">시설</string>
+    <string name="server_settings">시설 설정</string>
+    <string name="server_add">시설 추가</string>
+    <string name="server_select">시설 선택</string>
+    <string name="server_delete">시설 삭제</string>
+    <string name="server_name">시설 이름</string>
+    
+    <!-- Common actions -->
+    <string name="ok">확인</string>
+    <string name="cancel">취소</string>
+    <string name="save">저장</string>
+    <string name="delete">삭제</string>
+    <string name="done">완료</string>
+    <string name="next">다음</string>
+    <string name="back">뒤로</string>
+    <string name="retry">다시 시도</string>
+    <string name="close">닫기</string>
+    <string name="confirm">확인</string>
+    <string name="yes">예</string>
+    <string name="no">아니오</string>
+    
+    <!-- Welcome & Onboarding -->
+    <string name="welcome_home_assistant_title">CoFarmer</string>
+    <string name="welcome_details">어디서나 농장을 모니터링하고 관리하세요.\n\n센서 추적, 기후 제어 자동화, 실시간 알림 수신 — 완벽한 프라이버시 보장.</string>
+    <string name="welcome_connect_to_ha">내 농장에 연결</string>
+    <string name="welcome_scan_qr">QR 코드 스캔</string>
+    <string name="manual_setup">주소 직접 입력</string>
+    
+    <!-- QR Scanner -->
+    <string name="qr_scanner_button">QR 코드 스캔</string>
+    <string name="qr_scanner_title">Hub QR 코드 스캔</string>
+    <string name="qr_scanner_subtitle">CoFarmer Hub의 QR 코드에 카메라를 향하세요</string>
+    <string name="qr_scanner_permission_title">카메라 접근 필요</string>
+    <string name="qr_scanner_permission_button">카메라 접근 허용</string>
+    
+    <!-- Connection -->
+    <string name="connecting">연결 중…</string>
+    <string name="connected">연결됨</string>
+    <string name="disconnected">연결 끊김</string>
+    
+    <!-- Display -->
+    <string name="fullscreen">전체 화면</string>
+    <string name="keep_screen_on">화면 켜짐 유지</string>
+    <string name="themes_title_settings">테마</string>
+    <string name="lang_title_settings">언어</string>
+    
+    <!-- About -->
+    <string name="about_app">정보</string>
+    <string name="privacy_policy">개인정보 처리방침</string>
+    
+</resources>

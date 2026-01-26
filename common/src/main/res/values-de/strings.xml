@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- CoFarmer German Translations -->
+    
+    <!-- Main Navigation -->
+    <string name="servers_and_devices">Betriebsstandorte</string>
+    <string name="other_settings">App-Einstellungen</string>
+    
+    <!-- Farm Sites (was Servers) -->
+    <string name="server_add">Standort hinzufügen</string>
+    <string name="server_select">Standort auswählen</string>
+    <string name="server_delete">Standort entfernen</string>
+    <string name="server_name">Standortname</string>
+    <string name="server_add_new">Neuen Standort hinzufügen</string>
+    <string name="add_server">Standort hinzufügen</string>
+    <string name="server_add_another">Weiteren Standort hinzufügen</string>
+    <string name="no_servers_configured">Keine Standorte konfiguriert</string>
+    
+    <!-- Common Actions -->
+    <string name="ok">OK</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="save">Speichern</string>
+    <string name="delete">Löschen</string>
+    <string name="edit">Bearbeiten</string>
+    <string name="close">Schließen</string>
+    <string name="done">Fertig</string>
+    <string name="next">Weiter</string>
+    <string name="back">Zurück</string>
+    <string name="retry">Wiederholen</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
+    <string name="confirm">Bestätigen</string>
+    <string name="loading">Laden…</string>
+    <string name="error">Fehler</string>
+    <string name="success">Erfolg</string>
+    <string name="warning">Warnung</string>
+    <string name="info">Info</string>
+    
+    <!-- Onboarding -->
+    <string name="welcome_title">Willkommen bei CoFarmer</string>
+    <string name="welcome_description">Ihre Smart-Farming-Lösung</string>
+    <string name="getting_started">Erste Schritte</string>
+    <string name="scan_qr_code">QR-Code scannen</string>
+    <string name="manual_setup">Manuelle Einrichtung</string>
+    <string name="enter_url">URL eingeben</string>
+    <string name="connecting">Verbinden…</string>
+    <string name="connection_successful">Verbindung erfolgreich</string>
+    <string name="connection_failed">Verbindung fehlgeschlagen</string>
+    
+    <!-- Settings -->
+    <string name="settings">Einstellungen</string>
+    <string name="general">Allgemein</string>
+    <string name="notifications">Benachrichtigungen</string>
+    <string name="appearance">Darstellung</string>
+    <string name="theme">Design</string>
+    <string name="language">Sprache</string>
+    <string name="privacy">Datenschutz</string>
+    <string name="about">Über</string>
+    <string name="version">Version</string>
+    <string name="help">Hilfe</string>
+    <string name="feedback">Feedback</string>
+    <string name="rate_app">App bewerten</string>
+    <string name="share_app">App teilen</string>
+    <string name="privacy_policy">Datenschutzerklärung</string>
+    <string name="terms_of_service">Nutzungsbedingungen</string>
+    
+    <!-- Notifications -->
+    <string name="notifications_enabled">Benachrichtigungen aktiviert</string>
+    <string name="notifications_disabled">Benachrichtigungen deaktiviert</string>
+    <string name="notification_settings">Benachrichtigungseinstellungen</string>
+    
+    <!-- Errors -->
+    <string name="error_network">Netzwerkfehler</string>
+    <string name="error_timeout">Zeitüberschreitung</string>
+    <string name="error_unknown">Unbekannter Fehler</string>
+    <string name="error_invalid_url">Ungültige URL</string>
+    <string name="error_server_unavailable">Server nicht verfügbar</string>
+    <string name="try_again">Erneut versuchen</string>
+    
+    <!-- QR Scanner -->
+    <string name="qr_scanner">QR-Scanner</string>
+    <string name="point_camera_at_qr">Kamera auf QR-Code richten</string>
+    <string name="scanning">Scannen…</string>
+    <string name="qr_code_detected">QR-Code erkannt</string>
+    <string name="invalid_qr_code">Ungültiger QR-Code</string>
+    
+    <!-- Permissions -->
+    <string name="permission_camera">Kamera-Berechtigung</string>
+    <string name="permission_camera_required">Kamera-Berechtigung erforderlich</string>
+    <string name="permission_location">Standort-Berechtigung</string>
+    <string name="permission_notification">Benachrichtigungs-Berechtigung</string>
+    <string name="grant_permission">Berechtigung erteilen</string>
+    
+    <!-- Network Discovery Warning -->
+    <string name="local_network_warning_title">Nur lokaler Zugang</string>
+    <string name="local_network_warning_message">Die hier gefundenen Server funktionieren nur im selben Netzwerk (innerhalb Ihres Betriebs).\n\nFür den Fernzugriff von überall scannen Sie den QR-Code aus der CoFarmer Schnellstartanleitung oder der Produktverpackung.</string>
+    <string name="local_network_access_warning">Nur lokal — gleiches Wi-Fi-Netzwerk erforderlich</string>
+    
+</resources>

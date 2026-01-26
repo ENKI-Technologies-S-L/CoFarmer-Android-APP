@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- CoFarmer Arabic Translations -->
+    <!-- RTL language -->
+    
+    <!-- App name and branding -->
+    <string name="app_name">CoFarmer</string>
+    <string name="app_name_full">CoFarmer</string>
+    
+    <!-- Settings categories -->
+    <string name="servers_devices_category">المنشآت</string>
+    <string name="display_settings">العرض</string>
+    <string name="advanced_settings">متقدم</string>
+    <string name="other_settings">الإعدادات</string>
+    
+    <!-- Farm/Server related -->
+    <string name="server">المنشأة</string>
+    <string name="server_settings">إعدادات المنشأة</string>
+    <string name="server_add">إضافة منشأة</string>
+    <string name="server_select">اختيار منشأة</string>
+    <string name="server_delete">حذف منشأة</string>
+    <string name="server_name">اسم المنشأة</string>
+    
+    <!-- Common actions -->
+    <string name="ok">موافق</string>
+    <string name="cancel">إلغاء</string>
+    <string name="save">حفظ</string>
+    <string name="delete">حذف</string>
+    <string name="done">تم</string>
+    <string name="next">التالي</string>
+    <string name="back">رجوع</string>
+    <string name="retry">إعادة المحاولة</string>
+    <string name="close">إغلاق</string>
+    <string name="confirm">تأكيد</string>
+    <string name="yes">نعم</string>
+    <string name="no">لا</string>
+    
+    <!-- Welcome & Onboarding -->
+    <string name="welcome_home_assistant_title">CoFarmer</string>
+    <string name="welcome_details">راقب وأدر مزرعتك من أي مكان.\n\nتتبع أجهزة الاستشعار، وأتمتة التحكم في المناخ، واستقبل التنبيهات في الوقت الفعلي.</string>
+    <string name="welcome_connect_to_ha">الاتصال بمزرعتي</string>
+    <string name="welcome_scan_qr">مسح رمز QR</string>
+    <string name="manual_setup">إدخال العنوان يدوياً</string>
+    
+    <!-- QR Scanner -->
+    <string name="qr_scanner_button">مسح رمز QR</string>
+    <string name="qr_scanner_title">مسح رمز QR للمحور</string>
+    <string name="qr_scanner_subtitle">وجه الكاميرا نحو رمز QR على محور CoFarmer الخاص بك</string>
+    <string name="qr_scanner_permission_title">يلزم الوصول إلى الكاميرا</string>
+    <string name="qr_scanner_permission_button">السماح بالوصول إلى الكاميرا</string>
+    
+    <!-- Connection -->
+    <string name="connecting">جاري الاتصال…</string>
+    <string name="connected">متصل</string>
+    <string name="disconnected">غير متصل</string>
+    
+    <!-- Display -->
+    <string name="fullscreen">ملء الشاشة</string>
+    <string name="keep_screen_on">إبقاء الشاشة مضاءة</string>
+    <string name="themes_title_settings">المظهر</string>
+    <string name="lang_title_settings">اللغة</string>
+    
+    <!-- About -->
+    <string name="about_app">حول</string>
+    <string name="privacy_policy">سياسة الخصوصية</string>
+    
+</resources>

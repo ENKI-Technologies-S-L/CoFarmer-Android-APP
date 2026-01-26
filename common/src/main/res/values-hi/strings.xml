@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- CoFarmer Hindi Translations -->
+    
+    <!-- App name and branding -->
+    <string name="app_name">CoFarmer</string>
+    <string name="app_name_full">CoFarmer</string>
+    
+    <!-- Settings categories -->
+    <string name="servers_devices_category">प्रतिष्ठान</string>
+    <string name="display_settings">प्रदर्शन</string>
+    <string name="advanced_settings">उन्नत</string>
+    <string name="other_settings">सेटिंग्स</string>
+    
+    <!-- Farm/Server related -->
+    <string name="server">प्रतिष्ठान</string>
+    <string name="server_settings">प्रतिष्ठान सेटिंग्स</string>
+    <string name="server_add">प्रतिष्ठान जोड़ें</string>
+    <string name="server_select">प्रतिष्ठान चुनें</string>
+    <string name="server_delete">प्रतिष्ठान हटाएं</string>
+    <string name="server_name">प्रतिष्ठान का नाम</string>
+    
+    <!-- Common actions -->
+    <string name="ok">ठीक है</string>
+    <string name="cancel">रद्द करें</string>
+    <string name="save">सहेजें</string>
+    <string name="delete">हटाएं</string>
+    <string name="done">पूर्ण</string>
+    <string name="next">आगे</string>
+    <string name="back">पीछे</string>
+    <string name="retry">पुनः प्रयास</string>
+    <string name="close">बंद करें</string>
+    <string name="confirm">पुष्टि करें</string>
+    <string name="yes">हाँ</string>
+    <string name="no">नहीं</string>
+    
+    <!-- Welcome & Onboarding -->
+    <string name="welcome_home_assistant_title">CoFarmer</string>
+    <string name="welcome_details">कहीं से भी अपने खेत की निगरानी और प्रबंधन करें।\n\nसेंसर ट्रैक करें, जलवायु नियंत्रण स्वचालित करें, और वास्तविक समय में अलर्ट प्राप्त करें।</string>
+    <string name="welcome_connect_to_ha">मेरे खेत से जुड़ें</string>
+    <string name="welcome_scan_qr">QR कोड स्कैन करें</string>
+    <string name="manual_setup">पता मैन्युअल रूप से दर्ज करें</string>
+    
+    <!-- QR Scanner -->
+    <string name="qr_scanner_button">QR कोड स्कैन करें</string>
+    <string name="qr_scanner_title">Hub QR कोड स्कैन करें</string>
+    <string name="qr_scanner_subtitle">कैमरा अपने CoFarmer Hub पर QR कोड की ओर करें</string>
+    <string name="qr_scanner_permission_title">कैमरा एक्सेस आवश्यक</string>
+    <string name="qr_scanner_permission_button">कैमरा एक्सेस की अनुमति दें</string>
+    
+    <!-- Connection -->
+    <string name="connecting">कनेक्ट हो रहा है…</string>
+    <string name="connected">कनेक्टेड</string>
+    <string name="disconnected">डिस्कनेक्टेड</string>
+    
+    <!-- Display -->
+    <string name="fullscreen">फुल स्क्रीन</string>
+    <string name="keep_screen_on">स्क्रीन चालू रखें</string>
+    <string name="themes_title_settings">थीम</string>
+    <string name="lang_title_settings">भाषा</string>
+    
+    <!-- About -->
+    <string name="about_app">के बारे में</string>
+    <string name="privacy_policy">गोपनीयता नीति</string>
+    
+</resources>

@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- CoFarmer Spanish Translations -->
+    <!-- Last updated: Day 7 - January 2026 -->
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- APP NAME & BRANDING                                                      -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="app_name">CoFarmer</string>
+    <string name="app_name_full">CoFarmer</string>
+    <string name="home_assistant_branding_icon_content_description">Icono de CoFarmer</string>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- SETTINGS CATEGORIES (Day 6)                                              -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="servers_devices_category">Instalaciones</string>
+    <string name="display_settings">Pantalla</string>
+    <string name="advanced_display_settings">Pantalla avanzada</string>
+    <string name="advanced_settings">Avanzado</string>
+    <string name="developer_options">Opciones de desarrollador</string>
+    <string name="danger_zone">Zona de peligro</string>
+    <string name="other_settings">Configuración</string>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- FARM/SERVER RELATED                                                      -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="server">Instalación</string>
+    <string name="server_settings">Configuración de instalación</string>
+    <string name="server_add">Añadir instalación</string>
+    <string name="server_add_success">Instalación añadida</string>
+    <string name="server_add_failed">No se pudo añadir la instalación</string>
+    <string name="server_select">Seleccionar instalación</string>
+    <string name="server_delete">Eliminar instalación</string>
+    <string name="server_delete_confirm">¿Estás seguro de que quieres eliminar esta instalación de la aplicación?</string>
+    <string name="server_delete_working">Eliminando instalación…</string>
+    <string name="server_name">Nombre de instalación</string>
+    <string name="aa_change_server">Cambiar hub</string>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- COMMON ACTIONS                                                           -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="ok">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="save">Guardar</string>
+    <string name="delete">Eliminar</string>
+    <string name="done">Hecho</string>
+    <string name="next">Siguiente</string>
+    <string name="back">Atrás</string>
+    <string name="retry">Reintentar</string>
+    <string name="close">Cerrar</string>
+    <string name="confirm">Confirmar</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+    <string name="allow">Permitir</string>
+    <string name="disable">Desactivar</string>
+    <string name="disabled">Desactivado</string>
+    <string name="activate">Activar</string>
+    <string name="details">Detalles</string>
+    <string name="documentation">Documentación</string>
+    <string name="loading_content_description">Cargando</string>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- WELCOME & ONBOARDING                                                     -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="welcome_title">Bienvenido a CoFarmer</string>
+    <string name="welcome_subtitle">Conecta tu instalación agrícola</string>
+    <string name="welcome_home_assistant_title">CoFarmer</string>
+    <string name="welcome_hass">¡Bienvenido a CoFarmer Companion!</string>
+    <string name="welcome_details">Monitoriza y gestiona tu granja desde cualquier lugar.\n\nRastreo de sensores, automatización del control climático y alertas en tiempo real — todo con privacidad completa y arquitectura local.</string>
+    <string name="welcome_connect_to_ha">Conectar a mi granja</string>
+    <string name="welcome_learn_more">Saber más</string>
+    <string name="welcome_scan_qr">Escanear código QR</string>
+    <string name="welcome_scan_qr_description">La forma más rápida de conectar. Encuentra tu código QR en los ajustes de tu Hub CoFarmer.</string>
+    <string name="welcome_other_options">Otros métodos de conexión</string>
+    <string name="welcome_option_autodiscover">Buscar en red local</string>
+    <string name="welcome_option_autodiscover_description">Descubrir hubs automáticamente en tu Wi-Fi</string>
+    <string name="welcome_option_manual">Introducir dirección manualmente</string>
+    <string name="welcome_option_manual_description">Escribe la URL de tu hub directamente</string>
+    <string name="manual_setup">Introducir dirección manualmente</string>
+    <string name="manual_title">¿Cuál es la dirección de tu CoFarmer?</string>
+    <string name="manual_server_title">¿Cuál es la dirección de tu CoFarmer?</string>
+    <string name="manual_server_connect">Conectar</string>
+    <string name="manual_server_wrong_url">Dirección de CoFarmer no válida</string>
+    <string name="searching_home_network">Buscando en\nla red local</string>
+    
+    <!-- Hub Setup Screen -->
+    <string name="hub_setup_title">Bienvenido a CoFarmer</string>
+    <string name="hub_setup_question">¿Tienes un Hub CoFarmer?</string>
+    <string name="hub_setup_yes_have_hub">Sí, tengo un Hub CoFarmer</string>
+    <string name="hub_setup_no_hub">No tengo un Hub CoFarmer</string>
+    <string name="hub_setup_instructions_title">Vamos a configurar tu Hub</string>
+    <string name="hub_setup_step_1">Conecta el cable de alimentación a tu Hub CoFarmer</string>
+    <string name="hub_setup_step_2">Conecta un cable Ethernet a tu router</string>
+    <string name="hub_setup_step_3">Espera a que el LED del botón de encendido se encienda</string>
+    <string name="hub_setup_step_4">Espera aproximadamente 2 minutos para que el sistema arranque</string>
+    <string name="hub_setup_ready">Mi Hub está listo</string>
+    <string name="hub_setup_no_hub_title">Consigue un Hub CoFarmer</string>
+    <string name="hub_setup_no_hub_description">El Hub CoFarmer es el cerebro de tu granja inteligente. Visita nuestro sitio web para más información y comprar tu Hub.</string>
+    <string name="hub_setup_visit_website">Visitar sitio web de Enkitek</string>
+    
+    <!-- Hub Settings -->
+    <string name="hub_identity">Identidad del Hub</string>
+    <string name="hub_name">Nombre del hub</string>
+    <string name="hub_delete">Eliminar este hub</string>
+    <string name="hub_delete_summary">Desconectar este hub de tu aplicación</string>
+    <string name="connection_settings">Conexión</string>
+    <string name="remote_access_url">URL de acceso remoto</string>
+    <string name="local_network_wifi">Redes Wi-Fi locales</string>
+    <string name="local_hub_url">URL local del hub</string>
+    
+    <!-- Device Naming -->
+    <string name="name_your_device_title">¿Cómo te gustaría nombrar este dispositivo?</string>
+    <string name="name_your_device_content">Esto se usa para identificar tu dispositivo.</string>
+    <string name="name_your_device_save">Guardar</string>
+    
+    <!-- Connection Screen -->
+    <string name="connection_screen_malformed_url">Verifica que la dirección de tu CoFarmer sea correcta</string>
+    <string name="clear_text">Borrar texto</string>
+    
+    <!-- Local First Setup -->
+    <string name="local_first_title">Local por defecto.\nRemoto cuando estés listo.</string>
+    <string name="local_first_content">Tu CoFarmer solo es accesible en tu red local. Para controlar tu granja inteligente desde cualquier lugar, puedes configurar el acceso remoto más tarde en los ajustes.\n\nPor ahora, estás conectado de forma segura a tu red local.</string>
+    <string name="local_first_next">Entendido</string>
+    
+    <!-- Location Sharing -->
+    <string name="location_sharing_title">Habilitar automatización basada en ubicación</string>
+    <string name="location_sharing_content">Tu ubicación ayuda a CoFarmer a automatizar operaciones según tu proximidad a la granja. Por ejemplo, activar sistemas de riego cuando llegas, o recibir alertas cuando estás fuera y los sensores detectan anomalías.\n\nEstos datos permanecen en tu sistema local y nunca se comparten con terceros. También refuerza la seguridad de tu conexión con CoFarmer.</string>
+    <string name="location_sharing_share">Compartir mi ubicación</string>
+    <string name="location_sharing_no_share">No compartir mi ubicación</string>
+    
+    <!-- Language Selection -->
+    <string name="lang_option_label_default">Idioma del dispositivo</string>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- QR SCANNER (Day 5)                                                       -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="qr_scanner_button">Escanear código QR</string>
+    <string name="qr_scanner_title">Escanear código QR del Hub</string>
+    <string name="qr_scanner_subtitle">Apunta la cámara al código QR de tu hub CoFarmer o de la documentación de configuración</string>
+    <string name="qr_scanner_help">Encuentra el código QR en los ajustes de tu Hub CoFarmer</string>
+    <string name="qr_scanner_error_invalid_url">Esto no parece un código de hub CoFarmer. Prueba con otro código o introduce la dirección manualmente.</string>
+    <string name="qr_scanner_error_connection_failed">Dirección encontrada, pero no se puede conectar. Asegúrate de estar en la misma red que tu hub.</string>
+    <string name="qr_scanner_permission_title">Acceso a la cámara necesario</string>
+    <string name="qr_scanner_permission_content">Para escanear el código QR del hub, CoFarmer necesita acceso a la cámara. La cámara solo se usa para escanear, nada se graba ni almacena.</string>
+    <string name="qr_scanner_permission_button">Permitir acceso a la cámara</string>
+    <string name="qr_scanner_permission_denied_title">Permiso de cámara requerido</string>
+    <string name="qr_scanner_permission_denied_content">El acceso a la cámara fue denegado. Por favor, habilítalo en Ajustes para escanear códigos QR, o introduce la dirección manualmente.</string>
+    <string name="qr_scanner_open_settings">Abrir Ajustes</string>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- LOCAL NETWORK WARNING (Day 5)                                            -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="local_network_warning_title">Solo acceso local</string>
+    <string name="local_network_warning_message">Los hubs encontrados aquí solo funcionarán cuando estés conectado a la misma red (dentro de tu granja).\n\nPara acceso remoto desde cualquier lugar, escanea el código QR de tu Guía de Inicio Rápido de CoFarmer o de la caja del producto.</string>
+    <string name="local_network_access_warning">Solo local — requiere misma red Wi-Fi</string>
+    <string name="local_connection_confirm_title">Solo conexión local</string>
+    <string name="local_connection_confirm_message">Al conectarte de esta manera, solo podrás acceder a tu Hub CoFarmer cuando estés conectado a la misma red Wi-Fi.\n\nPara acceso remoto desde cualquier lugar, recomendamos escanear el código QR de tu Guía de Inicio Rápido.</string>
+    <string name="local_connection_confirm_understand">Entiendo, conectar de todas formas</string>
+    <string name="local_connection_confirm_use_qr">Usar código QR en su lugar</string>
+    <string name="server_discovery_no_server_info">Comprueba que tu Hub CoFarmer esté encendido y estés conectado a la misma red. Puedes introducir la dirección manualmente si la conoces.</string>
+    <string name="server_discovery_connect">Conectar</string>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- DISPLAY SETTINGS                                                         -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="fullscreen">Pantalla completa</string>
+    <string name="fullscreen_def">Ocultar la barra de estado del sistema</string>
+    <string name="keep_screen_on">Mantener pantalla encendida</string>
+    <string name="keep_screen_on_def">Evitar que la pantalla se apague automáticamente</string>
+    <string name="screen_orientation_title_settings">Orientación de pantalla</string>
+    <string name="pinch_to_zoom">Pellizcar para zoom</string>
+    <string name="pinch_to_zoom_def">Permitir zoom mediante gestos de pellizco</string>
+    <string name="themes_title_settings">Tema</string>
+    <string name="lang_title_settings">Idioma</string>
+    <string name="lang_summary_settings">Selecciona el idioma de la aplicación</string>
+    <string name="gestures">Gestos</string>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- NOTIFICATIONS                                                            -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="notifications">Notificaciones</string>
+    <string name="notification_channels">Canales de notificación</string>
+    <string name="notification_history">Historial de notificaciones</string>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- CONNECTION                                                               -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="connection_failed">Conexión fallida</string>
+    <string name="connecting">Conectando…</string>
+    <string name="connected">Conectado</string>
+    <string name="disconnected">Desconectado</string>
+    <string name="attempting_authentication">Autenticando…</string>
+    <string name="attempting_connection">Conectando…</string>
+    <string name="attempting_registration">Registrando aplicación…</string>
+    <string name="connection_security_most_secure">Más seguro: Deja que CoFarmer detecte cuando estás en tu instalación agrícola</string>
+    <string name="connection_security_less_secure">Menos seguro: No compartir tu ubicación con CoFarmer</string>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- ERRORS                                                                   -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="error">Error</string>
+    <string name="error_generic">Algo salió mal</string>
+    <string name="no_internet">Sin conexión a Internet</string>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- VERSION & ABOUT                                                          -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="version_info">Información de versión</string>
+    <string name="app_version_info">Información de versión de la app</string>
+    <string name="application_version">Versión de la aplicación</string>
+    <string name="about_app">Acerca de</string>
+    <string name="privacy_policy">Política de privacidad</string>
+    <string name="terms_of_service">Términos de servicio</string>
+    <string name="acknowledgments">Reconocimientos</string>
+    <string name="acknowledgments_summary">Licencias de terceros</string>
+    <string name="acknowledgments_detail">CoFarmer está construido sobre la Home Assistant Companion App, bajo licencia Apache License 2.0. Agradecemos a la comunidad de Home Assistant por sus contribuciones.</string>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- TROUBLESHOOTING                                                          -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="troubleshooting">Solución de problemas</string>
+    <string name="crash_reporting">Informes de errores</string>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- MATTER                                                                   -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="matter_commissioning_unavailable">Matter no está disponible actualmente</string>
+    <string name="matter_shared_title">Añadir dispositivo Matter</string>
+    <string name="matter_shared_status_not_registered">Por favor, conecta a tu Hub CoFarmer antes de añadir un dispositivo Matter.</string>
+    <string name="matter_shared_status_select_server">¿Qué hub te gustaría usar?</string>
+    <string name="matter_shared_status_not_supported">Para añadir un dispositivo Matter, por favor actualiza tu Hub CoFarmer y añade Matter primero.</string>
+    <string name="matter_shared_status_confirmation_named">¿Quieres añadir %1$s a CoFarmer?</string>
+    <string name="matter_shared_status_confirmation">¿Quieres añadir este dispositivo Matter a CoFarmer?</string>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- WIDGETS                                                                  -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="manage_widgets">Gestionar widgets</string>
+    <string name="manage_widgets_summary">Edita tus widgets. Añadir/eliminar solo puede hacerse desde la pantalla de inicio.</string>
+    <string name="add_widget">Añadir widget</string>
+    <string name="add_to_entity_widget">Añadir estado de entidad a la pantalla de inicio</string>
+    <string name="add_to_camera_widget">Añadir cámara/imagen a la pantalla de inicio</string>
+    <string name="add_to_media_player_widget">Añadir reproductor multimedia a la pantalla de inicio</string>
+    <string name="add_to_todo_widget">Añadir lista a la pantalla de inicio</string>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- ANDROID AUTO                                                             -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="aa_launch_native">Modo nativo</string>
+    <string name="aa_driving_optimized_change">¿Usar CoFarmer en modo conducción?</string>
+    <string name="aa_navigation">Navegación</string>
+    <string name="aa_no_entities_with_locations">No se encontraron entidades con ubicaciones</string>
+    <string name="add_to_android_auto_favorite">Añadir a favoritos de Android Auto</string>
+    <string name="add_to_android_auto_driving_favorite">Añadir a favoritos de conducción</string>
+    <string name="add_to_android_auto_success">Favorito añadido</string>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- DEVICE & SENSORS                                                         -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="device_name">Nombre del dispositivo</string>
+    <string name="device_registration">Registro del dispositivo</string>
+    <string name="device_tracker">Rastreador de dispositivo</string>
+    <string name="sensors">Sensores</string>
+    <string name="sensor_title">Sensores del dispositivo</string>
+    <string name="sensor_summary">Gestionar sensores del teléfono</string>
+    <string name="sensor_update_frequency">Frecuencia de actualización de sensores</string>
+    <string name="sensor_update_frequency_summary">Controla con qué frecuencia se actualizan los sensores</string>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- SHORTCUTS & TILES                                                        -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="add_shortcut">Añadir acceso directo</string>
+    <string name="add_to_shortcut">Añadir acceso directo fijado</string>
+    <string name="add_to_shortcut_limit">Ya hay 5 accesos directos establecidos</string>
+    <string name="add_to_tile">Añadir mosaico de ajustes rápidos</string>
+    <string name="add_favorite">Añadir favorito</string>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- DOMAINS                                                                  -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="domain_automation">Automatización</string>
+    <string name="domain_button">Botón</string>
+    <string name="domain_camera">Cámara</string>
+    <string name="domain_climate">Clima</string>
+    <string name="domain_cover">Persiana</string>
+    <string name="domain_fan">Ventilador</string>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- MISCELLANEOUS                                                            -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="all_entities">Todas las entidades</string>
+    <string name="all_results">Todos los resultados</string>
+    <string name="always_show_first_view_on_app_start">Mostrar siempre primera vista al abrir la app</string>
+    <string name="always_show_first_view_on_app_start_summary">La primera vista del panel predeterminado se muestra al abrir la app</string>
+    <string name="attributes">Atributos</string>
+    <string name="accuracy">Precisión</string>
+    <string name="action_reply">Responder</string>
+    <string name="activity_intent_error">No se pudo enviar el intent de actividad, por favor verifica el formato del comando</string>
+    <string name="add_device">Añadir dispositivo</string>
+    <string name="add_action_data_field">Añadir campo</string>
+    <string name="add_ssid">Añadir</string>
+    <string name="add_ssid_name_suggestion">Añadir %1$s</string>
+    <string name="advanced">Avanzado</string>
+    <string name="account">Cuenta</string>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- WEAR OS                                                                  -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="add_to_watch_favorite">Añadir a favoritos de %s</string>
+    <string name="add_to_watch_favorite_disconnected">Reloj desconectado</string>
+    <string name="wear_os_settings_title">Ajustes de Wear OS</string>
+    <string name="wear_os_settings_summary">Configurar la app para tu reloj inteligente</string>
+    
+</resources>
