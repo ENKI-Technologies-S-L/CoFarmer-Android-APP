@@ -1,7 +1,6 @@
 package io.homeassistant.companion.android.sensors
 
 import android.annotation.SuppressLint
-import android.app.NotificationManager
 import android.app.PendingIntent
 import android.bluetooth.BluetoothAdapter
 import android.content.Context
@@ -16,7 +15,6 @@ import io.homeassistant.companion.android.common.sensors.AndroidOsSensorManager
 import io.homeassistant.companion.android.common.sensors.AudioSensorManager
 import io.homeassistant.companion.android.common.sensors.BatterySensorManager
 import io.homeassistant.companion.android.common.sensors.BluetoothSensorManager
-import io.homeassistant.companion.android.common.sensors.DNDSensorManager
 import io.homeassistant.companion.android.common.sensors.DisplaySensorManager
 import io.homeassistant.companion.android.common.sensors.KeyguardSensorManager
 import io.homeassistant.companion.android.common.sensors.LastRebootSensorManager
@@ -24,15 +22,12 @@ import io.homeassistant.companion.android.common.sensors.LastUpdateManager
 import io.homeassistant.companion.android.common.sensors.LightSensorManager
 import io.homeassistant.companion.android.common.sensors.MobileDataManager
 import io.homeassistant.companion.android.common.sensors.NetworkSensorManager
-import io.homeassistant.companion.android.common.sensors.NextAlarmManager
 import io.homeassistant.companion.android.common.sensors.NfcSensorManager
 import io.homeassistant.companion.android.common.sensors.PhoneStateSensorManager
 import io.homeassistant.companion.android.common.sensors.PowerSensorManager
 import io.homeassistant.companion.android.common.sensors.PressureSensorManager
-import io.homeassistant.companion.android.common.sensors.ProximitySensorManager
 import io.homeassistant.companion.android.common.sensors.SensorManager
 import io.homeassistant.companion.android.common.sensors.SensorReceiverBase
-import io.homeassistant.companion.android.common.sensors.StepsSensorManager
 import io.homeassistant.companion.android.common.sensors.StorageSensorManager
 import io.homeassistant.companion.android.common.sensors.TimeZoneManager
 import io.homeassistant.companion.android.common.sensors.TrafficStatsManager
@@ -48,23 +43,29 @@ class SensorReceiver : SensorReceiverBase() {
         get() = MANAGERS
 
     companion object {
+        // CoFarmer: Removed sensors not relevant for agriculture:
+        // - ActivitySensorManager (activity detection)
+        // - HealthConnectSensorManager (health data integration)
+        // - StepsSensorManager (pedometer)
+        // - QuestSensorManager (Meta Quest VR headset)
+        // - DynamicColorSensorManager (theme accent color)
+        // - LastAppSensorManager (last used app)
+        // - NotificationSensorManager (notification count)
+        // - DNDSensorManager (do not disturb mode)
+        // - ProximitySensorManager (proximity sensor)
+        // - NextAlarmManager (next alarm time)
+        // - AndroidAutoSensorManager (Android Auto state)
+        // - CarSensorManager (car connection)
         val MANAGERS = listOf(
-            ActivitySensorManager(),
-            AndroidAutoSensorManager(),
             AndroidOsSensorManager(),
             AppSensorManager(),
             AudioSensorManager(),
             BatterySensorManager(),
             BluetoothSensorManager(),
-            CarSensorManager(),
             DisplaySensorManager(),
-            DNDSensorManager(),
-            DynamicColorSensorManager(),
             DevicePolicyManager(),
             GeocodeSensorManager(),
-            HealthConnectSensorManager(),
             KeyguardSensorManager(),
-            LastAppSensorManager(),
             LastRebootSensorManager(),
             LastUpdateManager(),
             LightSensorManager(),
@@ -72,14 +73,9 @@ class SensorReceiver : SensorReceiverBase() {
             MobileDataManager(),
             NetworkSensorManager(),
             NfcSensorManager(),
-            NextAlarmManager(),
-            NotificationSensorManager(),
             PhoneStateSensorManager(),
             PowerSensorManager(),
             PressureSensorManager(),
-            ProximitySensorManager(),
-            QuestSensorManager(),
-            StepsSensorManager(),
             StorageSensorManager(),
             TimeZoneManager(),
             TrafficStatsManager(),
@@ -98,17 +94,15 @@ class SensorReceiver : SensorReceiverBase() {
     // Suppress Lint because we only register for the receiver if the android version matches the intent
     @SuppressLint("InlinedApi")
     override val skippableActions = mapOf(
-        "android.app.action.NEXT_ALARM_CLOCK_CHANGED" to listOf(NextAlarmManager.nextAlarm.id),
+        // CoFarmer: Removed skippable actions for sensors not used in agriculture
         "android.bluetooth.device.action.ACL_CONNECTED" to listOf(BluetoothSensorManager.bluetoothConnection.id),
         "android.bluetooth.device.action.ACL_DISCONNECTED" to listOf(BluetoothSensorManager.bluetoothConnection.id),
-        "com.oculus.intent.action.MOUNT_STATE_CHANGED" to listOf(QuestSensorManager.headsetMounted.id),
         "android.net.wifi.WIFI_AP_STATE_CHANGED" to listOf(NetworkSensorManager.hotspotState.id),
         BluetoothAdapter.ACTION_STATE_CHANGED to listOf(BluetoothSensorManager.bluetoothState.id),
         Intent.ACTION_SCREEN_OFF to listOf(PowerSensorManager.interactiveDevice.id),
         Intent.ACTION_SCREEN_ON to listOf(PowerSensorManager.interactiveDevice.id),
         PowerManager.ACTION_POWER_SAVE_MODE_CHANGED to listOf(PowerSensorManager.powerSave.id),
         PowerManager.ACTION_DEVICE_IDLE_MODE_CHANGED to listOf(PowerSensorManager.doze.id),
-        NotificationManager.ACTION_INTERRUPTION_FILTER_CHANGED to listOf(DNDSensorManager.dndSensor.id),
         AudioManager.ACTION_MICROPHONE_MUTE_CHANGED to listOf(AudioSensorManager.micMuted.id),
         AudioManager.ACTION_SPEAKERPHONE_STATE_CHANGED to listOf(AudioSensorManager.speakerphoneState.id),
         AudioManager.RINGER_MODE_CHANGED_ACTION to listOf(AudioSensorManager.audioSensor.id),

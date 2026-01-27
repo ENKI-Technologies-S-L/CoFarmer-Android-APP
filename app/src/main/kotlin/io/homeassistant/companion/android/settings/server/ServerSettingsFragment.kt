@@ -379,29 +379,29 @@ class ServerSettingsFragment :
             )
         }
 
-        // Switch Hub
+        // Switch Hub - Verde (primary action)
         applyTint("activate_server", commonR.color.iconTintEnkitekVerde)
 
-        // Hub Identity
-        applyTint("server_name", commonR.color.iconTintEnkitekAzul)
-        applyTint("registration_name", commonR.color.iconTintNeutral)
+        // Hub Identity - Verde (identity/branding)
+        applyTint("server_name", commonR.color.iconTintEnkitekVerde)
+        applyTint("registration_name", commonR.color.iconTintEnkitekVerde)
 
-        // Connection
+        // Connection - Verde (network/connectivity)
         applyTint("connection_external", commonR.color.iconTintEnkitekVerde)
-        applyTint("connection_internal_ssids", commonR.color.iconTintEnkitekAzul)
-        applyTint("connection_internal", commonR.color.iconTintNeutral)
+        applyTint("connection_internal_ssids", commonR.color.iconTintEnkitekVerde)
+        applyTint("connection_internal", commonR.color.iconTintEnkitekVerde)
 
-        // Security
-        applyTint("app_lock", commonR.color.iconTintWarning)
-        applyTint("app_lock_home_bypass", commonR.color.iconTintEnkitekAzul)
-        applyTint("session_timeout", commonR.color.iconTintNeutral)
+        // Security - Negro (security features)
+        applyTint("app_lock", commonR.color.iconTintEnkitekNegro)
+        applyTint("app_lock_home_bypass", commonR.color.iconTintEnkitekNegro)
+        applyTint("session_timeout", commonR.color.iconTintEnkitekNegro)
 
-        // Advanced
-        applyTint("trust_server", commonR.color.iconTintNeutral)
-        applyTint("connection_security_level", commonR.color.iconTintNeutral)
-        applyTint("websocket", commonR.color.iconTintNeutral)
+        // Advanced - Negro (technical settings)
+        applyTint("trust_server", commonR.color.iconTintEnkitekNegro)
+        applyTint("connection_security_level", commonR.color.iconTintEnkitekNegro)
+        applyTint("websocket", commonR.color.iconTintEnkitekNegro)
 
-        // Danger Zone
-        applyTint("delete_server", commonR.color.iconTintWarning)
+        // Danger Zone - Rojo (destructive action)
+        applyTint("delete_server", commonR.color.iconTintDanger)
     }
 }

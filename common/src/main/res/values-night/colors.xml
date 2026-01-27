@@ -30,4 +30,16 @@
     <color name="colorAlertWarning">#382d18</color>
     <color name="colorOnSurfaceVariant">#CAC4D0</color> <!-- M3 On Surface Variant -->
     <color name="colorBottomSheetHandle">#66CAC4D0</color> <!-- M3 On Surface Variant 40% opacity -->
+    
+    <!-- Menu Icon Tint Colors - Brighter for dark mode -->
+    <color name="iconTintPrimary">#04D288</color> <!-- Enkitek Green -->
+    <color name="iconTintSecondary">#4DA6FF</color> <!-- Lighter Blue for dark mode -->
+    <color name="iconTintWarning">#FFB74D</color> <!-- Lighter Orange -->
+    <color name="iconTintNeutral">#9E9E9E</color> <!-- Gray -->
+    <color name="iconTintDanger">#FF6B6B</color> <!-- Lighter Red for visibility -->
+    
+    <!-- Brand Icon Colors (for preferences) -->
+    <color name="iconTintEnkitekVerde">#04D288</color> <!-- Enkitek Green -->
+    <color name="iconTintEnkitekAzul">#4DA6FF</color> <!-- Lighter Blue -->
+    <color name="iconTintEnkitekNegro">#AAAAAA</color> <!-- Light Gray for dark mode -->
 </resources>

@@ -51,14 +51,15 @@
     <color name="colorBottomSheetHandle">#6649454E</color> <!-- M3 On Surface Variant 40% opacity -->
     <color name="colorLauncherBackground">@color/cofarmer_primary</color>
 
-    <!-- Pastel Menu Icon Tints - Soft and pleasant colors -->
-    <color name="iconTintPrimary">#7BC9A6</color> <!-- Soft Sage Green - Primary actions -->
-    <color name="iconTintSecondary">#7EB5D6</color> <!-- Soft Sky Blue - Info/Help -->
-    <color name="iconTintWarning">#E8A87C</color> <!-- Soft Peach - Settings/Warnings -->
-    <color name="iconTintNeutral">#9E9E9E</color> <!-- Medium Gray - Less important items -->
+    <!-- Menu Icon Tint Colors - Enkitek Brand -->
+    <color name="iconTintPrimary">#04D288</color> <!-- Enkitek Green - Primary actions -->
+    <color name="iconTintSecondary">#0066CC</color> <!-- Blue - Info/Help -->
+    <color name="iconTintWarning">#FF9800</color> <!-- Orange - Settings/Warnings -->
+    <color name="iconTintNeutral">#666666</color> <!-- Gray - Less important items -->
+    <color name="iconTintDanger">#E53935</color> <!-- Red - Destructive actions -->
     
-    <!-- Pastel Brand Icon Colors (for preferences) -->
-    <color name="iconTintEnkitekVerde">#7BC9A6</color> <!-- Soft Sage Green -->
-    <color name="iconTintEnkitekAzul">#7EB5D6</color> <!-- Soft Sky Blue -->
-    <color name="iconTintEnkitekNegro">#6B7B8C</color> <!-- Soft Slate Blue-Gray -->
+    <!-- Brand Icon Colors (for preferences) -->
+    <color name="iconTintEnkitekVerde">#04D288</color> <!-- Enkitek Green -->
+    <color name="iconTintEnkitekAzul">#0066CC</color> <!-- Blue -->
+    <color name="iconTintEnkitekNegro">#333333</color> <!-- Dark Gray -->
 </resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Menu Icon Tint Colors - Enkitek Brand (Night Mode) -->
+    <!-- Slightly brighter colors for dark backgrounds -->
+    <color name="iconTintEnkitekVerde">#04D288</color>
+    <color name="iconTintEnkitekAzul">#4D9EFF</color>
+    <color name="iconTintEnkitekNegro">#E0E0E0</color>
+    <color name="iconTintNeutral">#AAAAAA</color>
+    <color name="iconTintWarning">#FFB74D</color>
+    <color name="iconTintDanger">#EF5350</color>
+</resources>

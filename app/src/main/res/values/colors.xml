@@ -11,4 +11,7 @@
     <color name="iconTintEnkitekVerde">#04D288</color>
     <color name="iconTintEnkitekAzul">#0066CC</color>
     <color name="iconTintEnkitekNegro">#0A0A0A</color>
+    <color name="iconTintNeutral">#666666</color>
+    <color name="iconTintWarning">#FF9800</color>
+    <color name="iconTintDanger">#E53935</color>
 </resources>

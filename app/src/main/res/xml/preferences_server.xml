@@ -24,12 +24,12 @@
         <EditTextPreference
             android:key="server_name"
             android:icon="@drawable/ic_stat_ic_notification_blue"
-            app:iconTint="@color/iconTintEnkitekAzul"
+            app:iconTint="@color/iconTintEnkitekVerde"
             android:title="@string/hub_name"/>
         <EditTextPreference
             android:key="registration_name"
             android:icon="@drawable/ic_edit"
-            app:iconTint="@color/iconTintNeutral"
+            app:iconTint="@color/iconTintEnkitekVerde"
             android:title="@string/device_name"
             app:useSimpleSummaryProvider="true"/>
     </PreferenceCategory>
@@ -47,12 +47,12 @@
         <Preference
             android:key="connection_internal_ssids"
             android:icon="@drawable/ic_wifi"
-            app:iconTint="@color/iconTintEnkitekAzul"
+            app:iconTint="@color/iconTintEnkitekVerde"
             android:title="@string/local_network_wifi"/>
         <EditTextPreference
             android:key="connection_internal"
             android:icon="@drawable/ic_computer"
-            app:iconTint="@color/iconTintNeutral"
+            app:iconTint="@color/iconTintEnkitekVerde"
             android:title="@string/local_hub_url"
             app:useSimpleSummaryProvider="true"/>
     </PreferenceCategory>
@@ -66,19 +66,19 @@
         <SwitchPreference
             android:key="app_lock"
             android:icon="@drawable/ic_lock"
-            app:iconTint="@color/iconTintWarning"
+            app:iconTint="@color/iconTintEnkitekNegro"
             android:title="@string/lock_title"
             android:summary="@string/lock_summary"/>
         <SwitchPreference
             android:key="app_lock_home_bypass"
             android:icon="@drawable/ic_wifi"
-            app:iconTint="@color/iconTintEnkitekAzul"
+            app:iconTint="@color/iconTintEnkitekNegro"
             android:title="@string/lock_home_bypass_title"
             android:summary="@string/lock_home_bypass_summary"/>
         <EditTextPreference
             android:key="session_timeout"
             android:icon="@drawable/ic_timeout"
-            app:iconTint="@color/iconTintNeutral"
+            app:iconTint="@color/iconTintEnkitekNegro"
             android:title="@string/session_timeout_title"
             app:isPreferenceVisible="false"
             app:useSimpleSummaryProvider="true"/>
@@ -94,18 +94,18 @@
             android:key="trust_server"
             android:defaultValue="true"
             android:icon="@drawable/ic_settings_remote"
-            app:iconTint="@color/iconTintNeutral"
+            app:iconTint="@color/iconTintEnkitekNegro"
             android:title="@string/trust_server_title"
             android:summary="@string/trust_server_summary"/>
         <Preference
             android:key="connection_security_level"
             android:icon="@drawable/ic_lock"
-            app:iconTint="@color/iconTintNeutral"
+            app:iconTint="@color/iconTintEnkitekNegro"
             android:title="@string/connection_security_level_title"/>
         <Preference
             android:key="websocket"
             android:icon="@drawable/ic_websocket"
-            app:iconTint="@color/iconTintNeutral"
+            app:iconTint="@color/iconTintEnkitekNegro"
             android:title="@string/websocket_setting_name"
             android:summary="@string/websocket_setting_summary" />
     </PreferenceCategory>
@@ -118,7 +118,7 @@
         <Preference
             android:key="delete_server"
             android:icon="@drawable/ic_clear"
-            app:iconTint="@color/iconTintWarning"
+            app:iconTint="@color/iconTintDanger"
             android:title="@string/hub_delete"
             android:summary="@string/hub_delete_summary"/>
     </PreferenceCategory>
