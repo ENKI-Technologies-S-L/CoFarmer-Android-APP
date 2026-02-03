@@ -37,6 +37,7 @@ internal class LocationSharingNavigationTest : BaseOnboardingNavigationTest() {
                 .performScrollTo()
                 .performClick()
 
+            // No disclosure dialog needed - LocationSharingScreen already has prominent disclosure (skipDisclosure=true)
             assertTrue(navController.currentBackStackEntry?.destination?.hasRoute<LocationForSecureConnectionRoute>() == true)
 
             composeTestRule.activity.onBackPressedDispatcher.onBackPressed()
@@ -57,6 +58,7 @@ internal class LocationSharingNavigationTest : BaseOnboardingNavigationTest() {
                 .performScrollTo()
                 .performClick()
 
+            // No disclosure dialog needed - LocationSharingScreen already has prominent disclosure (skipDisclosure=true)
             assertTrue(onboardingDone)
         }
     }

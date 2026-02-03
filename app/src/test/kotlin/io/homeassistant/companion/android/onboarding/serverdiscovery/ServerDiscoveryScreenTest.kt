@@ -123,6 +123,7 @@ class ServerDiscoveryScreenTest {
                         // We don't know how to test dismiss of the modal
                     },
                     onHelpClick = { },
+                    onQrScanClick = { },
                     onManualSetupClick = { },
                 )
             }
@@ -161,6 +162,7 @@ class ServerDiscoveryScreenTest {
                         // We don't know how to test dismiss of the modal
                     },
                     onHelpClick = { helpClicked = true },
+                    onQrScanClick = { },
                     onManualSetupClick = { manualSetupClicked = true },
                 )
             }

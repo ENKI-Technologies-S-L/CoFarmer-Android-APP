@@ -55,6 +55,10 @@ class BlockInsecureScreenTest {
                     .performScrollTo()
                     .performClick()
 
+                // Disclosure dialog should appear first - accept it
+                onNodeWithText(stringResource(commonR.string.location_disclosure_dialog_title)).assertIsDisplayed()
+                onNodeWithText(stringResource(commonR.string.location_disclosure_dialog_accept)).performClick()
+
                 registry.assertLocationPermissionRequested()
                 assertTrue(openLocationSettingsClicked)
             }

@@ -57,6 +57,11 @@ class LocationForSecureConnectionScreenTest {
                 onNodeWithText(stringResource(commonR.string.connection_security_most_secure)).performScrollTo().performClick()
 
                 nextButton.assertIsEnabled().performClick()
+
+                // Disclosure dialog should appear first - accept it
+                onNodeWithText(stringResource(commonR.string.location_disclosure_dialog_title)).assertIsDisplayed()
+                onNodeWithText(stringResource(commonR.string.location_disclosure_dialog_accept)).performClick()
+
                 assertEquals(false, allowInsecureConnection)
                 assertNull(snackbarMessage)
                 registry.assertLocationPermissionRequested()
@@ -106,6 +111,11 @@ class LocationForSecureConnectionScreenTest {
 
                 // Should have scroll automatically to the end of the screen
                 nextButton.assertIsDisplayed().assertIsEnabled().performClick()
+
+                // Disclosure dialog should appear first - accept it
+                onNodeWithText(stringResource(commonR.string.location_disclosure_dialog_title)).assertIsDisplayed()
+                onNodeWithText(stringResource(commonR.string.location_disclosure_dialog_accept)).performClick()
+
                 // The callback shouldn't be invoked since the permission is not granted
                 assertEquals(null, allowInsecureConnection)
                 assertEquals(stringResource(commonR.string.location_secure_connection_discard_permission), snackbarMessage)
@@ -114,6 +124,11 @@ class LocationForSecureConnectionScreenTest {
                 snackbarMessage = null
 
                 nextButton.assertIsEnabled().performClick()
+
+                // Disclosure dialog should appear again - accept it
+                onNodeWithText(stringResource(commonR.string.location_disclosure_dialog_title)).assertIsDisplayed()
+                onNodeWithText(stringResource(commonR.string.location_disclosure_dialog_accept)).performClick()
+
                 assertEquals(true, allowInsecureConnection)
                 assertNull(snackbarMessage)
                 // background is only requested if foreground is granted

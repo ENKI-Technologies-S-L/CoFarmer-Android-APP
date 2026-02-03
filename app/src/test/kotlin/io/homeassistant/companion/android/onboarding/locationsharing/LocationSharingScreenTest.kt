@@ -73,6 +73,7 @@ class LocationSharingScreenTest {
                 onNodeWithText(stringResource(commonR.string.location_sharing_content)).assertIsDisplayed()
                 onNodeWithText(stringResource(commonR.string.location_sharing_share)).performScrollTo().assertIsDisplayed().performClick()
 
+                // No disclosure dialog needed - this screen already has prominent disclosure (skipDisclosure=true)
                 assertTrue(locationSharingResponse == true)
                 assertTrue(goToNextScreenClicked)
                 registry.assertLocationPermissionRequested()
@@ -107,6 +108,7 @@ class LocationSharingScreenTest {
                 onNodeWithText(stringResource(commonR.string.location_sharing_content)).assertIsDisplayed()
                 onNodeWithText(stringResource(commonR.string.location_sharing_share)).performScrollTo().assertIsDisplayed().performClick()
 
+                // No disclosure dialog needed - this screen already has prominent disclosure (skipDisclosure=true)
                 assertTrue(locationSharingResponse == true)
                 assertTrue(goToNextScreenClicked)
                 // background is only requested if foreground is granted

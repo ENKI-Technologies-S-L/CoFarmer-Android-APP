@@ -1,8 +1,11 @@
 package io.homeassistant.companion.android.onboarding.locationsharing
 
+import android.content.Intent
+import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -22,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextDecoration
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import io.homeassistant.companion.android.R
 import io.homeassistant.companion.android.common.R as commonR
@@ -31,12 +35,14 @@ import io.homeassistant.companion.android.common.compose.composable.HATopBar
 import io.homeassistant.companion.android.common.compose.theme.HADimens
 import io.homeassistant.companion.android.common.compose.theme.HATextStyle
 import io.homeassistant.companion.android.common.compose.theme.HAThemeForPreview
+import io.homeassistant.companion.android.common.compose.theme.LocalHAColorScheme
 import io.homeassistant.companion.android.common.compose.theme.MaxButtonWidth
 import io.homeassistant.companion.android.common.util.createBatteryOptimizationIntent
 import io.homeassistant.companion.android.util.compose.HAPreviews
 import io.homeassistant.companion.android.util.compose.rememberLocationPermission
 
 private val MaxContentWidth = MaxButtonWidth
+private const val PRIVACY_POLICY_URL = "https://enkitek.eu/privacy.html"
 
 @Composable
 internal fun LocationSharingScreen(
@@ -79,16 +85,17 @@ private fun LocationSharingContent(
     onLocationSharingResponse: (enabled: Boolean) -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val context = LocalContext.current
     Column(
         modifier = modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
             .padding(horizontal = HADimens.SPACE4),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(HADimens.SPACE6),
+        verticalArrangement = Arrangement.spacedBy(HADimens.SPACE4),
     ) {
         Image(
-            modifier = Modifier.padding(top = HADimens.SPACE6),
+            modifier = Modifier.padding(top = HADimens.SPACE4),
             // Use painterResource instead of vector resource for API < 24 since it has gradients
             painter = painterResource(R.drawable.ic_location_tracking),
             contentDescription = null,
@@ -101,9 +108,23 @@ private fun LocationSharingContent(
         )
 
         Text(
-            text = stringResource(commonR.string.location_sharing_content),
+            text = stringResource(commonR.string.location_sharing_content_plain),
             style = HATextStyle.Body,
             modifier = Modifier.widthIn(max = MaxContentWidth),
+        )
+
+        Text(
+            text = stringResource(commonR.string.location_sharing_privacy_link),
+            style = HATextStyle.Body.copy(
+                color = LocalHAColorScheme.current.colorTextLink,
+                textDecoration = TextDecoration.Underline,
+            ),
+            modifier = Modifier
+                .widthIn(max = MaxContentWidth)
+                .clickable {
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(PRIVACY_POLICY_URL))
+                    context.startActivity(intent)
+                },
         )
 
         Spacer(modifier = Modifier.weight(1f))
@@ -123,6 +144,7 @@ private fun BottomButtons(onGoToNextScreen: () -> Unit, onLocationSharingRespons
         contract = ActivityResultContracts.StartActivityForResult(),
         onResult = { onGoToNextScreen() },
     )
+    // Skip disclosure dialog because this screen already has a prominent disclosure
     val permissions = rememberLocationPermission(
         onPermissionResult = {
             // We ignore the result and proceed even if the user rejected the permission
@@ -133,6 +155,7 @@ private fun BottomButtons(onGoToNextScreen: () -> Unit, onLocationSharingRespons
                 onGoToNextScreen()
             }
         },
+        skipDisclosure = true,
     )
     Column(
         modifier = Modifier.fillMaxWidth(),
