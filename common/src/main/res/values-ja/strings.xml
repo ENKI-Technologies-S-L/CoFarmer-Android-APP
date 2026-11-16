@@ -3,7 +3,7 @@
     <!-- CoFarmer Japanese Translations -->
     
     <!-- App name and branding -->
-    <string name="app_name">CoFarmer</string>
+    <string name="app_name">CoFarmer Assistant</string>
     
     <!-- Settings categories -->
     <string name="servers_devices_category">施設</string>
@@ -29,7 +29,7 @@
     <string name="close">閉じる</string>
     
     <!-- Welcome & Onboarding -->
-    <string name="welcome_home_assistant_title">CoFarmer</string>
+    <string name="welcome_home_assistant_title">CoFarmer Assistant</string>
     <string name="welcome_details">どこからでも農場を監視・管理できます。\n\nセンサーの追跡、気候制御の自動化、リアルタイムアラートの受信 — 完全なプライバシー保護付き。</string>
     <string name="welcome_connect_to_ha">私の農場に接続</string>
     <string name="welcome_scan_qr">QRコードをスキャン</string>

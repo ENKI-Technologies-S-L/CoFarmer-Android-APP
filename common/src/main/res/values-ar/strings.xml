@@ -4,7 +4,7 @@
     <!-- RTL language -->
     
     <!-- App name and branding -->
-    <string name="app_name">CoFarmer</string>
+    <string name="app_name">CoFarmer Assistant</string>
     
     <!-- Settings categories -->
     <string name="servers_devices_category">المنشآت</string>
@@ -30,7 +30,7 @@
     <string name="close">إغلاق</string>
     
     <!-- Welcome & Onboarding -->
-    <string name="welcome_home_assistant_title">CoFarmer</string>
+    <string name="welcome_home_assistant_title">CoFarmer Assistant</string>
     <string name="welcome_details">راقب وأدر مزرعتك من أي مكان.\n\nتتبع أجهزة الاستشعار، وأتمتة التحكم في المناخ، واستقبل التنبيهات في الوقت الفعلي.</string>
     <string name="welcome_connect_to_ha">الاتصال بمزرعتي</string>
     <string name="welcome_scan_qr">مسح رمز QR</string>

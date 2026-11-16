@@ -3,7 +3,7 @@
     <!-- CoFarmer Chinese (Simplified) Translations -->
     
     <!-- App name and branding -->
-    <string name="app_name">CoFarmer</string>
+    <string name="app_name">CoFarmer Assistant</string>
     
     <!-- Settings categories -->
     <string name="servers_devices_category">农场设施</string>
@@ -29,7 +29,7 @@
     <string name="close">关闭</string>
     
     <!-- Welcome & Onboarding -->
-    <string name="welcome_home_assistant_title">CoFarmer</string>
+    <string name="welcome_home_assistant_title">CoFarmer Assistant</string>
     <string name="welcome_details">随时随地监控和管理您的农场。\n\n跟踪传感器、自动化气候控制、接收实时警报——完全保护您的隐私。</string>
     <string name="welcome_connect_to_ha">连接到我的农场</string>
     <string name="welcome_scan_qr">扫描二维码</string>
