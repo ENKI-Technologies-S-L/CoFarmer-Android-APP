@@ -13,11 +13,11 @@
           android:startY="61.4967"
           android:endX="147.574"
           android:endY="124.5086"
-          android:startColor="#04D288"
-          android:endColor="#0066CC"/>
+          android:startColor="#00C389"
+          android:endColor="#1E6BD6"/>
     </aapt:attr>
   </path>
   <path
       android:pathData="M78,89.8l8.1,-15.6H75.3h-1.9c-2.1,0 -3.9,1.7 -3.9,3.9v6.2v7.7h5C76,91.9 77.3,91.1 78,89.8z"
-      android:fillColor="#03B799"/>
+      android:fillColor="#0F97AF"/>
 </vector>

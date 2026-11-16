@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- CoFarmer App Launcher Colors -->
-    <color name="cofarmer_primary">#04D288</color>
-    <color name="cofarmer_secondary">#0066CC</color>
+    <color name="cofarmer_primary">#00C389</color>
+    <color name="cofarmer_secondary">#1E6BD6</color>
     <color name="ic_launcher_foreground">#FFF2F2F2</color>
     <!-- White background for adaptive icon - works well with rounded square launchers -->
     <color name="ic_launcher_background">#FFFFFF</color>
 
     <!-- Menu Icon Tint Colors - Enkitek Brand -->
-    <color name="iconTintEnkitekVerde">#04D288</color>
-    <color name="iconTintEnkitekAzul">#0066CC</color>
+    <color name="iconTintEnkitekVerde">#00C389</color>
+    <color name="iconTintEnkitekAzul">#1E6BD6</color>
     <color name="iconTintEnkitekNegro">#0A0A0A</color>
     <color name="iconTintNeutral">#666666</color>
     <color name="iconTintWarning">#FF9800</color>

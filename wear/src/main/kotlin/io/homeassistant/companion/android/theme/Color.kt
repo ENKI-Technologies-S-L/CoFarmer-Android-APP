@@ -8,9 +8,9 @@ import androidx.wear.compose.material3.SliderDefaults
 import androidx.wear.compose.material3.SwitchButtonDefaults
 
 // CoFarmer brand colors
-val cofarmer_primary = Color(0xFF04D288)
-val cofarmer_secondary = Color(0xFF0066CC)
-val cofarmer_accent = Color(0xFF03B799)
+val cofarmer_primary = Color(0xFF00C389)
+val cofarmer_secondary = Color(0xFF1E6BD6)
+val cofarmer_accent = Color(0xFF0F97AF)
 
 val md_theme_dark_primary = cofarmer_primary
 val md_theme_dark_onPrimary = Color(0xFF00291A)

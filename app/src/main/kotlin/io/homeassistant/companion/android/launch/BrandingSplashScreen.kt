@@ -32,8 +32,8 @@ import androidx.compose.ui.unit.sp
 import io.homeassistant.companion.android.R
 import io.homeassistant.companion.android.common.compose.theme.HAThemeForPreview
 
-private val CoFarmerGreen = Color(0xFF04D288)
-private val CoFarmerBlue = Color(0xFF0066CC)
+private val CoFarmerGreen = Color(0xFF00C389)
+private val CoFarmerBlue = Color(0xFF1E6BD6)
 private val BackgroundLight = Color(0xFFFAFAFA)
 private val BackgroundDark = Color(0xFF1A1A1A)
 

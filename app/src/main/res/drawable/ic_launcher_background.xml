@@ -16,8 +16,8 @@
                 android:startY="20"
                 android:endX="108"
                 android:endY="88">
-                <item android:offset="0.15" android:color="#FF04D288"/>
-                <item android:offset="0.85" android:color="#FF0066CC"/>
+                <item android:offset="0.15" android:color="#FF00C389"/>
+                <item android:offset="0.85" android:color="#FF1E6BD6"/>
             </gradient>
         </aapt:attr>
     </path>
