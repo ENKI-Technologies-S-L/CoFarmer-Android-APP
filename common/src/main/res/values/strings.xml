@@ -1424,8 +1424,8 @@
     <string name="hub_setup_ready">My Hub is ready</string>
     <string name="hub_setup_no_hub_title">Get a CoFarmer Hub</string>
     <string name="hub_setup_no_hub_description">CoFarmer Hub is the brain of your smart farm. Visit our website to learn more and purchase your Hub.</string>
-    <string name="hub_setup_visit_website">Visit Enkitek Website</string>
-    <string name="hub_setup_enkitek_url">https://www.enkitek.eu</string>
+    <string name="hub_setup_visit_website">Visit CoFarmer website</string>
+    <string name="hub_setup_enkitek_url">https://cofarmer.ai</string>
     <!-- Hub Settings - Server Configuration Menu -->
     <string name="hub_identity">Hub Identity</string>
     <string name="hub_name">Hub name</string>

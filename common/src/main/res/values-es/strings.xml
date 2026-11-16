@@ -88,7 +88,7 @@
     <string name="hub_setup_ready">Mi Hub está listo</string>
     <string name="hub_setup_no_hub_title">Consigue un Hub CoFarmer</string>
     <string name="hub_setup_no_hub_description">El Hub CoFarmer es el cerebro de tu granja inteligente. Visita nuestro sitio web para más información y comprar tu Hub.</string>
-    <string name="hub_setup_visit_website">Visitar sitio web de Enkitek</string>
+    <string name="hub_setup_visit_website">Visitar la web de CoFarmer</string>
     
     <!-- Hub Settings -->
     <string name="hub_identity">Identidad del Hub</string>
