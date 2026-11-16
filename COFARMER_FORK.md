@@ -683,6 +683,18 @@ When user clicks "Connect" on a locally-discovered server:
 - [x] ~~About screen with Enkitek branding~~
 - [x] ~~Changelog updates~~ (Play release notes in `fastlane/metadata/android/en-US/changelogs/default.txt`)
 
+### CoFarmer Assistant rebrand (branch `feature/cofarmer-assistant-rebrand`)
+Design: `docs/superpowers/specs/2026-11-16-cofarmer-assistant-rebrand-design.md`
+- [x] ~~App renamed "CoFarmer Assistant" (app-referring strings only; hub/cloud/server keep "CoFarmer")~~
+- [x] ~~Palette from logo gradient: #00C389 / #1E6BD6 / accent #0F97AF~~
+- [x] ~~CO link launcher icon (debug uses the same icon), welcome/splash logos, Wear icons, TV banner~~
+- [x] ~~Sora (OFL) on headings, toolbar titles and preference categories; body stays Roboto~~
+- [x] ~~New splash: "CoFarmer" + "Assistant" wordmark, translatable tagline~~
+- [ ] Rename the Play Console store listing to "CoFarmer Assistant" when releasing
+- [ ] Contrast: white text on #00C389 is 2.3:1 (below WCAG AA), same as before the rebrand
+- [ ] 27 onboarding unit tests fail on release/2026.12 and later (pre-existing, upstream tests vs CoFarmer onboarding)
+- [ ] `app` screenshot tests do not compile (`ServerDiscoveryScreenshotTest` vs CoFarmer `ServerDiscoveryScreen`)
+
 ### Maintenance
 - [ ] Sync with upstream home-assistant/android (958 commits behind as of 2026-11-16; upstream now targets API 37 and minSdk 24)
 - [ ] Publish an update at least every few months to avoid Play Console "inactive account" warnings
