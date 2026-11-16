@@ -35,7 +35,8 @@ object HATextStyle {
             fontStyle = FontStyle.Normal,
             fontSize = HAFontSize.X4L,
             lineHeight = HAFontSize.X5L,
-            fontWeight = FontWeight.W500,
+            fontFamily = SoraFontFamily,
+            fontWeight = FontWeight.SemiBold,
             textAlign = TextAlign.Center,
             color = LocalHAColorScheme.current.colorTextPrimary,
         )
@@ -46,7 +47,8 @@ object HATextStyle {
             fontStyle = FontStyle.Normal,
             fontSize = HAFontSize.X3L,
             lineHeight = HAFontSize.X5L,
-            fontWeight = FontWeight.W500,
+            fontFamily = SoraFontFamily,
+            fontWeight = FontWeight.SemiBold,
             textAlign = TextAlign.Center,
             color = LocalHAColorScheme.current.colorTextPrimary,
         )

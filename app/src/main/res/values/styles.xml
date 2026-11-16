@@ -22,6 +22,24 @@
         <item name="alertDialogTheme">@style/Theme.HomeAssistant.Dialog.Alert</item>
         <item name="actionBarPopupTheme">@style/ThemeOverlay.MaterialComponents.Dark</item>
         <item name="bottomSheetDialogTheme">@style/ThemeOverlay.HomeAssistant.BottomSheetDialog</item>
+        <!-- CoFarmer brand: Sora on toolbar titles and preference category headers only -->
+        <item name="toolbarStyle">@style/Widget.HomeAssistant.Toolbar</item>
+        <item name="preferenceCategoryTitleTextAppearance">@style/TextAppearance.HomeAssistant.PreferenceCategory</item>
+    </style>
+
+    <style name="Widget.HomeAssistant.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="titleTextAppearance">@style/TextAppearance.HomeAssistant.ToolbarTitle</item>
+    </style>
+
+    <style name="TextAppearance.HomeAssistant.ToolbarTitle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:fontFamily">@font/sora_semibold</item>
+        <item name="fontFamily">@font/sora_semibold</item>
+    </style>
+
+    <style name="TextAppearance.HomeAssistant.PreferenceCategory" parent="TextAppearance.AppCompat.Body2">
+        <item name="android:fontFamily">@font/sora_semibold</item>
+        <item name="fontFamily">@font/sora_semibold</item>
+        <item name="android:textColor">?attr/colorAccent</item>
     </style>
 
     <style name="Theme.HomeAssistant.Config" parent="Theme.HomeAssistant">
