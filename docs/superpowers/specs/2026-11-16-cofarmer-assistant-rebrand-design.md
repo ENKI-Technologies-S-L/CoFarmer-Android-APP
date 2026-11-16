@@ -10,7 +10,7 @@ La app pasa a llamarse **CoFarmer Assistant** y adopta la nueva identidad visual
 
 - Nombre visible **CoFarmer Assistant** en el icono, el splash, la bienvenida, «Acerca de» y la ficha de Play.
 - Icono de producción nuevo: el eslabón «CO» con degradado sobre fondo blanco.
-- Icono de la versión de desarrollo (`.debug`): el robot «DEV».
+- ~~Icono de la versión de desarrollo (`.debug`): el robot «DEV».~~ **Cambio (2026-11-16):** la versión debug usa el mismo icono que producción, para poder ver el logo real en el móvil.
 - Paleta actualizada al degradado del logo.
 - Sora en títulos y momentos de marca. El texto corrido sigue en Roboto.
 
@@ -69,7 +69,10 @@ La app pasa a llamarse **CoFarmer Assistant** y adopta la nueva identidad visual
 - Se regeneran los PNG antiguos (mdpi…xxxhdpi, para API 23–25), además de `ic_launcher_round`, el foreground de Assist (`ic_assist_launcher_foreground`) y los iconos de Wear (`wear/src/main/res/...ic_launcher*`).
 - **Nota:** `minSdk` es 23 y los degradados en VectorDrawable requieren API 24. En API 23 se usan los PNG del mipmap. Hay que comprobar que ningún vector con degradado se infle por la vía nativa en API 23.
 
-### 4. Icono debug: el robot «DEV»
+### 4. Icono debug: el robot «DEV» — DESCARTADO
+
+**Cambio pedido por el usuario tras verlo en el móvil:** la versión debug usa el icono de producción (eslabón «CO»). El robot queda solo como recurso en `branding-assets/cofarmer/cofarmer-robot-dev.png`. Texto original:
+
 
 - Solo en `app/src/debug/res/` (`ic_launcher`, `ic_launcher_round` y sus variantes de densidad).
 - Fondo: el azul marino del propio PNG. Delante, el robot escalado para que **la ilustración entera, incluida la etiqueta «DEV», quede dentro de la zona segura**.
