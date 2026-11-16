@@ -1514,4 +1514,11 @@
     <string name="connection_check_home_assistant">CoFarmer verification</string>
     <string name="connection_check_home_assistant_success">Verified as CoFarmer</string>
     <string name="connection_check_error_not_home_assistant">Server is not CoFarmer</string>
+
+    <!-- Branding splash (CoFarmer Assistant) -->
+    <string name="splash_brand_name" translatable="false">CoFarmer</string>
+    <string name="splash_brand_suffix" translatable="false">Assistant</string>
+    <string name="splash_tagline">Control your farm from anywhere</string>
+    <string name="splash_by_enkitek" translatable="false">by ENKITEK</string>
+    <string name="splash_logo_description">CoFarmer Assistant logo</string>
 </resources>

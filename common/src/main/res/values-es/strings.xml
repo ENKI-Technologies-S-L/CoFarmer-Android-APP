@@ -447,4 +447,7 @@
     <string name="thread_debug_result_unsupported_server">El CoFarmer Hub no es compatible con Thread</string>
     <string name="thread_debug_result_updated">Se ha actualizado en este dispositivo la red de CoFarmer</string>
 
+    <!-- Branding splash (CoFarmer Assistant) -->
+    <string name="splash_tagline">Controla tu granja desde cualquier lugar</string>
+    <string name="splash_logo_description">Logo de CoFarmer Assistant</string>
 </resources>
