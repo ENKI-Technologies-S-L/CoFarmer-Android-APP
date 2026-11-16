@@ -1642,7 +1642,7 @@ class WebViewActivity :
                 .setTitle(
                     getString(
                         commonR.string.error_connection_failed_to,
-                        serverName ?: getString(commonR.string.app_name),
+                        serverName ?: getString(commonR.string.hub_brand_name),
                     ),
                 )
                 .setOnDismissListener {

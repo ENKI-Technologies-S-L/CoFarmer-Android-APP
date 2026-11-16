@@ -5,6 +5,7 @@ import android.content.Context
 import androidx.annotation.StringRes
 import androidx.test.core.app.ApplicationProvider
 import io.homeassistant.companion.android.common.R as commonR
+import io.homeassistant.companion.android.common.util.GestureActionCategory
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -45,6 +46,32 @@ class BrandingStringsTest {
         assertEquals("Do you have a CoFarmer Hub?", getString(commonR.string.hub_setup_question))
         assertEquals("Unable to connect to CoFarmer.", getString(commonR.string.error_connection_failed))
         assertEquals("Use CoFarmer Cloud", getString(commonR.string.input_cloud))
+    }
+
+    @Test
+    fun `hub brand name is CoFarmer and is used for the hub frontend gesture category`() {
+        assertEquals("CoFarmer", getString(commonR.string.hub_brand_name))
+        assertEquals(commonR.string.hub_brand_name, GestureActionCategory.FRONTEND.description)
+    }
+
+    @Test
+    fun `location disclosure names the server CoFarmer`() {
+        assertTrue(getString(commonR.string.location_sharing_content_plain).contains("your self-hosted CoFarmer server"))
+    }
+
+    @Test
+    fun `secure connection hint names the company Enkitek`() {
+        assertEquals(
+            "Your location data stays local and is never shared with Enkitek or third parties.",
+            getString(commonR.string.location_secure_connection_hint),
+        )
+    }
+
+    @Test
+    @Config(qualifiers = "es")
+    fun `spanish location texts name the server CoFarmer and the company Enkitek`() {
+        assertTrue(getString(commonR.string.location_sharing_content_plain).contains("tu propio servidor CoFarmer\n"))
+        assertTrue(getString(commonR.string.location_secure_connection_hint).contains("con Enkitek ni con terceros"))
     }
 
     @Test

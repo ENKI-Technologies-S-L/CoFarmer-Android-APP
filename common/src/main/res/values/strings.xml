@@ -48,6 +48,8 @@
     <string name="always_show_first_view_on_app_start">Always show first view when opening app</string>
     <string name="always_show_first_view_on_app_start_summary">The first view of the default dashboard is shown as soon as the app is opened</string>
     <string name="app_name">CoFarmer Assistant</string>
+    <!-- Name of the hub/server product (the app is "CoFarmer Assistant") -->
+    <string name="hub_brand_name" translatable="false">CoFarmer</string>
     <string name="app_version_info">App version info</string>
     <string name="acknowledgments">Acknowledgments</string>
     <string name="acknowledgments_summary">Third-party licenses</string>
@@ -1448,7 +1450,7 @@
     <string name="local_first_next">Got it</string>
     <string name="location_sharing_title">Location Data Disclosure</string>
     <string name="location_sharing_content">This app collects location data to enable farm automation features even when the app is closed or not in use.\n\n<b>Data Collected:</b>\n• Precise location (GPS coordinates)\n• Background location data\n\n<b>Purpose:</b>\n• Trigger automations when you arrive/leave your farm\n• Enable geofencing for equipment control\n• Secure your connection\n\n<b>Data Handling:</b>\n• Location is sent only to your personal server\n• We do NOT collect, store, or share your location\n• You control your data completely</string>
-    <string name="location_sharing_content_plain">CoFarmer Assistant collects location data to enable farm automation features, even when the app is closed or not in use.\n\nWHAT WE COLLECT:\n• Precise location (GPS coordinates)\n• Background location tracking\n\nHOW WE USE IT:\n• Trigger automations when you arrive or leave your farm\n• Enable geofencing for equipment control\n• Location data is transmitted to your self-hosted CoFarmer Assistant server\n\nDATA SHARING:\n• Location data is NOT collected by Enkitek\n• Location data is NOT shared with third parties\n• Location data is NOT used for advertising\n• All data goes only to YOUR server under YOUR control</string>
+    <string name="location_sharing_content_plain">CoFarmer Assistant collects location data to enable farm automation features, even when the app is closed or not in use.\n\nWHAT WE COLLECT:\n• Precise location (GPS coordinates)\n• Background location tracking\n\nHOW WE USE IT:\n• Trigger automations when you arrive or leave your farm\n• Enable geofencing for equipment control\n• Location data is transmitted to your self-hosted CoFarmer server\n\nDATA SHARING:\n• Location data is NOT collected by Enkitek\n• Location data is NOT shared with third parties\n• Location data is NOT used for advertising\n• All data goes only to YOUR server under YOUR control</string>
     <string name="location_sharing_privacy_link">Read our Privacy Policy</string>
     <string name="location_sharing_share">I Understand, Continue</string>
     <string name="location_sharing_no_share">Deny</string>
@@ -1459,7 +1461,7 @@
     <string name="location_disclosure_dialog_deny">Deny</string>
     <string name="location_secure_connection_title">Secure your remote farm access</string>
     <string name="location_secure_connection_content">Your connection is not encrypted (HTTP). By knowing when you\'re away from the farm, CoFarmer Assistant can automatically use a more secure connection method to protect your agricultural data. This requires location services.</string>
-    <string name="location_secure_connection_hint">Your location data stays local and is never shared with CoFarmer or third parties.</string>
+    <string name="location_secure_connection_hint">Your location data stays local and is never shared with Enkitek or third parties.</string>
     <string name="location_secure_connection_next">Next</string>
     <string name="location_secure_connection_save">Save</string>
     <string name="location_secure_connection_discard_permission">Location permission denied. Allow access or choose the \'Less secure\' option.</string>
