@@ -4,7 +4,6 @@
     
     <!-- App name and branding -->
     <string name="app_name">CoFarmer</string>
-    <string name="app_name_full">CoFarmer</string>
     
     <!-- Settings categories -->
     <string name="servers_devices_category">시설</string>
@@ -25,14 +24,9 @@
     <string name="cancel">취소</string>
     <string name="save">저장</string>
     <string name="delete">삭제</string>
-    <string name="done">완료</string>
-    <string name="next">다음</string>
     <string name="back">뒤로</string>
     <string name="retry">다시 시도</string>
     <string name="close">닫기</string>
-    <string name="confirm">확인</string>
-    <string name="yes">예</string>
-    <string name="no">아니오</string>
     
     <!-- Welcome & Onboarding -->
     <string name="welcome_home_assistant_title">CoFarmer</string>
@@ -49,9 +43,6 @@
     <string name="qr_scanner_permission_button">카메라 접근 허용</string>
     
     <!-- Connection -->
-    <string name="connecting">연결 중…</string>
-    <string name="connected">연결됨</string>
-    <string name="disconnected">연결 끊김</string>
     
     <!-- Display -->
     <string name="fullscreen">전체 화면</string>

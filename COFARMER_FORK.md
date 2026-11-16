@@ -669,18 +669,23 @@ When user clicks "Connect" on a locally-discovered server:
 - [x] ~~Replace "homeassistant.io" documentation links with CoFarmer docs~~
 - [x] ~~Fix privacy URL hardcoded in SettingsFragment~~
 - [x] ~~Reorganize Settings menu for CoFarmer UX~~
-- [ ] Update README.md for CoFarmer
+- [x] ~~Update README.md for CoFarmer~~
 
 ### Medium Priority
-- [ ] Review and update Wear OS specific strings
+- [x] ~~Review and update Wear OS specific strings~~ (Wear uses `common` strings; no HA branding left)
 - [ ] Create CoFarmer-specific onboarding illustrations
 - [ ] Update app store metadata (descriptions, screenshots)
-- [ ] Add Spanish translations for new Day 5/6 strings
+- [x] ~~Add Spanish translations for new Day 5/6 strings~~ (release 2026.12: 109 CoFarmer strings)
+- [ ] Translate the remaining ~1,170 upstream strings to Spanish (upstream gets them from Lokalise at build time; this fork does not)
 
 ### Low Priority
 - [ ] Custom error pages
-- [ ] About screen with Enkitek branding
-- [ ] Changelog updates
+- [x] ~~About screen with Enkitek branding~~
+- [x] ~~Changelog updates~~ (Play release notes in `fastlane/metadata/android/en-US/changelogs/default.txt`)
+
+### Maintenance
+- [ ] Sync with upstream home-assistant/android (958 commits behind as of 2026-11-16; upstream now targets API 37 and minSdk 24)
+- [ ] Publish an update at least every few months to avoid Play Console "inactive account" warnings
 
 ---
 

@@ -5,7 +5,6 @@
     
     <!-- App name and branding -->
     <string name="app_name">CoFarmer</string>
-    <string name="app_name_full">CoFarmer</string>
     
     <!-- Settings categories -->
     <string name="servers_devices_category">المنشآت</string>
@@ -26,14 +25,9 @@
     <string name="cancel">إلغاء</string>
     <string name="save">حفظ</string>
     <string name="delete">حذف</string>
-    <string name="done">تم</string>
-    <string name="next">التالي</string>
     <string name="back">رجوع</string>
     <string name="retry">إعادة المحاولة</string>
     <string name="close">إغلاق</string>
-    <string name="confirm">تأكيد</string>
-    <string name="yes">نعم</string>
-    <string name="no">لا</string>
     
     <!-- Welcome & Onboarding -->
     <string name="welcome_home_assistant_title">CoFarmer</string>
@@ -50,9 +44,6 @@
     <string name="qr_scanner_permission_button">السماح بالوصول إلى الكاميرا</string>
     
     <!-- Connection -->
-    <string name="connecting">جاري الاتصال…</string>
-    <string name="connected">متصل</string>
-    <string name="disconnected">غير متصل</string>
     
     <!-- Display -->
     <string name="fullscreen">ملء الشاشة</string>

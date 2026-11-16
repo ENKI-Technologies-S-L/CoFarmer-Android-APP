@@ -7,7 +7,6 @@
     <!-- APP NAME & BRANDING                                                      -->
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <string name="app_name">CoFarmer</string>
-    <string name="app_name_full">CoFarmer</string>
     <string name="home_assistant_branding_icon_content_description">Icono de CoFarmer</string>
     
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
@@ -43,14 +42,9 @@
     <string name="cancel">Cancelar</string>
     <string name="save">Guardar</string>
     <string name="delete">Eliminar</string>
-    <string name="done">Hecho</string>
-    <string name="next">Siguiente</string>
     <string name="back">Atrás</string>
     <string name="retry">Reintentar</string>
     <string name="close">Cerrar</string>
-    <string name="confirm">Confirmar</string>
-    <string name="yes">Sí</string>
-    <string name="no">No</string>
     <string name="allow">Permitir</string>
     <string name="disable">Desactivar</string>
     <string name="disabled">Desactivado</string>
@@ -62,8 +56,6 @@
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <!-- WELCOME & ONBOARDING                                                     -->
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
-    <string name="welcome_title">Bienvenido a CoFarmer</string>
-    <string name="welcome_subtitle">Conecta tu instalación agrícola</string>
     <string name="welcome_home_assistant_title">CoFarmer</string>
     <string name="welcome_hass">¡Bienvenido a CoFarmer Companion!</string>
     <string name="welcome_details">Monitoriza y gestiona tu granja desde cualquier lugar.\n\nRastreo de sensores, automatización del control climático y alertas en tiempo real — todo con privacidad completa y arquitectura local.</string>
@@ -185,10 +177,6 @@
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <!-- CONNECTION                                                               -->
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
-    <string name="connection_failed">Conexión fallida</string>
-    <string name="connecting">Conectando…</string>
-    <string name="connected">Conectado</string>
-    <string name="disconnected">Desconectado</string>
     <string name="attempting_authentication">Autenticando…</string>
     <string name="attempting_connection">Conectando…</string>
     <string name="attempting_registration">Registrando aplicación…</string>
@@ -198,9 +186,6 @@
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <!-- ERRORS                                                                   -->
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
-    <string name="error">Error</string>
-    <string name="error_generic">Algo salió mal</string>
-    <string name="no_internet">Sin conexión a Internet</string>
     
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <!-- VERSION & ABOUT                                                          -->
@@ -218,7 +203,6 @@
     <string name="about_documentation">Documentación</string>
     <string name="about_privacy">Política de Privacidad</string>
     <string name="privacy_policy">Política de privacidad</string>
-    <string name="terms_of_service">Términos de servicio</string>
     <string name="acknowledgments">Reconocimientos</string>
     <string name="acknowledgments_summary">Licencias de terceros</string>
     <string name="acknowledgments_detail">CoFarmer está construido sobre la Home Assistant Companion App, bajo licencia Apache License 2.0. Agradecemos a la comunidad de Home Assistant por sus contribuciones.</string>
@@ -331,5 +315,136 @@
     <string name="add_to_watch_favorite_disconnected">Reloj desconectado</string>
     <string name="wear_os_settings_title">Ajustes de Wear OS</string>
     <string name="wear_os_settings_summary">Configurar la app para tu reloj inteligente</string>
-    
+
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- RELEASE 2026.12 - CoFarmer-specific strings                             -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+
+    <!-- Location disclosure (Google Play) -->
+    <string name="location_disclosure_dialog_title">Aviso sobre datos de ubicación</string>
+    <string name="location_disclosure_dialog_content">CoFarmer recopila datos de ubicación para habilitar funciones de automatización de la granja, incluso cuando la app está cerrada o no se está usando.\n\n• Se recopilan coordenadas GPS precisas\n• Se usa el seguimiento de la ubicación en segundo plano\n• Los datos se envían a tu propio servidor\n• Enkitek NO recopila tu ubicación\n• Tu ubicación NO se comparte con terceros\n• Tu ubicación NO se usa con fines publicitarios</string>
+    <string name="location_disclosure_dialog_accept">Lo entiendo, continuar</string>
+    <string name="location_disclosure_dialog_deny">Denegar</string>
+    <string name="location_sharing_content_plain">CoFarmer recopila datos de ubicación para habilitar funciones de automatización de la granja, incluso cuando la app está cerrada o no se está usando.\n\nQUÉ RECOPILAMOS:\n• Ubicación precisa (coordenadas GPS)\n• Seguimiento de la ubicación en segundo plano\n\nCÓMO LO USAMOS:\n• Activar automatizaciones cuando llegas a tu granja o te vas de ella\n• Habilitar geovallas para el control de equipos\n• Los datos de ubicación se envían a tu propio servidor CoFarmer\n\nCOMPARTICIÓN DE DATOS:\n• Enkitek NO recopila tus datos de ubicación\n• Tus datos de ubicación NO se comparten con terceros\n• Tus datos de ubicación NO se usan con fines publicitarios\n• Todos los datos van solo a TU servidor, bajo TU control</string>
+    <string name="location_sharing_privacy_link">Leer nuestra política de privacidad</string>
+    <string name="location_secure_connection_title">Protege el acceso remoto a tu granja</string>
+    <string name="location_secure_connection_content">Tu conexión no está cifrada (HTTP). Si sabe cuándo estás fuera de la granja, CoFarmer puede usar automáticamente un método de conexión más seguro para proteger tus datos agrícolas. Para ello necesita los servicios de ubicación.</string>
+    <string name="location_secure_connection_hint">Tus datos de ubicación se quedan en local y nunca se comparten con CoFarmer ni con terceros.</string>
+
+    <!-- Permissions and notifications -->
+    <string name="notification_permission_dialog_title">¿Activar alertas de la granja?</string>
+    <string name="notification_permission_dialog_content">Mantente informado de tus operaciones agrícolas en tiempo real. Recibe alertas de cambios de temperatura, niveles de humedad, fugas de agua, estado de los equipos y otros eventos críticos. Tú decides qué alertas recibes.</string>
+    <string name="notification_permission_summary">CoFarmer no tiene permiso para enviarte notificaciones. Selecciona para activarlas.</string>
+    <string name="suggestion_notifications_summary">Permite que CoFarmer envíe notificaciones</string>
+    <string name="suggestion_assist_summary">Establece CoFarmer como tu app de asistente</string>
+    <string name="background_access_disabled">CoFarmer no tiene acceso para ejecutarse en segundo plano. Sin este permiso, la app no podrá enviar datos a tu servidor de forma fiable. Selecciona para actualizar los permisos.</string>
+    <string name="background_access_enabled">CoFarmer tiene acceso para ejecutarse en segundo plano</string>
+    <string name="improv_permission_text">La app CoFarmer puede encontrar dispositivos usando el Bluetooth de este dispositivo. Concede acceso a los siguientes permisos.</string>
+    <string name="manage_ssids_permission">CoFarmer necesita acceso adicional para leer la información de la red Wi-Fi.</string>
+    <string name="missing_command_permission">Abre la app CoFarmer y envía el comando de nuevo para conceder los permisos necesarios. Se abrirá una página donde podrás conceder el permiso a la app CoFarmer, o bien tendrás que seleccionar Permisos en la página de detalles y conceder el permiso que falta. Para command_bluetooth, el permiso se llama Dispositivos cercanos. Si intentas usar command_activity para hacer una llamada, también tendrás que conceder el permiso de Teléfono.</string>
+
+    <!-- Local network / connection -->
+    <string name="pref_connection_homenetwork">Red local</string>
+    <string name="pref_connection_url">URL de CoFarmer</string>
+    <string name="input_url">URL de CoFarmer</string>
+    <string name="input_cloud">Usar CoFarmer Cloud</string>
+    <string name="set_home_network_title">¿Cuál es tu red local?</string>
+    <string name="set_home_network_content">Para una mejor experiencia, CoFarmer necesita saber cuándo estás conectado a tu red local.</string>
+    <string name="set_home_network_wifi_name">Nombre de la red Wi-Fi de tu granja</string>
+    <string name="manage_ssids_introduction">Indica cuándo estás conectado a tu red local, según la red Wi-Fi, Ethernet o VPN. Esto sirve, por ejemplo, para usar la URL de conexión interna o desactivar el bloqueo de la app cuando estás en tu granja.</string>
+    <string name="manage_ssids_warning">Asegúrate de configurar bien tu red local. Añadir redes Wi-Fi públicas o usar varias conexiones Ethernet/VPN puede exponer sin querer información o acceso a tu app o servidor.</string>
+    <string name="block_insecure_content">Esta conexión no es segura porque usa HTTP. Has elegido bloquear las conexiones no seguras cuando no estás en tu granja.</string>
+    <string name="block_insecure_action_configure_home">Configurar red local</string>
+    <string name="block_insecure_missing_home_setup">La app no puede saber si estás en tu red local porque no hay ninguna red configurada.</string>
+    <string name="block_insecure_missing_location">Se necesita acceso a la ubicación para detectar tu red local. Android lo exige porque la información de la red puede usarse para deducir tu ubicación.</string>
+    <string name="connection_security_level_default_summary">Conectarse al servidor solo cuando la conexión esté cifrada o estés en tu granja</string>
+    <string name="prioritize_internal_title">Al cargar el panel sin saber si estás conectado a la red local</string>
+    <string name="prioritize_internal_off">Usar la URL de CoFarmer (recomendado)</string>
+    <string name="lock_home_bypass_title">Desbloquear en la red local</string>
+    <string name="lock_home_bypass_summary">Desactivar el bloqueo de la app cuando estés conectado a la red local</string>
+    <string name="connection_check_home_assistant">Verificación de CoFarmer</string>
+    <string name="connection_check_home_assistant_success">Verificado como CoFarmer</string>
+    <string name="connection_check_error_not_home_assistant">El servidor no es CoFarmer</string>
+    <string name="list_header_instances">Hubs</string>
+    <string name="tile_server">Selecciona un hub (obligatorio)</string>
+    <string name="widget_spinner_server">Hub:</string>
+
+    <!-- Persistent connection -->
+    <string name="websocket_listening">Conectado a CoFarmer</string>
+    <string name="websocket_restricted_title">No se puede abrir la conexión con CoFarmer</string>
+    <string name="websocket_notification_backgroundaccess">Para conectar con tu servidor de forma fiable, permite que CoFarmer siga ejecutándose en segundo plano.</string>
+    <string name="websocket_setting_summary">Gestiona cuándo se mantiene una conexión persistente con tu CoFarmer Hub.</string>
+    <string name="websocket_setting_description">La app puede mantener una conexión persistente con tu CoFarmer Hub. Así la app puede recibir notificaciones push directamente.\n\n¿Cuándo quieres usar una conexión persistente?</string>
+    <string name="websocket_setting_home_wifi">Solo en la red local\n\nFuera de la red local, las notificaciones las entregará Google.</string>
+    <string name="websocket_setting_home_wifi_minimal">Solo en la red local\n\nSolo recibirás notificaciones cuando estés en la red local.</string>
+
+    <!-- Errors -->
+    <string name="connection_error_unknown_error">Se ha producido un error al cargar CoFarmer. Revisa la configuración de conexión y vuelve a intentarlo.</string>
+    <string name="connection_error_discord_content_description">Discord de CoFarmer</string>
+    <string name="connection_error_documentation_content_description">Documentación de CoFarmer</string>
+    <string name="connection_error_forum_content_description">Foro de CoFarmer</string>
+    <string name="connection_error_github_content_description">GitHub de CoFarmer</string>
+    <string name="error_auth_revoked">Parece que tu autorización se ha revocado. Vuelve a conectarte a CoFarmer.</string>
+    <string name="error_connection_failed">No se puede conectar con CoFarmer.</string>
+    <string name="error_ssl">No se puede comunicar con CoFarmer por un error de SSL. Comprueba que tu certificado sea válido.</string>
+    <string name="error_with_registration">La integración \'Mobile App\' es necesaria para usar la app, pero no está disponible en tu CoFarmer Hub. Revisa la configuración del hub y vuelve a intentarlo.</string>
+    <string name="database_event_failure">No se ha podido enviar a CoFarmer el evento de fallo de migración</string>
+    <string name="webview_error">Se ha producido un error al cargar CoFarmer. Revisa la configuración de conexión y vuelve a intentarlo. Al seleccionar Actualizar, intentaremos usar otra de las URL configuradas.</string>
+    <string name="webview_error_HOST_LOOKUP">No se ha podido resolver el nombre del servidor o del proxy. Comprueba que la URL sea una URL de CoFarmer válida.</string>
+    <string name="webview_error_SSL_DATE_INVALID">La fecha del certificado de CoFarmer no es válida. Revisa el certificado de CoFarmer o la configuración de conexión y vuelve a intentarlo.</string>
+    <string name="webview_error_SSL_EXPIRED">El certificado de CoFarmer ha caducado. Revisa el certificado de CoFarmer o la configuración de conexión y vuelve a intentarlo.</string>
+    <string name="webview_error_SSL_IDMISMATCH">El nombre de host no coincide con el certificado de CoFarmer. Revisa el certificado de CoFarmer o la configuración de conexión y vuelve a intentarlo.</string>
+    <string name="webview_error_SSL_INVALID">Se ha producido un error de SSL al cargar CoFarmer. Revisa el certificado de CoFarmer o la configuración de conexión y vuelve a intentarlo.</string>
+    <string name="webview_error_SSL_NOTYETVALID">El certificado de CoFarmer todavía no es válido. Revisa el certificado de CoFarmer o la configuración de conexión y vuelve a intentarlo.</string>
+    <string name="webview_error_SSL_UNTRUSTED">La autoridad de certificación del certificado de CoFarmer no es de confianza. Revisa el certificado de CoFarmer o la configuración de conexión y vuelve a intentarlo.</string>
+    <string name="security_vulnerably_message">Tu versión de CoFarmer no está protegida frente a vulnerabilidades de seguridad descubiertas recientemente en componentes personalizados. Consulta los detalles en el boletín y actualiza lo antes posible.</string>
+
+    <!-- Assist -->
+    <string name="ha_assist">CF: Asistente</string>
+    <string name="assist_connnect">El asistente no ha podido conectar con CoFarmer. Comprueba tu conexión.</string>
+    <string name="assist_permission">Para usar el asistente con la voz, permite que CoFarmer acceda al micrófono</string>
+    <string name="no_assist_support">Necesitas como mínimo CoFarmer %1$s y tener activada la integración %2$s</string>
+    <string name="not_registered">Abre la app CoFarmer e inicia sesión para empezar a usar el asistente</string>
+
+    <!-- General -->
+    <string name="companion_app">App de monitorización CoFarmer</string>
+    <string name="biometric_title">CoFarmer está bloqueado</string>
+    <string name="join_our_server">Únete a nuestra granja inteligente</string>
+    <string name="install_phone_to_continue">Instala CoFarmer en tu teléfono para continuar</string>
+    <string name="gestures_description">Configura gestos para acciones rápidas mientras usas la interfaz principal de CoFarmer.\n\nNota: si tu dispositivo tiene gestos que funcionan en cualquier app, pueden tener prioridad sobre los gestos de CoFarmer.</string>
+    <string name="controls_setting_mode_panel_info">Usa uno de tus paneles de CoFarmer para personalizar por completo tus controles</string>
+    <string name="remote_debugging_summary">Permite la depuración remota del WebView para resolver problemas de la interfaz de CoFarmer</string>
+    <string name="share_failed">No se ha podido compartir con CoFarmer</string>
+    <string name="share_success">Compartido con CoFarmer</string>
+    <string name="share_logs_sens_message">Ten en cuenta que, al compartir el registro, podrías compartir datos sensibles como tu ubicación o tu URL de CoFarmer.\n\n¿Quieres continuar?</string>
+    <string name="show_share_logs_summary">Compartir los registros con el equipo de CoFarmer ayuda a resolver problemas. Compártelos solo si un desarrollador de CoFarmer te lo ha pedido</string>
+    <string name="nfc_invalid_tag">Esta etiqueta no contiene datos de CoFarmer</string>
+    <string name="nfc_welcome_message">Las etiquetas NFC escritas con la app lanzarán un evento cuando acerques tu dispositivo a ellas.\n\nLas etiquetas funcionarán en cualquier dispositivo que tenga CoFarmer instalado y cuyo hardware pueda leerlas.</string>
+    <string name="matter_shared_status_failure">No se ha podido añadir el dispositivo a CoFarmer. ¿Quieres volver a intentarlo?</string>
+    <string name="matter_shared_status_failure_code">No se ha podido añadir el dispositivo a CoFarmer (código de error %1$d). ¿Quieres volver a intentarlo?</string>
+
+    <!-- Sensors -->
+    <string name="sensor_privacy">Tienes el control total de tus datos. Si lo activas, los datos de los sensores solo se envían a tu propio servidor CoFarmer. Nunca se compartirán con CoFarmer ni con terceros.</string>
+    <string name="sensor_update_type_info_enable">Activa este sensor para que envíe actualizaciones a CoFarmer.\n\n</string>
+    <string name="sensor_setting_ble_home_wifi_only_title">Transmitir solo en la red local</string>
+    <string name="sensor_description_location_background">Actualiza tu ubicación periódicamente en segundo plano.\n\nEl ajuste \"Precisión mínima\" te permite decidir qué precisión (en metros) debe tener la ubicación del dispositivo para enviarla a CoFarmer.\nEl ajuste \"Ubicación enviada\" te permite cambiar el nivel de detalle de la ubicación que se envía a tu servidor.</string>
+    <string name="sensor_description_location_zone">Usa las zonas existentes de CoFarmer como geovallas para el seguimiento por zonas.\n\nEl ajuste \"Precisión mínima\" te permite decidir qué precisión (en metros) debe tener la ubicación del dispositivo para enviarla a CoFarmer.</string>
+    <string name="sensor_description_location_accurate">Permite forzar una actualización precisa de la ubicación del dispositivo. Consulta la documentación para ver las opciones para forzar una actualización de la ubicación.\n\nEl ajuste \"Precisión mínima\" te permite decidir qué precisión (en metros) debe tener la ubicación del dispositivo para enviarla a CoFarmer.\nEl ajuste \"Tiempo mínimo entre actualizaciones\" (en milisegundos) evita que el dispositivo envíe la ubicación precisa con demasiada frecuencia.\nEl ajuste \"Incluir en la actualización de sensores\" solicitará la ubicación en cada actualización de los sensores.</string>
+    <string name="sensor_description_wifi_bssid">La dirección MAC del punto de acceso Wi-Fi al que estás conectado. Si activas \"Obtener BSSID actual\", se creará un nuevo ajuste que te permite renombrar el estado que se envía a CoFarmer para esa dirección MAC. El interruptor se desactiva después de guardar el BSSID actual, así que tendrás que activarlo una vez por cada BSSID que quieras renombrar. También puedes borrar el valor para eliminar el ajuste en la siguiente actualización.</string>
+    <string name="sensor_description_bluetooth_ble_emitter">Envía un iBeacon BLE con el intervalo configurado, que sirve para detectar la presencia en la granja, por ejemplo junto con los proyectos roomassistant, esp32-mqtt-room o espresence.\n\nAviso: esto puede afectar a la batería, sobre todo si el ajuste \"Potencia del transmisor\" está en Alta o \"Modo de anuncio\" está en Baja latencia.\n\nLos ajustes permiten indicar:\n• \"UUID\" (formato UUID estándar), \"Major\" y \"Minor\" (entre 0 y 65535), para personalizar identificadores y grupos. El valor Minor predeterminado 40004 tiene un significado especial: obliga a que la integración iBeacon Tracker reconozca la baliza\n• \"Potencia del transmisor\" y \"Modo de anuncio\" para ahorrar batería (usa los valores más bajos posibles)\n• \"Potencia medida\" para indicar la potencia medida a 1 m (valor inicial -59)\n\nTambién puedes hacer que las balizas solo se transmitan cuando estés conectado a una red local, lo que puede ser útil por privacidad y para ahorrar batería.\n\nNota:\nAdemás, hay un ajuste aparte (\"Activar transmisor\") para detener o iniciar la transmisión.</string>
+
+    <!-- Android Auto / Wear OS / Thread -->
+    <string name="aa_favorites_summary">Selecciona tus entidades favoritas para mostrarlas en la app cuando uses la interfaz de conducción de CoFarmer</string>
+    <string name="aa_set_favorites">Selecciona las entidades favoritas que aparecerán en la categoría de favoritos de la interfaz de conducción de CoFarmer. También puedes arrastrarlas para cambiar el orden en que aparecen. Ten en cuenta que el número de entidades mostradas varía según el vehículo.</string>
+    <string name="wear_mtls_content">Tu CoFarmer Hub requiere autenticación con certificado de cliente TLS. Selecciona un archivo de certificado de cliente TLS para instalarlo en tu dispositivo Wear OS.</string>
+    <string name="wear_unsupported_message">La configuración de Wear OS requiere la versión completa de la app CoFarmer con los servicios de Google Play</string>
+    <string name="thread_debug_summary">Actualiza manualmente las credenciales de Thread del dispositivo y del hub y verifica los resultados</string>
+    <string name="thread_debug_result_exported">Se ha añadido a CoFarmer la red de este dispositivo</string>
+    <string name="thread_debug_result_imported">Se ha añadido a este dispositivo la red de CoFarmer</string>
+    <string name="thread_debug_result_match">CoFarmer y este dispositivo usan la misma red</string>
+    <string name="thread_debug_result_mismatch">CoFarmer y este dispositivo prefieren redes diferentes</string>
+    <string name="thread_debug_result_removed">Se ha eliminado de este dispositivo la red antigua de CoFarmer</string>
+    <string name="thread_debug_result_unsupported_server">El CoFarmer Hub no es compatible con Thread</string>
+    <string name="thread_debug_result_updated">Se ha actualizado en este dispositivo la red de CoFarmer</string>
+
 </resources>

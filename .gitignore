@@ -366,3 +366,6 @@ playStorePublishServiceCredentialsFile.json
 
 ## Temp results from the CI
 merged_results.sarif
+
+# Local crash/logcat dumps
+crash_log*.txt

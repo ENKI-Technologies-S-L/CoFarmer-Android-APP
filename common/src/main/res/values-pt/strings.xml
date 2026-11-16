@@ -4,7 +4,6 @@
     
     <!-- App name and branding -->
     <string name="app_name">CoFarmer</string>
-    <string name="app_name_full">CoFarmer</string>
     
     <!-- Settings categories -->
     <string name="servers_devices_category">Instalações</string>
@@ -25,14 +24,9 @@
     <string name="cancel">Cancelar</string>
     <string name="save">Salvar</string>
     <string name="delete">Excluir</string>
-    <string name="done">Concluído</string>
-    <string name="next">Próximo</string>
     <string name="back">Voltar</string>
     <string name="retry">Tentar novamente</string>
     <string name="close">Fechar</string>
-    <string name="confirm">Confirmar</string>
-    <string name="yes">Sim</string>
-    <string name="no">Não</string>
     
     <!-- Welcome & Onboarding -->
     <string name="welcome_home_assistant_title">CoFarmer</string>
@@ -49,9 +43,6 @@
     <string name="qr_scanner_permission_button">Permitir acesso à câmera</string>
     
     <!-- Connection -->
-    <string name="connecting">Conectando…</string>
-    <string name="connected">Conectado</string>
-    <string name="disconnected">Desconectado</string>
     
     <!-- Display -->
     <string name="fullscreen">Tela cheia</string>

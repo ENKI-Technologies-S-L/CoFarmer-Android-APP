@@ -4,7 +4,6 @@
     
     <!-- App name and branding -->
     <string name="app_name">CoFarmer</string>
-    <string name="app_name_full">CoFarmer</string>
     
     <!-- Settings categories -->
     <string name="servers_devices_category">Sites agricoles</string>
@@ -27,18 +26,11 @@
     <string name="cancel">Annuler</string>
     <string name="save">Enregistrer</string>
     <string name="delete">Supprimer</string>
-    <string name="done">Terminé</string>
-    <string name="next">Suivant</string>
     <string name="back">Retour</string>
     <string name="retry">Réessayer</string>
     <string name="close">Fermer</string>
-    <string name="confirm">Confirmer</string>
-    <string name="yes">Oui</string>
-    <string name="no">Non</string>
     
     <!-- Onboarding -->
-    <string name="welcome_title">Bienvenue sur CoFarmer</string>
-    <string name="welcome_subtitle">Connectez votre exploitation agricole</string>
     <string name="qr_scanner_button">Scanner le code QR</string>
     <string name="manual_setup">Configuration manuelle</string>
     <string name="searching_home_network">Recherche sur le réseau local</string>
@@ -60,20 +52,12 @@
     <string name="notification_history">Historique des notifications</string>
     
     <!-- Connection -->
-    <string name="connection_failed">Échec de la connexion</string>
-    <string name="connecting">Connexion en cours…</string>
-    <string name="connected">Connecté</string>
-    <string name="disconnected">Déconnecté</string>
     
     <!-- Errors -->
-    <string name="error">Erreur</string>
-    <string name="error_generic">Une erreur s\'est produite</string>
-    <string name="no_internet">Pas de connexion Internet</string>
     
     <!-- Version info -->
     <string name="version_info">Informations de version</string>
     <string name="privacy_policy">Politique de confidentialité</string>
-    <string name="terms_of_service">Conditions d\'utilisation</string>
     
     <!-- Troubleshooting -->
     <string name="troubleshooting">Dépannage</string>

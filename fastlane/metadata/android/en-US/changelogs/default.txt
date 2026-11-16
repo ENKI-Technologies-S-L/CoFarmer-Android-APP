@@ -1,1 +1,3 @@
-Full release change log: https://github.com/home-assistant/android/releases/latest
+• Spanish translation of settings, connection, error and location data disclosure screens
+• Updated Firebase and Sentry libraries for improved stability and security
+• Minor fixes and improvements
