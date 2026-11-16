@@ -20,8 +20,7 @@ import org.robolectric.annotation.Config
 @Config(application = Application::class)
 class BrandingStringsTest {
 
-    private fun getString(@StringRes id: Int): String =
-        ApplicationProvider.getApplicationContext<Context>().getString(id)
+    private fun getString(@StringRes id: Int): String = ApplicationProvider.getApplicationContext<Context>().getString(id)
 
     @Test
     fun `app name is CoFarmer Assistant`() {

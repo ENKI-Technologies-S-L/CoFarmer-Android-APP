@@ -1,5 +1,7 @@
 <!-- CoFarmer Assistant adaptive icon foreground. Generated from branding-assets/cofarmer/logo-cofarmer-vector.svg -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="VectorPath"
     xmlns:aapt="http://schemas.android.com/aapt"
     android:width="108dp"
     android:height="108dp"

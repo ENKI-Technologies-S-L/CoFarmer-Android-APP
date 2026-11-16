@@ -224,12 +224,12 @@ private object HAColors {
 //  in dark mode)
 object HABrandColors {
     // CoFarmer/Enkitek Brand Colors
-    val Blue = Color(0xFF1E6BD6)  // Enkitek Secondary Blue
+    val Blue = Color(0xFF1E6BD6) // Enkitek Secondary Blue
     val Background = Color(0xFFF2F4F9)
-    val Primary = Color(0xFF00C389)  // Enkitek Primary Green
-    val Secondary = Color(0xFF1E6BD6)  // Enkitek Secondary Blue
-    val Accent = Color(0xFF0F97AF)  // Enkitek Accent Teal
-    val Warning = Color(0xFFFF9800)  // Amber/Orange for warnings
+    val Primary = Color(0xFF00C389) // Enkitek Primary Green
+    val Secondary = Color(0xFF1E6BD6) // Enkitek Secondary Blue
+    val Accent = Color(0xFF0F97AF) // Enkitek Accent Teal
+    val Warning = Color(0xFFFF9800) // Amber/Orange for warnings
 }
 
 @Immutable

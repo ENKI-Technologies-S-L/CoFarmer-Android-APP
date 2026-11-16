@@ -1,8 +1,8 @@
 package io.homeassistant.companion.android.branding
 
 import android.content.Context
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.text.TextStyle
 import androidx.core.content.res.ResourcesCompat
 import androidx.test.core.app.ApplicationProvider
 import dagger.hilt.android.testing.HiltAndroidRule

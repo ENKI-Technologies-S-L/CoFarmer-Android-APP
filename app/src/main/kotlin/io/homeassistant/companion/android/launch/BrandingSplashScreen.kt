@@ -4,6 +4,7 @@ import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -45,10 +46,7 @@ private val BackgroundDark = Color(0xFF1A1A1A)
  * Displays the CO link logo, the "CoFarmer Assistant" wordmark (Sora), the tagline and the "by ENKITEK" footer.
  */
 @Composable
-fun BrandingSplashScreen(
-    modifier: Modifier = Modifier,
-    isDarkTheme: Boolean = false,
-) {
+fun BrandingSplashScreen(modifier: Modifier = Modifier, isDarkTheme: Boolean = isSystemInDarkTheme()) {
     var startAnimation by remember { mutableStateOf(false) }
     val alphaAnim by animateFloatAsState(
         targetValue = if (startAnimation) 1f else 0f,
