@@ -49,7 +49,7 @@
     <color name="colorPreferenceSuggestion">#1F00C389</color> <!-- cofarmer_primary 12% opacity -->
     <color name="colorOnSurfaceVariant">#49454E</color> <!-- M3 On Surface Variant -->
     <color name="colorBottomSheetHandle">#6649454E</color> <!-- M3 On Surface Variant 40% opacity -->
-    <color name="colorLauncherBackground">@color/cofarmer_primary</color>
+    <color name="colorLauncherBackground">#FFFFFF</color> <!-- white: CO link mark sits on white -->
 
     <!-- Menu Icon Tint Colors - Enkitek Brand -->
     <color name="iconTintPrimary">#00C389</color> <!-- Enkitek Green - Primary actions -->
