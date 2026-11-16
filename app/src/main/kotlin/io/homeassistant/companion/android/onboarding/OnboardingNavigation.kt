@@ -58,7 +58,7 @@ const val URL_GETTING_STARTED_DOCUMENTATION =
     "https://docs.cofarmer.enkitek.eu/docs/getting_started/"
 
 @VisibleForTesting
-const val URL_ENKITEK_WEBSITE = "https://www.enkitek.eu"
+const val URL_COFARMER_WEBSITE = "https://cofarmer.ai"
 
 /**
  * Navigation route for the main onboarding flow.
@@ -158,7 +158,7 @@ internal fun NavGraphBuilder.onboarding(
         noHubScreen(
             onBackClick = navController::popBackStack,
             onVisitWebsiteClick = {
-                navController.navigateToUri(URL_ENKITEK_WEBSITE)
+                navController.navigateToUri(URL_COFARMER_WEBSITE)
             },
         )
         welcomeScreen(
