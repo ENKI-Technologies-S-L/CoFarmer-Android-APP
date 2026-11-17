@@ -3,7 +3,7 @@
     <!-- CoFarmer French Translations -->
     
     <!-- App name and branding -->
-    <string name="app_name">CoFarmer</string>
+    <string name="app_name">CoFarmer Assistant</string>
     
     <!-- Settings categories -->
     <string name="servers_devices_category">Sites agricoles</string>

@@ -25,7 +25,7 @@ enum class GestureAction(@StringRes val description: Int, val category: GestureA
 enum class GestureActionCategory(@StringRes val description: Int) {
     NONE(R.string.none),
     APP(R.string.gestures_category_app),
-    FRONTEND(R.string.app_name),
+    FRONTEND(R.string.hub_brand_name),
     NAVIGATION(R.string.gestures_category_navigation),
     SERVERS(R.string.gestures_category_servers),
 }

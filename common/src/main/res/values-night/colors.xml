@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- CoFarmer Brand Colors (same in light/dark mode) -->
-    <color name="cofarmer_primary">#04D288</color>
-    <color name="cofarmer_secondary">#0066CC</color>
-    <color name="cofarmer_accent">#03B799</color>
+    <color name="cofarmer_primary">#00C389</color>
+    <color name="cofarmer_secondary">#1E6BD6</color>
+    <color name="cofarmer_accent">#0F97AF</color>
     
     <!-- Dark mode specific colors -->
     <color name="colorDialogBackground">#111111</color>
@@ -32,14 +32,14 @@
     <color name="colorBottomSheetHandle">#66CAC4D0</color> <!-- M3 On Surface Variant 40% opacity -->
     
     <!-- Menu Icon Tint Colors - Brighter for dark mode -->
-    <color name="iconTintPrimary">#04D288</color> <!-- Enkitek Green -->
+    <color name="iconTintPrimary">#00C389</color> <!-- Enkitek Green -->
     <color name="iconTintSecondary">#4DA6FF</color> <!-- Lighter Blue for dark mode -->
     <color name="iconTintWarning">#FFB74D</color> <!-- Lighter Orange -->
     <color name="iconTintNeutral">#9E9E9E</color> <!-- Gray -->
     <color name="iconTintDanger">#FF6B6B</color> <!-- Lighter Red for visibility -->
     
     <!-- Brand Icon Colors (for preferences) -->
-    <color name="iconTintEnkitekVerde">#04D288</color> <!-- Enkitek Green -->
+    <color name="iconTintEnkitekVerde">#00C389</color> <!-- Enkitek Green -->
     <color name="iconTintEnkitekAzul">#4DA6FF</color> <!-- Lighter Blue -->
     <color name="iconTintEnkitekNegro">#AAAAAA</color> <!-- Light Gray for dark mode -->
 </resources>

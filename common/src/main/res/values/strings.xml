@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="aa_launch_native">Native mode</string>
-    <string name="aa_driving_optimized_change">Use CoFarmer in drive mode?</string>
+    <string name="aa_driving_optimized_change">Use CoFarmer Assistant in drive mode?</string>
     <string name="aa_navigation">Navigation</string>
     <string name="aa_no_entities_with_locations">No entities with locations found</string>
     <string name="aa_change_server">Change hub</string>
@@ -47,11 +47,13 @@
     <string name="allow">Allow</string>
     <string name="always_show_first_view_on_app_start">Always show first view when opening app</string>
     <string name="always_show_first_view_on_app_start_summary">The first view of the default dashboard is shown as soon as the app is opened</string>
-    <string name="app_name">CoFarmer</string>
+    <string name="app_name">CoFarmer Assistant</string>
+    <!-- Name of the hub/server product (the app is "CoFarmer Assistant") -->
+    <string name="hub_brand_name" translatable="false">CoFarmer</string>
     <string name="app_version_info">App version info</string>
     <string name="acknowledgments">Acknowledgments</string>
     <string name="acknowledgments_summary">Third-party licenses</string>
-    <string name="acknowledgments_detail">CoFarmer is built upon the Home Assistant Companion App, licensed under Apache License 2.0. We thank the Home Assistant community for their contributions.</string>
+    <string name="acknowledgments_detail">CoFarmer Assistant is built upon the Home Assistant Companion App, licensed under Apache License 2.0. We thank the Home Assistant community for their contributions.</string>
     <string name="disclosures">Disclosures</string>
     <string name="disclosures_based_on">Based on Home Assistant Companion App</string>
     <string name="disclosures_license">Licensed under Apache License 2.0</string>
@@ -67,8 +69,8 @@
     <string name="autoplay_video_summary">Autoplay videos when dashboard is active. Enabling this setting may increase data usage unexpectedly, proceed with caution.</string>
     <string name="autoplay_video">Autoplay videos</string>
     <string name="available_as_assistant_app">Available as assistant app</string>
-    <string name="background_access_disabled">CoFarmer does not have access to run in the background. Without this permission the app will not be able to reliably send data back to your server. Select to update permissions.</string>
-    <string name="background_access_enabled">CoFarmer has access to run in the background</string>
+    <string name="background_access_disabled">CoFarmer Assistant does not have access to run in the background. Without this permission the app will not be able to reliably send data back to your server. Select to update permissions.</string>
+    <string name="background_access_enabled">CoFarmer Assistant has access to run in the background</string>
     <string name="background_access_title">Background access</string>
     <string name="basic_sensor_name_active_calories_burned">Active calories burned</string>
     <string name="basic_sensor_name_active_notification_count">Active notification count</string>
@@ -147,7 +149,7 @@
     <string name="basic_sensor_name_hotspot_state">Hotspot state</string>
     <string name="binary_sensor">Binary sensor</string>
     <string name="biometric_set_title">Confirm to continue</string>
-    <string name="biometric_title">CoFarmer is locked</string>
+    <string name="biometric_title">CoFarmer Assistant is locked</string>
     <string name="brightness">Brightness: %1$d%%</string>
     <string name="broadcast_intent_error">Unable to send broadcast intent, please check the command format</string>
     <string name="buttons">Buttons</string>
@@ -314,7 +316,7 @@
     <string name="gestures_category_app">App</string>
     <string name="gestures_category_navigation">Navigation</string>
     <string name="gestures_category_servers">Servers</string>
-    <string name="gestures_description">Set up gestures for quick actions whenever you are using the main CoFarmer UI.\n\nNote: if your device has gestures that work in any app, they may override CoFarmer gestures.</string>
+    <string name="gestures_description">Set up gestures for quick actions whenever you are using the main CoFarmer Assistant UI.\n\nNote: if your device has gestures that work in any app, they may override CoFarmer Assistant gestures.</string>
     <string name="gestures_direction_down">Swipe down</string>
     <string name="gestures_direction_left">Swipe left</string>
     <string name="gestures_direction_right">Swipe right</string>
@@ -343,7 +345,7 @@
     <string name="input_url">CoFarmer URL</string>
     <string name="install">Install</string>
     <string name="install_app">Install app on Wear device</string>
-    <string name="install_phone_to_continue">Install CoFarmer on your phone to continue</string>
+    <string name="install_phone_to_continue">Install CoFarmer Assistant on your phone to continue</string>
     <plurals name="interval_hours">
         <item quantity="one">%d hour</item>
         <item quantity="other">%d hours</item>
@@ -370,7 +372,7 @@
     <string name="improv_error_unknown">Unknown error, please try again</string>
     <string name="improv_list_title">Devices ready to set up</string>
     <string name="improv_permission_title">Search devices</string>
-    <string name="improv_permission_text">The CoFarmer app can find devices using Bluetooth of this device. Allow access for the following permissions.</string>
+    <string name="improv_permission_text">The CoFarmer Assistant app can find devices using Bluetooth of this device. Allow access for the following permissions.</string>
     <string name="improv_permission_bluetooth">Bluetooth</string>
     <string name="improv_permission_location">Precise location</string>
     <string name="improv_wifi_title">Connect to Wi-Fi</string>
@@ -457,7 +459,7 @@
     <string name="manage_ssids_input_exists">This SSID already exists</string>
     <string name="manage_ssids_input">New Wi-Fi SSID</string>
     <string name="manage_ssids_introduction">Indicate when you\'re connected to your local network, based on Wi-Fi, ethernet or VPN. This can be used to, for example, use the internal connection URL or disable the app lock when on your farm.</string>
-    <string name="manage_ssids_permission">CoFarmer needs additional access to read Wi-Fi information.</string>
+    <string name="manage_ssids_permission">CoFarmer Assistant needs additional access to read Wi-Fi information.</string>
     <string name="manage_ssids_wifi">Wi-Fi network connected</string>
     <string name="manage_ssids_vpn">VPN connected</string>
     <string name="manage_ssids_warning">Make sure to set up your local network correctly. Adding public Wi-Fi networks or using multiple ethernet/VPN connections may unintentionally expose information about or access to your app or server.</string>
@@ -477,7 +479,7 @@
     <string name="qr_scanner_error_invalid_url">This doesn\'t look like a CoFarmer hub code. Try another code or enter the address manually.</string>
     <string name="qr_scanner_error_connection_failed">Found address, but can\'t connect. Make sure you\'re on the same network as your hub.</string>
     <string name="qr_scanner_permission_title">Camera Access Needed</string>
-    <string name="qr_scanner_permission_content">To scan the hub QR code, CoFarmer needs camera access. Your camera is only used for scanning, nothing is recorded or stored.</string>
+    <string name="qr_scanner_permission_content">To scan the hub QR code, CoFarmer Assistant needs camera access. Your camera is only used for scanning, nothing is recorded or stored.</string>
     <string name="qr_scanner_permission_button">Allow Camera Access</string>
     <string name="qr_scanner_permission_denied_title">Camera Permission Required</string>
     <string name="qr_scanner_permission_denied_content">Camera access was denied. Please enable it in Settings to scan QR codes, or enter the address manually.</string>
@@ -500,7 +502,7 @@
     <string name="message_checking">Checking Wear devices with app</string>
     <string name="message_missing_all">The Wear app is missing on your watch.</string>
     <string name="message_no_connected_nodes">No connected Wear devices, please make sure Bluetooth is on and your watch is paired.</string>
-    <string name="missing_command_permission">Please open the CoFarmer app and send the command again to grant the proper permissions. You will be taken to a page to either grant the CoFarmer app the permission, or you will need to select Permissions from the details page and then grant the missing permission. For command_bluetooth the name of the permission is Nearby devices. If you are attempting to use command_activity to make a phone call you will also need to grant Phone permissions.</string>
+    <string name="missing_command_permission">Please open the CoFarmer Assistant app and send the command again to grant the proper permissions. You will be taken to a page to either grant the CoFarmer Assistant app the permission, or you will need to select Permissions from the details page and then grant the missing permission. For command_bluetooth the name of the permission is Nearby devices. If you are attempting to use command_activity to make a phone call you will also need to grant Phone permissions.</string>
     <string name="mute_unmute">Mute/Unmute</string>
     <string name="play">Play</string>
     <string name="pause">Pause</string>
@@ -525,7 +527,7 @@
     <string name="nfc_tag_identifier">Tag ID</string>
     <string name="nfc_title_nfc_setup">NFC tags</string>
     <string name="nfc_title_settings">NFC tags</string>
-    <string name="nfc_welcome_message">NFC tags written by the app will fire an event once you bring your device near them.\n\nTags will work on any device with CoFarmer installed which has hardware support to read them.</string>
+    <string name="nfc_welcome_message">NFC tags written by the app will fire an event once you bring your device near them.\n\nTags will work on any device with CoFarmer Assistant installed which has hardware support to read them.</string>
     <string name="nfc_welcome_turnon">NFC is turned off. To get started, please turn on NFC in your device\'s settings.</string>
     <string name="nfc_write_tag_error">Error while writing NFC tag</string>
     <string name="nfc_write_tag_instructions">Hold your device near an NFC tag to write the following ID to it:\n\n%1$s</string>
@@ -886,9 +888,9 @@
     <string name="store_request_unsuccessful">Play Store request failed. Wear device(s) may not support Play Store, that is, the Wear device may be version 1.0.</string>
     <string name="successful">Successful</string>
     <string name="suggestion_assist_title">Use Assist from anywhere</string>
-    <string name="suggestion_assist_summary">Set CoFarmer as your assistant app</string>
+    <string name="suggestion_assist_summary">Set CoFarmer Assistant as your assistant app</string>
     <string name="suggestion_notifications_title">Enable notifications</string>
-    <string name="suggestion_notifications_summary">Allow CoFarmer to send notifications</string>
+    <string name="suggestion_notifications_summary">Allow CoFarmer Assistant to send notifications</string>
     <string name="sun">Sun</string>
     <string name="switches">Switches</string>
     <string name="tag_reader_title">Processing tag</string>
@@ -989,7 +991,7 @@
     <string name="wear_set_favorites">Select your favorite entities to appear at the top of the Wear home screen. You can also drag and drop to change the order in which they appear.</string>
     <string name="wear_settings">Wear device settings</string>
     <string name="wear_unsupported_title">Wear OS not supported</string>
-    <string name="wear_unsupported_message">Wear OS onboarding requires the full version of the CoFarmer app with Google Play Services</string>
+    <string name="wear_unsupported_message">Wear OS onboarding requires the full version of the CoFarmer Assistant app with Google Play Services</string>
     <string name="websocket_listening">Connected to CoFarmer</string>
     <string name="websocket_restricted_title">Unable to open connection to CoFarmer</string>
     <string name="websocket_restricted_fix">Update settings to fix or disable</string>
@@ -1006,7 +1008,7 @@
     <string name="webview_error_SSL_NOTYETVALID">The CoFarmer certificate is not yet valid, please review the CoFarmer certificate or the connection settings and try again.</string>
     <string name="webview_error_SSL_UNTRUSTED">The CoFarmer certificate authority is not trusted, please review the CoFarmer certificate or the connection settings and try again.</string>
     <string name="webview_error">There was an error loading CoFarmer, please review the connection settings and try again. We will attempt to try another provided URL when you select Refresh.</string>
-    <string name="welcome_hass">Welcome to CoFarmer Companion!</string>
+    <string name="welcome_hass">Welcome to CoFarmer Assistant!</string>
     <string name="widget_attribute_separator_label">Separator between attributes:</string>
     <string name="widget_background_type_title">Select widget theme</string>
     <string name="widget_background_type_label">Widget theme:</string>
@@ -1064,7 +1066,7 @@
     <string name="widget_text_color_white">White</string>
     <string name="widget_update_error">Unable to update widget.</string>
     <string name="widgets">Widgets</string>
-    <string name="companion_app">CoFarmer monitoring app</string>
+    <string name="companion_app">CoFarmer Assistant monitoring app</string>
     <string name="basic_sensor_name_last_used_app">Last used app</string>
     <string name="sensor_description_last_used_app">Application name or package name of the last used application on the device</string>
     <string name="sensor_name_last_app">Last used app</string>
@@ -1078,13 +1080,13 @@
     <string name="websocket_setting_always">Always</string>
     <string name="websocket_setting_always_minimal">Always\n\nRequired to always receive notifications</string>
     <string name="websocket_persistent_notification">To maintain the persistent connection, the app will need to create a persistent notification. You may use the button below to manage the appearance of this notification. It is recommended to minimize the notification to hide the icon.</string>
-    <string name="websocket_notification_backgroundaccess">To reliably connect your server, allow CoFarmer to keep running in the background.</string>
+    <string name="websocket_notification_backgroundaccess">To reliably connect your server, allow CoFarmer Assistant to keep running in the background.</string>
     <string name="websocket_notification_channel">Manage persistent connection notification</string>
     <string name="websocket_notification_issues">Persistent connection issues</string>
     <string name="notification_channels">Notification channels</string>
     <string name="notification_channels_summary">Manage all notification channels configured on the device. Channels control the behavior of its notifications including visibility and sound.</string>
     <string name="notification_permission">Notification permission</string>
-    <string name="notification_permission_summary">CoFarmer does not have permission to send you notifications. Select to enable notifications.</string>
+    <string name="notification_permission_summary">CoFarmer Assistant does not have permission to send you notifications. Select to enable notifications.</string>
     <string name="info">Information</string>
     <string name="show_changelog">Show change log</string>
     <string name="show_changelog_summary">Show the change log dialog from when the app was updated</string>
@@ -1219,14 +1221,14 @@
     <string name="assist_last_used_pipeline">Last used assistant</string>
     <string name="assist_log_in">Log in to start using Assist</string>
     <string name="assist_manage_pipelines">Manage assistants</string>
-    <string name="assist_permission">To use Assist with your voice, allow CoFarmer to access the microphone</string>
+    <string name="assist_permission">To use Assist with your voice, allow CoFarmer Assistant to access the microphone</string>
     <string name="assist_pipeline">Assistant</string>
     <string name="assist_preferred_pipeline">Preferred assistant (%1$s)</string>
     <string name="assist_send_text">Send text</string>
     <string name="assist_shortcut">Assist shortcut</string>
     <string name="assist_start_listening">Start listening</string>
     <string name="assist_stop_listening">Stop listening</string>
-    <string name="not_registered">Please open the CoFarmer app and log in to start using Assist</string>
+    <string name="not_registered">Please open the CoFarmer Assistant app and log in to start using Assist</string>
     <string name="ha_assist">CF: Assist</string>
     <string name="only_favorites">Only show favorites</string>
     <string name="beacon_scanning">Beacon monitor scanning</string>
@@ -1234,9 +1236,9 @@
     <string name="sensor_description_car_fuel_type">List of available fuel types for the connected car</string>
     <string name="basic_sensor_name_car_ev_connector_type">Car EV connector type</string>
     <string name="sensor_description_car_ev_connector_type">List of available EV connectors for the connected car</string>
-    <string name="aa_set_favorites">Select your favorite entities to appear in the favorites category in the CoFarmer driving interface. You can also drag and drop to change the order in which they appear. Keep in mind that the amount of entities shown will vary from vehicle to vehicle.</string>
+    <string name="aa_set_favorites">Select your favorite entities to appear in the favorites category in the CoFarmer Assistant driving interface. You can also drag and drop to change the order in which they appear. Keep in mind that the amount of entities shown will vary from vehicle to vehicle.</string>
     <string name="aa_favorites">Android Auto favorites</string>
-    <string name="aa_favorites_summary">Select your favorite entities to be shown in the app while viewing the CoFarmer driving interface</string>
+    <string name="aa_favorites_summary">Select your favorite entities to be shown in the app while viewing the CoFarmer Assistant driving interface</string>
     <string name="android_automotive">Android Automotive</string>
     <string name="android_automotive_favorites">Driving favorites</string>
     <string name="alarm_control_panels">Alarm Control Panels</string>
@@ -1377,16 +1379,16 @@
     <string name="climate_cooling">Cooling</string>
     <string name="launcher">Kiosk Mode</string>
     <string name="launcher_option_title">Enable kiosk mode</string>
-    <string name="launcher_option_summary">Use this device as a dedicated CoFarmer display. When enabled, pressing the Home button will open CoFarmer instead of the normal launcher.</string>
+    <string name="launcher_option_summary">Use this device as a dedicated CoFarmer Assistant display. When enabled, pressing the Home button will open CoFarmer Assistant instead of the normal launcher.</string>
     <string name="default_launcher_prompt">Set as home screen</string>
-    <string name="default_launcher_prompt_def">Configure CoFarmer as this device\'s home screen. Currently set to: %s</string>
+    <string name="default_launcher_prompt_def">Configure CoFarmer Assistant as this device\'s home screen. Currently set to: %s</string>
     <string name="unknown_launcher_label">unknown app</string>
     <string name="open_settings">Open settings</string>
     <string name="connection_security_level_title">Remote connection security level</string>
     <string name="connection_security_level_default_summary">Only connect to the server when we are sure that connection is encrypted or you are on your farm</string>
-    <string name="connection_security_most_secure">Most secure: Let CoFarmer detect when you\'re at your agricultural site</string>
-    <string name="connection_security_less_secure">Less secure: Do not share your location with CoFarmer</string>
-    <string name="home_assistant_branding_icon_content_description">CoFarmer branding icon</string>
+    <string name="connection_security_most_secure">Most secure: Let CoFarmer Assistant detect when you\'re at your agricultural site</string>
+    <string name="connection_security_less_secure">Less secure: Do not share your location with CoFarmer Assistant</string>
+    <string name="home_assistant_branding_icon_content_description">CoFarmer Assistant branding icon</string>
     <string name="loading_content_description">Loading</string>
     <string name="searching_home_network">Scanning\nlocal network</string>
     <string name="local_network_warning_title">Local access only</string>
@@ -1400,7 +1402,7 @@
     <string name="server_discovery_no_server_info">Check that your CoFarmer Hub is powered on and you\'re connected to the same network. You can enter the address manually if you know it.</string>
     <string name="server_discovery_connect">Connect</string>
     <!-- Welcome Screen - QR First Design -->
-    <string name="welcome_home_assistant_title">CoFarmer</string>
+    <string name="welcome_home_assistant_title">CoFarmer Assistant</string>
     <string name="welcome_details">Monitor and manage your farm from anywhere.\n\nTrack sensors, automate climate control, and receive real-time alerts — all with complete privacy and local-first architecture.</string>
     <string name="welcome_connect_to_ha">Connect to my farm</string>
     <string name="welcome_learn_more">Learn more</string>
@@ -1412,7 +1414,7 @@
     <string name="welcome_option_manual">Enter address manually</string>
     <string name="welcome_option_manual_description">Type your hub URL directly</string>
     <!-- Hub Setup Screen - New User Onboarding -->
-    <string name="hub_setup_title">Welcome to CoFarmer</string>
+    <string name="hub_setup_title">Welcome to CoFarmer Assistant</string>
     <string name="hub_setup_question">Do you have a CoFarmer Hub?</string>
     <string name="hub_setup_yes_have_hub">Yes, I have a CoFarmer Hub</string>
     <string name="hub_setup_no_hub">I don\'t have a CoFarmer Hub</string>
@@ -1448,18 +1450,18 @@
     <string name="local_first_next">Got it</string>
     <string name="location_sharing_title">Location Data Disclosure</string>
     <string name="location_sharing_content">This app collects location data to enable farm automation features even when the app is closed or not in use.\n\n<b>Data Collected:</b>\n• Precise location (GPS coordinates)\n• Background location data\n\n<b>Purpose:</b>\n• Trigger automations when you arrive/leave your farm\n• Enable geofencing for equipment control\n• Secure your connection\n\n<b>Data Handling:</b>\n• Location is sent only to your personal server\n• We do NOT collect, store, or share your location\n• You control your data completely</string>
-    <string name="location_sharing_content_plain">CoFarmer collects location data to enable farm automation features, even when the app is closed or not in use.\n\nWHAT WE COLLECT:\n• Precise location (GPS coordinates)\n• Background location tracking\n\nHOW WE USE IT:\n• Trigger automations when you arrive or leave your farm\n• Enable geofencing for equipment control\n• Location data is transmitted to your self-hosted CoFarmer server\n\nDATA SHARING:\n• Location data is NOT collected by Enkitek\n• Location data is NOT shared with third parties\n• Location data is NOT used for advertising\n• All data goes only to YOUR server under YOUR control</string>
+    <string name="location_sharing_content_plain">CoFarmer Assistant collects location data to enable farm automation features, even when the app is closed or not in use.\n\nWHAT WE COLLECT:\n• Precise location (GPS coordinates)\n• Background location tracking\n\nHOW WE USE IT:\n• Trigger automations when you arrive or leave your farm\n• Enable geofencing for equipment control\n• Location data is transmitted to your self-hosted CoFarmer server\n\nDATA SHARING:\n• Location data is NOT collected by Enkitek\n• Location data is NOT shared with third parties\n• Location data is NOT used for advertising\n• All data goes only to YOUR server under YOUR control</string>
     <string name="location_sharing_privacy_link">Read our Privacy Policy</string>
     <string name="location_sharing_share">I Understand, Continue</string>
     <string name="location_sharing_no_share">Deny</string>
     <!-- Location Disclosure Dialog - shown before ANY location permission request -->
     <string name="location_disclosure_dialog_title">Location Data Disclosure</string>
-    <string name="location_disclosure_dialog_content">CoFarmer collects location data to enable farm automation features, even when the app is closed or not in use.\n\n• Precise GPS coordinates are collected\n• Background location tracking is used\n• Data is transmitted to your self-hosted server\n• Location is NOT collected by Enkitek\n• Location is NOT shared with third parties\n• Location is NOT used for advertising</string>
+    <string name="location_disclosure_dialog_content">CoFarmer Assistant collects location data to enable farm automation features, even when the app is closed or not in use.\n\n• Precise GPS coordinates are collected\n• Background location tracking is used\n• Data is transmitted to your self-hosted server\n• Location is NOT collected by Enkitek\n• Location is NOT shared with third parties\n• Location is NOT used for advertising</string>
     <string name="location_disclosure_dialog_accept">I Understand, Continue</string>
     <string name="location_disclosure_dialog_deny">Deny</string>
     <string name="location_secure_connection_title">Secure your remote farm access</string>
-    <string name="location_secure_connection_content">Your connection is not encrypted (HTTP). By knowing when you\'re away from the farm, CoFarmer can automatically use a more secure connection method to protect your agricultural data. This requires location services.</string>
-    <string name="location_secure_connection_hint">Your location data stays local and is never shared with CoFarmer or third parties.</string>
+    <string name="location_secure_connection_content">Your connection is not encrypted (HTTP). By knowing when you\'re away from the farm, CoFarmer Assistant can automatically use a more secure connection method to protect your agricultural data. This requires location services.</string>
+    <string name="location_secure_connection_hint">Your location data stays local and is never shared with Enkitek or third parties.</string>
     <string name="location_secure_connection_next">Next</string>
     <string name="location_secure_connection_save">Save</string>
     <string name="location_secure_connection_discard_permission">Location permission denied. Allow access or choose the \'Less secure\' option.</string>
@@ -1478,7 +1480,7 @@
     <string name="wear_mtls_deselect_file">Deselect file</string>
     <string name="set_home_network_title">What is your local network?</string>
     <string name="set_home_network_wifi_name">Name of the Wi-Fi network on your farm</string>
-    <string name="set_home_network_content">For the best experience, CoFarmer needs to know when you’re connected to your local network.</string>
+    <string name="set_home_network_content">For the best experience, CoFarmer Assistant needs to know when you’re connected to your local network.</string>
     <string name="set_home_network_next">Next</string>
     <string name="connection_error_url_info">The app is currently connecting to</string>
     <string name="connection_error_more_details">More details</string>
@@ -1514,4 +1516,11 @@
     <string name="connection_check_home_assistant">CoFarmer verification</string>
     <string name="connection_check_home_assistant_success">Verified as CoFarmer</string>
     <string name="connection_check_error_not_home_assistant">Server is not CoFarmer</string>
+
+    <!-- Branding splash (CoFarmer Assistant) -->
+    <string name="splash_brand_name" translatable="false">CoFarmer</string>
+    <string name="splash_brand_suffix" translatable="false">Assistant</string>
+    <string name="splash_tagline">Control your farm from anywhere</string>
+    <string name="splash_by_enkitek" translatable="false">by ENKITEK</string>
+    <string name="splash_logo_description">CoFarmer Assistant logo</string>
 </resources>

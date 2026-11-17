@@ -3,7 +3,7 @@
     <!-- CoFarmer Hindi Translations -->
     
     <!-- App name and branding -->
-    <string name="app_name">CoFarmer</string>
+    <string name="app_name">CoFarmer Assistant</string>
     
     <!-- Settings categories -->
     <string name="servers_devices_category">प्रतिष्ठान</string>
@@ -29,7 +29,7 @@
     <string name="close">बंद करें</string>
     
     <!-- Welcome & Onboarding -->
-    <string name="welcome_home_assistant_title">CoFarmer</string>
+    <string name="welcome_home_assistant_title">CoFarmer Assistant</string>
     <string name="welcome_details">कहीं से भी अपने खेत की निगरानी और प्रबंधन करें।\n\nसेंसर ट्रैक करें, जलवायु नियंत्रण स्वचालित करें, और वास्तविक समय में अलर्ट प्राप्त करें।</string>
     <string name="welcome_connect_to_ha">मेरे खेत से जुड़ें</string>
     <string name="welcome_scan_qr">QR कोड स्कैन करें</string>

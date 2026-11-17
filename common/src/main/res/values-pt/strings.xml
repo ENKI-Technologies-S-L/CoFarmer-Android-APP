@@ -3,7 +3,7 @@
     <!-- CoFarmer Portuguese Translations -->
     
     <!-- App name and branding -->
-    <string name="app_name">CoFarmer</string>
+    <string name="app_name">CoFarmer Assistant</string>
     
     <!-- Settings categories -->
     <string name="servers_devices_category">Instalações</string>
@@ -29,7 +29,7 @@
     <string name="close">Fechar</string>
     
     <!-- Welcome & Onboarding -->
-    <string name="welcome_home_assistant_title">CoFarmer</string>
+    <string name="welcome_home_assistant_title">CoFarmer Assistant</string>
     <string name="welcome_details">Monitore e gerencie sua fazenda de qualquer lugar.\n\nRastreie sensores, automatize o controle climático e receba alertas em tempo real — tudo com privacidade completa.</string>
     <string name="welcome_connect_to_ha">Conectar à minha fazenda</string>
     <string name="welcome_scan_qr">Escanear código QR</string>

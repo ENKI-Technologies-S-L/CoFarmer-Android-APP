@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- CoFarmer Brand Colors -->
-    <color name="cofarmer_primary">#04D288</color>
-    <color name="cofarmer_secondary">#0066CC</color>
-    <color name="cofarmer_accent">#03B799</color>
-    <color name="cofarmer_gradient_start">#04D288</color>
-    <color name="cofarmer_gradient_end">#0066CC</color>
+    <color name="cofarmer_primary">#00C389</color>
+    <color name="cofarmer_secondary">#1E6BD6</color>
+    <color name="cofarmer_accent">#0F97AF</color>
+    <color name="cofarmer_gradient_start">#00C389</color>
+    <color name="cofarmer_gradient_end">#1E6BD6</color>
     
     <!-- Legacy theme colors updated with CoFarmer palette -->
     <color name="colorDialogBackground">@android:color/white</color>
@@ -46,20 +46,20 @@
     <color name="colorDeviceControlsThermostatHeat">#FF8B66</color>
     <color name="colorDeviceControlsCamera">#F1F3F4</color>
     <color name="colorSpeechText">#B3E5FC</color>
-    <color name="colorPreferenceSuggestion">#1F04D288</color> <!-- cofarmer_primary 12% opacity -->
+    <color name="colorPreferenceSuggestion">#1F00C389</color> <!-- cofarmer_primary 12% opacity -->
     <color name="colorOnSurfaceVariant">#49454E</color> <!-- M3 On Surface Variant -->
     <color name="colorBottomSheetHandle">#6649454E</color> <!-- M3 On Surface Variant 40% opacity -->
-    <color name="colorLauncherBackground">@color/cofarmer_primary</color>
+    <color name="colorLauncherBackground">#FFFFFF</color> <!-- white: CO link mark sits on white -->
 
     <!-- Menu Icon Tint Colors - Enkitek Brand -->
-    <color name="iconTintPrimary">#04D288</color> <!-- Enkitek Green - Primary actions -->
-    <color name="iconTintSecondary">#0066CC</color> <!-- Blue - Info/Help -->
+    <color name="iconTintPrimary">#00C389</color> <!-- Enkitek Green - Primary actions -->
+    <color name="iconTintSecondary">#1E6BD6</color> <!-- Blue - Info/Help -->
     <color name="iconTintWarning">#FF9800</color> <!-- Orange - Settings/Warnings -->
     <color name="iconTintNeutral">#666666</color> <!-- Gray - Less important items -->
     <color name="iconTintDanger">#E53935</color> <!-- Red - Destructive actions -->
     
     <!-- Brand Icon Colors (for preferences) -->
-    <color name="iconTintEnkitekVerde">#04D288</color> <!-- Enkitek Green -->
-    <color name="iconTintEnkitekAzul">#0066CC</color> <!-- Blue -->
+    <color name="iconTintEnkitekVerde">#00C389</color> <!-- Enkitek Green -->
+    <color name="iconTintEnkitekAzul">#1E6BD6</color> <!-- Blue -->
     <color name="iconTintEnkitekNegro">#333333</color> <!-- Dark Gray -->
 </resources>

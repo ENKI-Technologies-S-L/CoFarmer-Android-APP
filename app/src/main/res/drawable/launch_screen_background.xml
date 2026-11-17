@@ -1,47 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- CoFarmer branded splash screen - displays logo with branding during app launch -->
+<!-- CoFarmer Assistant launch window (API < 26, and night mode on all APIs).
+     Uses a PNG logo: gradient VectorDrawables are not supported before API 24.
+     The wordmark and tagline are drawn by BrandingSplashScreen (Compose). -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Background color -->
     <item android:drawable="@color/colorLaunchScreenBackground" />
-    
-    <!-- Subtle gradient accent at bottom -->
+
     <item>
         <shape android:shape="rectangle">
             <gradient
                 android:type="linear"
                 android:angle="90"
-                android:startColor="#0004D288"
-                android:centerColor="#0004D288"
-                android:endColor="#1504D288"
-                android:centerY="0.9"/>
+                android:startColor="#0000C389"
+                android:centerColor="#0000C389"
+                android:endColor="#1500C389"
+                android:centerY="0.9" />
         </shape>
     </item>
-    
-    <!-- Main Enkitek E Logo centered -->
+
     <item
         android:gravity="center"
         android:top="-60dp"
-        android:width="160dp"
-        android:height="160dp"
-        android:drawable="@drawable/splash_logo_cofarmer" />
-    
-    <!-- COFARMER text below logo -->
-    <item
-        android:gravity="center_horizontal|center_vertical"
-        android:top="100dp"
-        android:width="200dp"
-        android:height="36dp"
-        android:drawable="@drawable/splash_text_cofarmer" />
-    
-    <!-- Tagline text - smaller, below CoFarmer -->
-    <item
-        android:gravity="center_horizontal|center_vertical"
-        android:top="155dp"
-        android:width="180dp"
-        android:height="18dp"
-        android:drawable="@drawable/splash_tagline" />
-    
-    <!-- "by ENKITEK" at bottom -->
+        android:width="140dp"
+        android:height="140dp"
+        android:drawable="@drawable/splash_logo_cofarmer_png" />
+
     <item
         android:gravity="center_horizontal|bottom"
         android:bottom="48dp"

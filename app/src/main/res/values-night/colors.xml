@@ -2,7 +2,7 @@
 <resources>
     <!-- Menu Icon Tint Colors - Enkitek Brand (Night Mode) -->
     <!-- Slightly brighter colors for dark backgrounds -->
-    <color name="iconTintEnkitekVerde">#04D288</color>
+    <color name="iconTintEnkitekVerde">#00C389</color>
     <color name="iconTintEnkitekAzul">#4D9EFF</color>
     <color name="iconTintEnkitekNegro">#E0E0E0</color>
     <color name="iconTintNeutral">#AAAAAA</color>

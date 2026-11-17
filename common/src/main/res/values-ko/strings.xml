@@ -3,7 +3,7 @@
     <!-- CoFarmer Korean Translations -->
     
     <!-- App name and branding -->
-    <string name="app_name">CoFarmer</string>
+    <string name="app_name">CoFarmer Assistant</string>
     
     <!-- Settings categories -->
     <string name="servers_devices_category">시설</string>
@@ -29,7 +29,7 @@
     <string name="close">닫기</string>
     
     <!-- Welcome & Onboarding -->
-    <string name="welcome_home_assistant_title">CoFarmer</string>
+    <string name="welcome_home_assistant_title">CoFarmer Assistant</string>
     <string name="welcome_details">어디서나 농장을 모니터링하고 관리하세요.\n\n센서 추적, 기후 제어 자동화, 실시간 알림 수신 — 완벽한 프라이버시 보장.</string>
     <string name="welcome_connect_to_ha">내 농장에 연결</string>
     <string name="welcome_scan_qr">QR 코드 스캔</string>

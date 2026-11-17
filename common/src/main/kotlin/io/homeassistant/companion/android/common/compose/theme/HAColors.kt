@@ -193,43 +193,43 @@ private object HAColors {
     val Yellow90 = Color(0xFFFFE495)
     val Yellow95 = Color(0xFFFEF3CD)
 
-    // CoFarmer Green (based on #04D288)
-    val CoFarmerGreen05 = Color(0xFF001A10)
-    val CoFarmerGreen10 = Color(0xFF00291A)
-    val CoFarmerGreen20 = Color(0xFF004D32)
-    val CoFarmerGreen30 = Color(0xFF007549)
-    val CoFarmerGreen40 = Color(0xFF009E62)
-    val CoFarmerGreen50 = Color(0xFF04D288)
-    val CoFarmerGreen60 = Color(0xFF3DDBA0)
-    val CoFarmerGreen70 = Color(0xFF6DE5B7)
-    val CoFarmerGreen80 = Color(0xFFA0EFCF)
-    val CoFarmerGreen90 = Color(0xFFD2F9E8)
-    val CoFarmerGreen95 = Color(0xFFE9FCF4)
+    // CoFarmer Green (based on #00C389, logo gradient start)
+    val CoFarmerGreen05 = Color(0xFF001A12)
+    val CoFarmerGreen10 = Color(0xFF00291D)
+    val CoFarmerGreen20 = Color(0xFF004D36)
+    val CoFarmerGreen30 = Color(0xFF007552)
+    val CoFarmerGreen40 = Color(0xFF009E6F)
+    val CoFarmerGreen50 = Color(0xFF00C389)
+    val CoFarmerGreen60 = Color(0xFF3ADEAD)
+    val CoFarmerGreen70 = Color(0xFF6BE7C2)
+    val CoFarmerGreen80 = Color(0xFF9EF1D8)
+    val CoFarmerGreen90 = Color(0xFFD1FAEE)
+    val CoFarmerGreen95 = Color(0xFFE9FCF6)
 
-    // CoFarmer Blue (based on #0066CC)
-    val CoFarmerBlue05 = Color(0xFF001433)
-    val CoFarmerBlue10 = Color(0xFF002152)
-    val CoFarmerBlue20 = Color(0xFF003A85)
-    val CoFarmerBlue30 = Color(0xFF0050B5)
-    val CoFarmerBlue40 = Color(0xFF0066CC)
-    val CoFarmerBlue50 = Color(0xFF3385D6)
-    val CoFarmerBlue60 = Color(0xFF5599DD)
-    val CoFarmerBlue70 = Color(0xFF80B3E6)
-    val CoFarmerBlue80 = Color(0xFFAACCEE)
-    val CoFarmerBlue90 = Color(0xFFD5E6F7)
-    val CoFarmerBlue95 = Color(0xFFEAF3FB)
+    // CoFarmer Blue (based on #1E6BD6, logo gradient end)
+    val CoFarmerBlue05 = Color(0xFF06162D)
+    val CoFarmerBlue10 = Color(0xFF0A2448)
+    val CoFarmerBlue20 = Color(0xFF103A75)
+    val CoFarmerBlue30 = Color(0xFF164F9F)
+    val CoFarmerBlue40 = Color(0xFF1E6BD6)
+    val CoFarmerBlue50 = Color(0xFF477AC2)
+    val CoFarmerBlue60 = Color(0xFF6691CC)
+    val CoFarmerBlue70 = Color(0xFF8DADD9)
+    val CoFarmerBlue80 = Color(0xFFB2C8E6)
+    val CoFarmerBlue90 = Color(0xFFD9E4F3)
+    val CoFarmerBlue95 = Color(0xFFECF1F9)
 }
 
 // TODO validate with design team if this color are immutable or not (not changeable by the users and also stay the same
 //  in dark mode)
 object HABrandColors {
     // CoFarmer/Enkitek Brand Colors
-    val Blue = Color(0xFF0066CC)  // Enkitek Secondary Blue
+    val Blue = Color(0xFF1E6BD6) // Enkitek Secondary Blue
     val Background = Color(0xFFF2F4F9)
-    val Primary = Color(0xFF04D288)  // Enkitek Primary Green
-    val Secondary = Color(0xFF0066CC)  // Enkitek Secondary Blue
-    val Accent = Color(0xFF03B799)  // Enkitek Accent Teal
-    val Warning = Color(0xFFFF9800)  // Amber/Orange for warnings
+    val Primary = Color(0xFF00C389) // Enkitek Primary Green
+    val Secondary = Color(0xFF1E6BD6) // Enkitek Secondary Blue
+    val Accent = Color(0xFF0F97AF) // Enkitek Accent Teal
+    val Warning = Color(0xFFFF9800) // Amber/Orange for warnings
 }
 
 @Immutable
